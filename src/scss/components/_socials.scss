@@ -1,0 +1,16 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+.socials {
+	display: flex;
+	gap: 8px;
+	&__link {
+		width: 44px;
+		height: 44px;
+		background: #ffffff0f;
+		border-radius: 50%;
+		fill: #fff;
+		@include mix.flex-center;
+	}
+}

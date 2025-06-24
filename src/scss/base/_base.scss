@@ -1,4 +1,5 @@
 @use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
 
 *,
 *::before,
@@ -8,10 +9,36 @@
 	padding: 0;
 }
 html {
-	font-size: clamp(12px, 1vw, 20px);
+	font-size: calc(100vw / (1920 / 10));
+
+	// @include br.large-desktop {
+	// 	font-size: calc(100vw / (1920 / 11));
+	// }
+
+	@include br.desktop {
+		font-size: calc(100vw / (1920 / 11.2));
+	}
+
+	@include br.small-desktop {
+		font-size: calc(100vw / (1920 / 12));
+	}
+
+	@media screen and (max-width: 1100px) {
+		font-size: calc(100vw / (1920 / 15));
+	}
+
+	@include br.large-mobile {
+		font-size: 62.5%;
+	}
+
+	@include br.small-mobile {
+		font-size: calc(100vw / (375 / 10));
+	}
 }
 body {
 	font-family: vars.$font-gilroy;
+	background-color: vars.$black;
+	color: #fff;
 }
 a {
 	text-decoration: none;
@@ -36,7 +63,7 @@ button {
 	cursor: pointer;
 	color: inherit;
 	font: inherit;
-	transition-property: color, background-color, border-color, transform, outline;
+	transition-property: color, background-color, border-color, transform, outline, fill;
 	transition-duration: vars.$dt;
 }
 textarea {

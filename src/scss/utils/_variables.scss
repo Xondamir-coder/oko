@@ -3,6 +3,18 @@ $font-gilroy: 'Gilroy', sans-serif;
 $font-montserrat: 'Montserrat', sans-serif;
 
 // Colors
+$black: #000614;
+$dark-blue: #09121f;
+$dark-blue-alt: #0f1522;
 
 // Others
 $dt: 0.3s;
+$spacing: clamp(15px, 2.1vw, 40px);
+
+// Breakpoints
+$bp-large-desktop: 1600px;
+$bp-desktop: 1470px;
+$bp-small-desktop: 1366px;
+$bp-ipad-pro: 1024px;
+$bp-large-mobile: 768px;
+$bp-small-mobile: 512px;

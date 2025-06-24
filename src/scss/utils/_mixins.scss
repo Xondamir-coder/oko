@@ -1,31 +1,5 @@
 @use '@utils/variables' as vars;
 
-@mixin spacing($isPadding: true) {
-	@if $isPadding {
-		padding-inline: vars.$spacing;
-		@media screen and (max-width: 1100px) {
-			padding-inline: 6rem;
-		}
-		@include breakpoints.large-mobile {
-			padding-inline: 3rem;
-		}
-		@include breakpoints.small-mobile {
-			padding-inline: 16px;
-		}
-	} @else {
-		margin-inline: vars.$spacing;
-		@media screen and (max-width: 1100px) {
-			margin-inline: 6rem;
-		}
-		@include breakpoints.large-mobile {
-			margin-inline: 3rem;
-		}
-		@include breakpoints.small-mobile {
-			margin-inline: 16px;
-		}
-	}
-}
-
 // Layout related
 @mixin grid-center {
 	display: grid;

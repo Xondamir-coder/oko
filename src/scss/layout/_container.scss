@@ -1,6 +1,7 @@
 @use '@utils/variables' as vars;
-
-@use '../utils/mixins';
+@use '@utils/breakpoints' as br;
 
 .container {
+	padding-top: 20px;
+	position: relative;
 }

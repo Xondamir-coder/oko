@@ -1,0 +1,117 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+.main {
+	& > * {
+		padding-inline: vars.$spacing;
+	}
+}
+.wall {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	width: 100%;
+}
+.hero {
+	aspect-ratio: 1918/1798;
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	position: relative;
+	padding-inline: 0;
+	margin-top: clamp(64px, 7.7vw, 147px);
+	@include br.small-mobile {
+		aspect-ratio: 375/800;
+	}
+	&__gradient {
+		content: '';
+		position: absolute;
+		width: 100%;
+		aspect-ratio: 1920/1080;
+		z-index: 2;
+		background: linear-gradient(180deg, #00061465 0%, rgba(0, 6, 20, 0) 100%);
+		@include br.small-mobile {
+			background: linear-gradient(
+				180deg,
+				#000614 0%,
+				rgba(0, 6, 20, 0.974592) 30.47%,
+				rgba(0, 6, 20, 0) 90.98%
+			);
+		}
+	}
+	&__down {
+		width: clamp(40px, 2.9vw, 54px);
+		aspect-ratio: 1;
+		border-radius: 50%;
+		background: #ffffff1f;
+		fill: #fff;
+		backdrop-filter: blur(10px);
+
+		@include mix.flex-center;
+		&:hover {
+			background: #fff;
+			fill: vars.$dark-blue;
+		}
+	}
+	&__towers {
+		z-index: 1;
+		grid-column: 1 / 2;
+		grid-row: 2 / 4;
+		height: 100%;
+		object-fit: cover;
+		@include br.small-mobile {
+			aspect-ratio: 375/785;
+			object-position: 40%;
+		}
+	}
+	&__content {
+		z-index: 3;
+		grid-column: 1 / 2;
+		grid-row: 1 / 3;
+		margin-inline: 20%;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: clamp(32px, 2.61vw, 50px);
+		@media (max-width: vars.$bp-ipad-pro) {
+			margin-inline: 10%;
+		}
+		@media (max-width: vars.$bp-small-mobile) {
+			margin-inline: 0;
+			padding-inline: vars.$spacing;
+		}
+	}
+	&__box {
+		position: relative;
+		z-index: -1;
+	}
+	&__shadow {
+		position: absolute;
+		inset: 0;
+		scale: 2.5;
+		z-index: 1;
+	}
+	&__ball {
+		display: flex;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 35%;
+		.hero__image {
+			z-index: 2;
+		}
+	}
+	&__title {
+		max-width: 20ch;
+		font-weight: 500;
+		font-size: clamp(32px, 2.5vw, 48px);
+		line-height: 110.00000000000001%;
+		letter-spacing: -0.04em;
+		text-align: center;
+		color: #ffffff80;
+		@include br.small-mobile {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}

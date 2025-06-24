@@ -1,0 +1,29 @@
+@use '@utils/variables' as *;
+
+// Map of colors for utility generation
+$colors: (
+	'black': $black,
+	'dark-blue': $dark-blue,
+	'dark-blue-alt': $dark-blue-alt,
+	'normal-white': #fff,
+	'normal-black': #000
+);
+
+// Generate utility classes for text-color, background, SVG fill & stroke
+@each $name, $color in $colors {
+	.clr-#{$name} {
+		color: $color;
+	}
+
+	.bg-#{$name} {
+		background-color: $color;
+	}
+
+	.fill-#{$name} {
+		fill: $color;
+	}
+
+	.stroke-#{$name} {
+		stroke: $color;
+	}
+}

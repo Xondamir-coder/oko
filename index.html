@@ -13,6 +13,120 @@
 		<script src="src/main.js" defer type="module"></script>
 	</head>
 	<body>
-		<h1>hello world</h1>
+		<div class="container">
+			<svg viewBox="0 0 1920 11486" class="wall">
+				<use href="src/icons/sprite.svg#wall"></use>
+			</svg>
+			<header class="header">
+				<div class="header__left">
+					<a href="/" class="header__logo">
+						<div class="header__logo-container">
+							<svg viewBox="0 0 80 28" class="header__logo-icon">
+								<use href="src/icons/sprite.svg#logo"></use>
+							</svg>
+						</div>
+					</a>
+					<nav class="header__nav">
+						<a href="#" class="header__link"> О проекте </a>
+						<a href="#" class="header__link"> Апартаменты </a>
+						<a href="#" class="header__link"> Виртуальный тур </a>
+						<a href="#" class="header__link"> Контакты </a>
+					</nav>
+				</div>
+				<div class="header__right">
+					<a href="tel:+7 (495) 182 39 05" class="button header__tel">
+						<span>+7 (495) 182-39-05</span>
+						<svg viewBox="0 0 24 24" class="icon">
+							<use href="src/icons/sprite.svg#phone"></use>
+						</svg>
+					</a>
+					<button class="button">
+						<span>Выбрать апартаменты</span>
+						<svg viewBox="0 0 24 24" class="icon">
+							<use href="src/icons/sprite.svg#add-circle-filled"></use>
+						</svg>
+					</button>
+					<a href="tel:+7 (495) 182 39 05" class="header__action">
+						<div class="header__action-container">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#phone"></use>
+							</svg>
+						</div>
+					</a>
+					<button class="header__action">
+						<div class="header__action-container">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#menu"></use>
+							</svg>
+						</div>
+					</button>
+				</div>
+				<div class="menu">
+					<nav class="menu__nav">
+						<a href="#" class="menu__link"> О проекте </a>
+						<a href="#" class="menu__link"> Апартаменты </a>
+						<a href="#" class="menu__link"> Виртуальный тур </a>
+						<a href="#" class="menu__link"> Контакты </a>
+					</nav>
+					<div class="menu__bottom">
+						<a href="tel:+7 (495) 182-39-05">+7 (495) 182-39-05</a>
+						<a href="mailto:info@oko.com">info@oko.com</a>
+						<div class="socials">
+							<a href="https://vk.com/" class="socials__link" target="_blank">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#vk"></use>
+								</svg>
+							</a>
+							<a href="https://youtube.com/" class="socials__link" target="_blank">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#youtube"></use>
+								</svg>
+							</a>
+							<a href="https://telegram.com/" class="socials__link" target="_blank">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#telegram"></use>
+								</svg>
+							</a>
+							<a href="https://whatsapp.com/" class="socials__link" target="_blank">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#whatsapp"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			<main class="main">
+				<section class="hero">
+					<div class="hero__content">
+						<h1 class="hero__title">
+							<span>Посмотрите</span>
+							<span>истории, написанные</span>
+							<span class="clr-normal-white"> в Москва Сити </span>
+						</h1>
+						<div class="hero__box">
+							<div class="hero__ball">
+								<img src="src/images/ball.png" alt="ball" class="hero__image" />
+								<img
+									src="src/images/ball-shadow.png"
+									alt="shadow"
+									class="hero__shadow" />
+							</div>
+							<img
+								src="src/images/illustration.png"
+								alt="illustration"
+								class="hero__image" />
+						</div>
+						<button class="hero__down">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#arrow-down-fill"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="hero__gradient"></div>
+					<img src="src/images/towers.png" alt="towers" class="hero__towers" />
+				</section>
+			</main>
+		</div>
 	</body>
 </html>

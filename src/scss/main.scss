@@ -3,10 +3,16 @@
 @use 'base/base';
 @use 'base/fonts';
 
+@use 'components/button-icon';
+@use 'components/socials';
+
 @use 'layout/container';
 @use 'layout/header';
 @use 'layout/footer';
 @use 'layout/menu';
 
-@use 'utils/animations';
+@use 'index';
+
 @use 'utils/utils';
+@use 'utils/animations';
+@use 'utils/colors';
