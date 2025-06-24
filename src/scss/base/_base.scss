@@ -1,0 +1,74 @@
+@use '@utils/variables' as vars;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: clamp(12px, 1vw, 20px);
+}
+body {
+	font-family: vars.$font-gilroy;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+	transition-property: color, background-color, border-color, fill;
+	transition-duration: vars.$dt;
+	&:hover {
+		color: inherit;
+		text-decoration: none;
+	}
+}
+img {
+	width: 100%;
+	height: auto;
+}
+ul {
+	list-style: none;
+}
+button {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color: inherit;
+	font: inherit;
+	transition-property: color, background-color, border-color, transform, outline;
+	transition-duration: vars.$dt;
+}
+textarea {
+	resize: none;
+}
+input,
+textarea {
+	font: inherit;
+	color: inherit;
+	border: none;
+	outline: none;
+	&::placeholder {
+		color: inherit;
+		opacity: 0.8;
+	}
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+	pointer-events: none;
+}

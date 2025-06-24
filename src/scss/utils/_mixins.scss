@@ -1,0 +1,66 @@
+@use '@utils/variables' as vars;
+
+@mixin spacing($isPadding: true) {
+	@if $isPadding {
+		padding-inline: vars.$spacing;
+		@media screen and (max-width: 1100px) {
+			padding-inline: 6rem;
+		}
+		@include breakpoints.large-mobile {
+			padding-inline: 3rem;
+		}
+		@include breakpoints.small-mobile {
+			padding-inline: 16px;
+		}
+	} @else {
+		margin-inline: vars.$spacing;
+		@media screen and (max-width: 1100px) {
+			margin-inline: 6rem;
+		}
+		@include breakpoints.large-mobile {
+			margin-inline: 3rem;
+		}
+		@include breakpoints.small-mobile {
+			margin-inline: 16px;
+		}
+	}
+}
+
+// Layout related
+@mixin grid-center {
+	display: grid;
+	place-items: center;
+}
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+@mixin grid-scroll($grid-width, $snap-align: start) {
+	grid-template-columns: initial;
+	grid-auto-flow: column;
+	grid-auto-columns: $grid-width;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	& > * {
+		scroll-snap-align: $snap-align;
+	}
+}
+@mixin flex-scroll($snap-align: start) {
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	& > * {
+		scroll-snap-align: $snap-align;
+	}
+}
+@mixin flex-between {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
