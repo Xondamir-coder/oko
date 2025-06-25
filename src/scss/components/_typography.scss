@@ -1,5 +1,12 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
 .text-default {
 	font-weight: 500;
 	font-size: clamp(15px, 1vw, 18px);
 	color: rgba(#ffffff, 0.6);
+}
+.title-62 {
+	@include mix.title-62;
 }

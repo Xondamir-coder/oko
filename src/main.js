@@ -52,11 +52,11 @@ const handleFormSubmission = () => {
 
 			// console.log(...formData);
 
-			if (!e.target.closest('.popup')) {
+			if (!e.target.closest('[data-container]')) {
 				modal.show();
 			}
 
-			const popupContainer = document.querySelector('.popup__container');
+			const popupContainer = e.target.closest('[data-container]');
 			popupContainer.classList.add('active');
 			setTimeout(() => {
 				popupContainer.classList.remove('active');
@@ -70,8 +70,15 @@ const handleFormSubmission = () => {
 		});
 	});
 };
+const handlePlanModal = () => {
+	const btn = document.querySelector('.plan__box button');
+	btn.addEventListener('click', () => {
+		btn.closest('[data-container]').classList.add('show-form');
+	});
+};
 
 handleApartmentSelection();
 setCopyrightYear();
 handleMenu();
 handleFormSubmission();
+handlePlanModal();

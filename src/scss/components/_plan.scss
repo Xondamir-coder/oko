@@ -1,0 +1,185 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+@mixin item-hidden {
+	transform: translateY(10%);
+	opacity: 0;
+	pointer-events: none;
+}
+@mixin item-shown {
+	transform: translateY(0);
+	opacity: 1;
+	pointer-events: all;
+}
+
+.plan {
+	background: linear-gradient(0deg, #000614, #000614),
+		linear-gradient(0deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.06));
+	border-radius: 12px;
+	// @include br.small-mobile {
+	// 	border-radius: 20px;
+	// }
+	aspect-ratio: 1608/874;
+	padding-bottom: clamp(32px, 4vw, 77px);
+	display: flex;
+	flex-direction: column;
+	.close-button {
+		margin-bottom: 8px;
+		@include br.large-mobile {
+			margin-bottom: -6px;
+		}
+	}
+
+	&__wrapper {
+		flex-grow: 1;
+		position: relative;
+		overflow: hidden;
+		margin-inline: clamp(24px, 4.22vw, 81px);
+		display: grid;
+		grid-template-columns: 1fr 1.35fr;
+		@media screen and (max-width: 900px) {
+			gap: 20px;
+		}
+		@media screen and (max-width: 700px) {
+			grid-template-columns: 1fr;
+		}
+		& > *:not(.plan__image) {
+			z-index: 1;
+		}
+		.text-default {
+			max-width: max(65%, 310px);
+		}
+	}
+	&__mobile {
+		padding-top: 247px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		@media screen and (min-width: 700px) {
+			display: none;
+		}
+		.plan__details {
+			align-self: stretch;
+		}
+		.plan__image {
+			z-index: -1;
+			height: 100%;
+			width: 136%;
+			right: 0;
+			left: auto;
+			object-fit: cover;
+		}
+	}
+	&__success {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(16px, 1.7vw, 32px);
+		align-items: flex-start;
+		button {
+			padding-inline: 87px;
+			padding-block: 20px;
+			margin-top: clamp(8px, 0.9vw, 16px);
+		}
+	}
+	&__cta {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(20px, 2.6vw, 48px);
+	}
+	&__header {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(16px, 1.3vw, 24px);
+	}
+	&__check {
+		width: clamp(50px, 3.3vw, 62px);
+	}
+	&__container {
+		display: grid;
+		place-items: center;
+		@media only screen and (max-width: 700px) {
+			place-items: stretch;
+		}
+		& > * {
+			grid-area: 1/1/2/2;
+			transition-property: opacity, transform;
+			transition-duration: 0.5s;
+			animation: slide-from-bottom-20px 0.5s backwards;
+			&:not(:first-child) {
+				@include item-hidden;
+				display: none;
+			}
+		}
+		&.show-form > * {
+			&:nth-child(2) {
+				@include item-shown;
+				display: flex;
+			}
+			&:first-child,
+			&:last-child {
+				@include item-hidden;
+				display: none;
+			}
+		}
+		&.active > * {
+			&:last-child {
+				@include item-shown;
+				display: flex;
+			}
+			&:nth-child(2),
+			&:first-child {
+				@include item-hidden;
+				display: none;
+			}
+		}
+	}
+	&__nav {
+		display: flex;
+		gap: 12px;
+	}
+	&__box {
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(32px, 5.2vw, 100px);
+		align-items: flex-start;
+		&-top {
+			display: flex;
+			flex-direction: column;
+			gap: clamp(16px, 1.7vw, 32px);
+		}
+	}
+	&__details {
+		align-self: flex-end;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+		gap: 24px;
+	}
+	&__detail {
+		text-wrap: nowrap;
+		display: flex;
+		font-weight: 500;
+		flex-direction: column;
+		font-size: clamp(16px, 1vw, 18px);
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&__dialog {
+		--bs-modal-bg: transparent;
+		--bs-modal-color: #fff;
+		--bs-modal-width: 83.75%;
+		@media screen and (max-width: 1330px) {
+			--bs-modal-width: 100%;
+		}
+	}
+	&--desktop {
+		@media screen and (max-width: 700px) {
+			display: none;
+		}
+	}
+}

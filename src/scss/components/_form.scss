@@ -10,6 +10,18 @@
 		padding-block: clamp(17px, 1vw, 19px);
 		margin-top: clamp(16px, 1.15vw, 21px);
 	}
+	&__policy {
+		align-self: center;
+		max-width: 55ch;
+		margin-top: 20px;
+		font-weight: 500;
+		color: rgba(#fff, 0.6);
+		font-size: clamp(12px, 0.8vw, 14px);
+		text-align: center;
+		a {
+			text-decoration: underline;
+		}
+	}
 	&__input {
 		border-radius: 100px;
 		padding-block: clamp(16px, 1.2vw, 22px);

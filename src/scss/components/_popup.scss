@@ -57,16 +57,6 @@
 			padding-block: 18px;
 		}
 	}
-	&__close {
-		align-self: flex-end;
-		width: clamp(56px, 3.8vw, 72px);
-		aspect-ratio: 1;
-		margin-bottom: min(27.5px, 1.5vw);
-		@include mix.flex-center;
-		&:hover {
-			transform: scale(1.25);
-		}
-	}
 	&__header {
 		margin-bottom: clamp(32px, 2.6vw, 48px);
 		display: flex;
@@ -81,16 +71,6 @@
 			font-weight: 500;
 			font-size: clamp(32px, 2.5vw, 48px);
 			line-height: 110.00000000000001%;
-		}
-	}
-	&__policy {
-		margin-top: 20px;
-		font-weight: 500;
-		color: rgba(#fff, 0.6);
-		font-size: clamp(12px, 0.8vw, 14px);
-		text-align: center;
-		a {
-			text-decoration: underline;
 		}
 	}
 }

@@ -64,3 +64,29 @@
 		width: clamp(65px, 4.1vw, 80px);
 	}
 }
+.arrow-button {
+	@include mix.flex-center;
+	width: 54px;
+	aspect-ratio: 1;
+	background: #ffffff1f;
+	backdrop-filter: blur(144px);
+	border-radius: 50%;
+	fill: #fff;
+	&:last-child {
+		transform: rotate(180deg);
+	}
+	&:hover {
+		background: #fff;
+		fill: #000;
+	}
+}
+.close-button {
+	align-self: flex-end;
+	width: clamp(56px, 3.8vw, 72px);
+	aspect-ratio: 1;
+	margin-bottom: min(27.5px, 1.5vw);
+	@include mix.flex-center;
+	&:hover {
+		transform: scale(1.25);
+	}
+}

@@ -40,6 +40,11 @@
 	border-radius: clamp(20px, 2.4vw, 44px);
 	background-color: vars.$dark-blue-alt;
 }
+@mixin title-62 {
+	font-weight: 500;
+	font-size: clamp(30px, 3.3vw, 62px);
+	line-height: 100%;
+}
 
 // Layout related
 @mixin grid-center {

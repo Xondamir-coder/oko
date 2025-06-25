@@ -300,9 +300,7 @@
 		}
 	}
 	&__title {
-		font-weight: 500;
-		font-size: clamp(30px, 3.3vw, 62px);
-		line-height: 100%;
+		@include mix.title-62;
 		color: #ffffff80;
 	}
 	&__vector {
@@ -350,27 +348,9 @@
 			justify-content: flex-start;
 			gap: 10px;
 		}
-		&-button {
-			@include mix.flex-center;
-			width: 54px;
-			aspect-ratio: 1;
-			background: #ffffff1f;
-			backdrop-filter: blur(144px);
-			border-radius: 50%;
-			fill: #fff;
-			&:hover {
-				background: #fff;
-				fill: #000;
-			}
-			&:last-child {
-				transform: rotate(180deg);
-			}
-		}
 	}
 	&__title {
-		font-weight: 500;
-		font-size: clamp(30px, 3.3vw, 62px);
-		line-height: 100%;
+		@include mix.title-62;
 	}
 	&__bottom {
 		padding-block: clamp(24px, 3.2vw, 60px);

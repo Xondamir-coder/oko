@@ -169,11 +169,9 @@
 		max-width: 40ch;
 	}
 	&__title {
-		font-weight: 500;
-		font-size: clamp(30px, 3.3vw, 62px);
-		line-height: 100%;
-		color: #ffffff80;
 		letter-spacing: -0.04em;
+		color: #ffffff80;
+		@include mix.title-62;
 		@include br.small-mobile {
 			letter-spacing: 0;
 		}

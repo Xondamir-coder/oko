@@ -13,7 +13,7 @@
 		<script src="src/main.js" defer type="module"></script>
 	</head>
 	<body>
-		<!-- Modal -->
+		<!-- Form Modal -->
 		<div
 			class="modal fade"
 			id="form-modal"
@@ -23,12 +23,12 @@
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content popup__content">
 					<div class="popup">
-						<button data-bs-dismiss="modal" class="popup__close">
+						<button data-bs-dismiss="modal" class="close-button">
 							<svg viewBox="0 0 24 24" width="24" height="24">
 								<use href="src/icons/sprite.svg#x"></use>
 							</svg>
 						</button>
-						<div class="popup__container">
+						<div class="popup__container" data-container>
 							<div class="popup__box">
 								<div class="popup__header">
 									<h2 class="popup__header-title">
@@ -63,7 +63,7 @@
 										</svg>
 									</button>
 								</form>
-								<p class="popup__policy">
+								<p class="form__policy">
 									Отправляя данную форму вы соглашаетесь с политикой
 									<a href="/policy">обработки персональных данных.</a>
 								</p>
@@ -79,6 +79,163 @@
 									</p>
 								</div>
 								<button class="button" data-bs-dismiss="modal">Продолжить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Plan Modal -->
+		<div class="modal fade" id="plan-modal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered plan__dialog">
+				<div class="modal-content">
+					<div class="plan">
+						<button data-bs-dismiss="modal" class="close-button">
+							<svg viewBox="0 0 24 24" width="24" height="24">
+								<use href="src/icons/sprite.svg#x"></use>
+							</svg>
+						</button>
+						<div class="plan__wrapper">
+							<img
+								src="src/images/plan.png"
+								alt="plan"
+								class="plan__image plan--desktop" />
+							<div class="plan__container" data-container>
+								<div class="plan__box">
+									<div class="plan__box-top">
+										<h2 class="title-62">Планировочные решения</h2>
+										<p class="text-default">
+											Свобода в каждой детали. Свобода в каждой детали.
+											Свобода в каждой детали. Свобода в каждой детали.
+										</p>
+									</div>
+									<button class="button">
+										<span>Записаться на просмотр</span>
+										<svg viewBox="0 0 24 24" class="icon">
+											<use href="src/icons/sprite.svg#arrow-right-up"></use>
+										</svg>
+									</button>
+									<div class="plan__nav plan--desktop">
+										<button class="plan__arrow arrow-button">
+											<svg class="icon" viewBox="0 0 24 24">
+												<use href="src/icons/sprite.svg#arrow-left"></use>
+											</svg>
+										</button>
+										<button class="plan__arrow arrow-button">
+											<svg class="icon" viewBox="0 0 24 24">
+												<use href="src/icons/sprite.svg#arrow-left"></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+								<div class="plan__cta">
+									<div class="plan__header">
+										<h2 class="title-62">
+											Почувствуйте <br />
+											жизнь в ОКО сами
+										</h2>
+										<p class="text-default">
+											Запишитесь на индивидуальный просмотр уже сегодня
+										</p>
+									</div>
+									<form class="form">
+										<input
+											type="text"
+											name="name"
+											id="plan-name"
+											autocomplete="given-name"
+											class="form__input"
+											required
+											placeholder="Имя" />
+										<input
+											type="tel"
+											name="tel"
+											id="plan-tel"
+											autocomplete="tel"
+											class="form__input"
+											required
+											placeholder="Телефон" />
+										<button class="form__button button" type="submit">
+											<span>Записаться на просмотр</span>
+											<svg viewBox="0 0 24 24" class="icon">
+												<use
+													href="src/icons/sprite.svg#arrow-right-up"></use>
+											</svg>
+										</button>
+										<p class="form__policy">
+											Отправляя данную форму вы соглашаетесь с политикой
+											<a href="/policy">обработки персональных данных.</a>
+										</p>
+									</form>
+								</div>
+								<div class="plan__success">
+									<svg viewBox="0 0 62 62" class="plan__check">
+										<use href="src/icons/sprite.svg#dark-check" />
+									</svg>
+									<div class="plan__header">
+										<h2 class="title-62">Ваша заявка отправлена</h2>
+										<p class="text-default">
+											Наш менеджер свяжется с вами в ближайшее время
+										</p>
+									</div>
+									<button
+										data-bs-dismiss="modal"
+										class="plan__success-button button">
+										Продолжить
+									</button>
+								</div>
+							</div>
+							<ul class="plan__details plan--desktop">
+								<li class="plan__detail">
+									<span class="clr-grey">Тип апартамента:</span>
+									<span>Yellow</span>
+								</li>
+								<li class="plan__detail">
+									<span class="clr-grey">Площадь:</span>
+									<span>295 М2</span>
+								</li>
+								<li class="plan__detail">
+									<span class="clr-grey">Особенности:</span>
+									<span>Вид на Центр</span>
+								</li>
+								<li class="plan__detail">
+									<span class="clr-grey">Этаж:</span>
+									<span>47 - 64 этаж</span>
+								</li>
+							</ul>
+							<div class="plan__mobile">
+								<img src="src/images/plan.png" alt="plan" class="plan__image" />
+								<ul class="plan__details">
+									<li class="plan__detail">
+										<span class="clr-grey">Тип апартамента:</span>
+										<span>Yellow</span>
+									</li>
+									<li class="plan__detail">
+										<span class="clr-grey">Площадь:</span>
+										<span>295 М2</span>
+									</li>
+									<li class="plan__detail">
+										<span class="clr-grey">Особенности:</span>
+										<span>Вид на Центр</span>
+									</li>
+									<li class="plan__detail">
+										<span class="clr-grey">Этаж:</span>
+										<span>47 - 64 этаж</span>
+									</li>
+								</ul>
+								<div class="plan__nav">
+									<button class="plan__arrow arrow-button">
+										<svg class="icon" viewBox="0 0 24 24">
+											<use href="src/icons/sprite.svg#arrow-left"></use>
+										</svg>
+									</button>
+									<button class="plan__arrow arrow-button">
+										<svg class="icon" viewBox="0 0 24 24">
+											<use href="src/icons/sprite.svg#arrow-left"></use>
+										</svg>
+									</button>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -318,7 +475,10 @@
 								<p class="history__card-text text-default">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button class="section-card__button">
+								<button
+									class="section-card__button"
+									data-bs-toggle="modal"
+									data-bs-target="#plan-modal">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -402,7 +562,10 @@
 								<p class="gallery__card-text">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button class="section-card__button">
+								<button
+									class="section-card__button"
+									data-bs-toggle="modal"
+									data-bs-target="#plan-modal">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -1315,7 +1478,10 @@
 								<p class="gallery__card-text">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button class="section-card__button">
+								<button
+									class="section-card__button"
+									data-bs-toggle="modal"
+									data-bs-target="#plan-modal">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -1402,7 +1568,10 @@
 								<p class="history__card-text text-default">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button class="section-card__button">
+								<button
+									class="section-card__button"
+									data-bs-toggle="modal"
+									data-bs-target="#plan-modal">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -1487,7 +1656,10 @@
 								<p class="gallery__card-text">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button class="section-card__button">
+								<button
+									class="section-card__button"
+									data-bs-toggle="modal"
+									data-bs-target="#plan-modal">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -1499,12 +1671,12 @@
 				</section>
 				<section class="slider">
 					<div class="slider__nav">
-						<button class="slider__nav-button">
+						<button class="slider__nav-button arrow-button">
 							<svg class="icon" viewBox="0 0 24 24">
 								<use href="src/icons/sprite.svg#arrow-left"></use>
 							</svg>
 						</button>
-						<button class="slider__nav-button">
+						<button class="slider__nav-button arrow-button">
 							<svg class="icon" viewBox="0 0 24 24">
 								<use href="src/icons/sprite.svg#arrow-left"></use>
 							</svg>
