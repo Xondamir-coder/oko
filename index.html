@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
@@ -19,9 +19,9 @@
 			</svg>
 			<header class="header">
 				<div class="header__left">
-					<a href="/" class="header__logo">
-						<div class="header__logo-container">
-							<svg viewBox="0 0 80 28" class="header__logo-icon">
+					<a href="/" class="logo-link">
+						<div class="logo-link__container">
+							<svg viewBox="0 0 80 28" class="logo-link__icon">
 								<use href="src/icons/sprite.svg#logo"></use>
 							</svg>
 						</div>
@@ -1409,7 +1409,7 @@
 						</li>
 					</ul>
 				</section>
-				<div class="slider">
+				<section class="slider">
 					<div class="slider__nav">
 						<button class="slider__nav-button">
 							<svg class="icon" viewBox="0 0 24 24">
@@ -1461,8 +1461,90 @@
 								alt="slider banner" />
 						</swiper-slide>
 					</swiper-container>
-				</div>
+				</section>
+				<section class="cta">
+					<div class="cta__left">
+						<h2 class="cta__title">
+							Почувствуйте <span class="clr-normal-white">жизнь в ОКО сами</span>
+						</h2>
+						<p class="text-default">
+							Запишитесь на индивидуальный просмотр уже сегодня
+						</p>
+					</div>
+					<form class="form">
+						<input
+							type="text"
+							name="name"
+							id="name"
+							autocomplete="given-name"
+							class="form__input"
+							required
+							placeholder="Имя" />
+						<input
+							type="tel"
+							name="tel"
+							id="tel"
+							autocomplete="tel"
+							class="form__input"
+							required
+							placeholder="Телефон" />
+						<button class="form__button button" type="submit">
+							<span>Записаться на просмотр</span>
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#arrow-right-up"></use>
+							</svg>
+						</button>
+					</form>
+				</section>
 			</main>
+			<footer class="footer">
+				<a href="/" class="logo-link">
+					<div class="logo-link__container">
+						<svg viewBox="0 0 80 28" class="logo-link__icon">
+							<use href="src/icons/sprite.svg#logo"></use>
+						</svg>
+					</div>
+				</a>
+				<nav class="footer__nav">
+					<a class="footer__nav-link" href="#about"> О проекте </a>
+					<a class="footer__nav-link" href="#apartments"> Апартаменты </a>
+					<a class="footer__nav-link" href="#tour"> Виртуальный тур </a>
+					<a class="footer__nav-link" href="#contacts"> Контакты </a>
+				</nav>
+				<div class="footer__right">
+					<a href="tel:+7 (495) 182-39-05" class="footer__right-link">
+						+7 (495) 182-39-05
+					</a>
+					<a href="mailto:info@oko.com" class="footer__right-link">info@oko.com</a>
+					<div class="socials">
+						<a href="https://vk.com/" class="socials__link" target="_blank">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#vk"></use>
+							</svg>
+						</a>
+						<a href="https://youtube.com/" class="socials__link" target="_blank">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#youtube"></use>
+							</svg>
+						</a>
+						<a href="https://telegram.com/" class="socials__link" target="_blank">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#telegram"></use>
+							</svg>
+						</a>
+						<a href="https://whatsapp.com/" class="socials__link" target="_blank">
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#whatsapp"></use>
+							</svg>
+						</a>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<span class="footer__year">© {year}. OKO. Все права защищены</span>
+					<a href="/policy"> Политика конфиденциальности </a>
+					<span>Создание сайта — <span class="clr-normal-white">Karanikola</span></span>
+				</div>
+			</footer>
 		</div>
 	</body>
 </html>

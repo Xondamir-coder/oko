@@ -390,3 +390,29 @@
 		z-index: 1;
 	}
 }
+.cta {
+	@include mix.section-elevation;
+	padding-block: clamp(40px, 6.4vw, 123px);
+	padding-inline: clamp(15px, 6vw, 116px);
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 7.8vw;
+	@media screen and (max-width: 800px) {
+		gap: max(2vw, 40px);
+	}
+	&__left {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(20px, 2.65vw, 50px);
+		@include br.small-mobile {
+			text-align: center;
+			align-items: center;
+		}
+	}
+	&__title {
+		font-weight: 600;
+		font-size: clamp(32px, 5.2vw, 100px);
+		line-height: 100%;
+		color: #ffffff80;
+	}
+}

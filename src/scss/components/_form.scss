@@ -1,0 +1,26 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(8px, 0.9vw, 16px);
+	&__button {
+		padding-block: clamp(17px, 1vw, 19px);
+		margin-top: clamp(16px, 1.15vw, 21px);
+	}
+	&__input {
+		border-radius: 100px;
+		padding-block: clamp(16px, 1.2vw, 22px);
+		padding-inline: clamp(25px, 1.6vw, 30px);
+		background-color: vars.$light-blue;
+		font-weight: 500;
+		font-size: clamp(16px, 1vw, 18px);
+		line-height: 100%;
+		&::placeholder {
+			color: rgba(#fff, 0.6);
+			opacity: 1;
+		}
+	}
+}

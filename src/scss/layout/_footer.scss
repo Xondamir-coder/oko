@@ -1,6 +1,69 @@
 @use '@utils/variables' as vars;
-
-@use '../utils/mixins';
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
 
 .footer {
+	margin-inline: vars.$spacing;
+	padding-block: clamp(30px, 3.4vw, 64px);
+	padding-inline: clamp(15px, 3.2vw, 60px);
+	display: grid;
+	font-weight: 500;
+	row-gap: clamp(30px, 9.8vw, 187px);
+	@media screen and (min-width: 900px) {
+		grid-template-columns: 1.5fr 1fr 1fr;
+	}
+	@media screen and (max-width: 900px) {
+		row-gap: max(30px, 4vw);
+		margin-top: max(40px, 2.1vw);
+	}
+
+	& > *:first-child {
+		place-self: flex-start;
+	}
+	&__bottom {
+		font-size: clamp(15px, 0.95vw, 18px);
+		color: rgba(#fff, 0.5);
+		line-height: 100%;
+		place-self: stretch;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		row-gap: 20px;
+		@media screen and (min-width: 900px) {
+			grid-column: span 3;
+			grid-template-columns: 1.5fr 1fr 1fr;
+		}
+		@media screen and (min-width: 900px) {
+			& > * {
+				&:last-child {
+					justify-self: flex-end;
+				}
+			}
+		}
+	}
+	&__nav {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(15px, 1.7vw, 32px);
+		place-self: flex-start;
+		&-link {
+			font-size: clamp(32px, 2.2vw, 42px);
+			line-height: 100%;
+		}
+	}
+	&__right {
+		justify-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		gap: clamp(20px, 1.7vw, 32px);
+		@media screen and (max-width: 900px) {
+			justify-self: stretch;
+			padding-block: 30px;
+			border-block: 1px solid #ffffff1f;
+			align-items: flex-start;
+		}
+		&-link {
+			font-size: clamp(20px, 1.7vw, 32px);
+			line-height: 100%;
+		}
+	}
 }

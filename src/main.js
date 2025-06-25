@@ -20,5 +20,11 @@ const handleApartmentSelection = () => {
 		btn.classList.add('active');
 	});
 };
+const setCopyrightYear = () => {
+	const year = new Date().getFullYear();
+	const el = document.querySelector('.footer__year');
+	el.textContent = el.textContent.replace('{year}', year);
+};
 
 handleApartmentSelection();
+setCopyrightYear();

@@ -12,5 +12,11 @@
 		border-radius: 50%;
 		fill: #fff;
 		@include mix.flex-center;
+		@media screen and (min-width: 900px) {
+			&:hover {
+				background: #fff;
+				fill: vars.$dark-blue;
+			}
+		}
 	}
 }
