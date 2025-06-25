@@ -3,9 +3,12 @@
 @use 'base/base';
 @use 'base/fonts';
 
+@use 'components/typography';
 @use 'components/button-icon';
+@use 'components/section';
 @use 'components/socials';
 @use 'components/history';
+@use 'components/gallery';
 
 @use 'layout/container';
 @use 'layout/header';

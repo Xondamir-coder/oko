@@ -1,0 +1,63 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+.section-label {
+	font-size: clamp(14px, 1vw, 18px);
+	line-height: 100%;
+	color: rgba(#fff, 0.6);
+	padding-block: clamp(12px, 0.9vw, 16px);
+	padding-inline: 16px;
+	border: 1px solid #ffffff1f;
+	border-radius: 100px;
+}
+.section-card {
+	counter-increment: card;
+	position: relative;
+	border-radius: clamp(12px, 1.3vw, 24px);
+	overflow: hidden;
+	display: flex;
+	align-items: flex-end;
+	@media screen and (max-width: 900px) {
+		aspect-ratio: 302/432;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: clamp(26px, 2.6vw, 48px);
+		line-height: 90%;
+		letter-spacing: -0.02em;
+	}
+	&__image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(10px, 1.3vw, 24px);
+		z-index: 2;
+		padding: clamp(16px, 1.7vw, 32px);
+	}
+	&__button {
+		font-size: clamp(14px, 1vw, 18px);
+		display: flex;
+		align-items: center;
+		gap: clamp(8px, 0.6vw, 10px);
+		line-height: 1;
+		background: #ffffff47;
+		align-self: flex-start;
+		padding-block: clamp(12px, 0.8vw, 15px);
+		padding-inline: clamp(16px, 1vw, 19px);
+		fill: #fff;
+		padding-left: clamp(20px, 1.3vw, 24px);
+		border-radius: 100px;
+		&:hover {
+			background: #fff;
+			color: vars.$dark-blue;
+			fill: vars.$dark-blue;
+		}
+	}
+}

@@ -1,5 +1,46 @@
 @use '@utils/variables' as vars;
 
+// Others
+@mixin card-counter {
+	@include flex-center;
+	content: counter(card);
+	position: absolute;
+	right: clamp(5px, 1vw, 18px);
+	top: clamp(5px, 1vw, 18px);
+	font-weight: 700;
+	font-size: clamp(14px, 1vw, 18px);
+	width: clamp(30px, 1.9vw, 36px);
+	aspect-ratio: 1;
+	z-index: 1;
+	border-radius: 50%;
+	background: #ffffff1f;
+	backdrop-filter: blur(144px);
+}
+@mixin card-blur($blur: 144px) {
+	content: '';
+	position: absolute;
+	filter: blur($blur);
+	z-index: 1;
+	width: 200%;
+	height: 100%;
+	top: 50%;
+	right: 5%;
+	transform: rotate(-5deg);
+	@media screen and (max-width: vars.$bp-small-mobile) {
+		bottom: 0;
+		width: 120%;
+		left: 50%;
+		height: 50%;
+		filter: blur(30px);
+		transform: translate(-50%, 20%);
+		object-fit: cover;
+	}
+}
+@mixin section-elevation {
+	border-radius: clamp(20px, 2.4vw, 44px);
+	background-color: vars.$dark-blue-alt;
+}
+
 // Layout related
 @mixin grid-center {
 	display: grid;

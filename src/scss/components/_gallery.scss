@@ -1,0 +1,63 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+.gallery {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(60px, 6.25vw, 120px);
+	&__top {
+		// max-width: max(320px, 65%);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		gap: clamp(16px, 1.7vw, 50px);
+		text-align: center;
+		.text-default {
+			max-width: 45ch;
+		}
+		.section-label {
+			@media screen and (max-width: vars.$bp-ipad-pro) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+	&__title {
+		font-weight: 600;
+		font-size: clamp(32px, 5.21vw, 100px);
+		line-height: 100%;
+		text-transform: uppercase;
+		max-width: 10ch;
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 11px;
+		counter-reset: card;
+		@media screen and (max-width: 900px) {
+			@include mix.grid-scroll(max(30%, 300px));
+		}
+	}
+	&__card {
+		@media screen and (min-width: 900px) {
+			aspect-ratio: 449/696;
+		}
+		&::after {
+			@include mix.card-counter;
+		}
+		&:last-child {
+			background-color: #1f2431;
+		}
+		img:first-child {
+			object-position: 60%;
+		}
+		&-text {
+			font-weight: 500;
+			font-size: clamp(15px, 0.9vw, 16px);
+			color: rgba(#ffffff, 0.75);
+		}
+		&-blur {
+			@include mix.card-blur(60px);
+		}
+	}
+}
