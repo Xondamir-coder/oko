@@ -1,4 +1,7 @@
 import './scss/main.scss';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 const handleApartmentSelection = () => {
 	const buttons = document.querySelector('.apartments__buttons');

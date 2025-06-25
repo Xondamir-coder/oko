@@ -1409,6 +1409,59 @@
 						</li>
 					</ul>
 				</section>
+				<div class="slider">
+					<div class="slider__nav">
+						<button class="slider__nav-button">
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
+						</button>
+						<button class="slider__nav-button">
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="slider__bottom">
+						<h2 class="slider__title">
+							Ваши виды <br />
+							из окон
+						</h2>
+						<button class="slider__button button">
+							<span>Записаться на просмотр</span>
+							<svg viewBox="0 0 24 24" class="icon">
+								<use href="src/icons/sprite.svg#arrow-right-up"></use>
+							</svg>
+						</button>
+					</div>
+					<swiper-container
+						class="slider__container"
+						slides-per-view="1"
+						grab-cursor="true"
+						space-between="10"
+						navigation="true"
+						navigation-prev-el=".slider__nav-button:first-child"
+						navigation-next-el=".slider__nav-button:last-child">
+						<swiper-slide class="slider__slide">
+							<img
+								class="slider__image"
+								src="src/images/slider-1.jpg"
+								alt="slider banner" />
+						</swiper-slide>
+						<swiper-slide class="slider__slide">
+							<img
+								class="slider__image"
+								src="src/images/slider-1.jpg"
+								alt="slider banner" />
+						</swiper-slide>
+						<swiper-slide class="slider__slide">
+							<img
+								class="slider__image"
+								src="src/images/slider-1.jpg"
+								alt="slider banner" />
+						</swiper-slide>
+					</swiper-container>
+				</div>
 			</main>
 		</div>
 	</body>
