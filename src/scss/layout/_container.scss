@@ -2,7 +2,22 @@
 @use '@utils/breakpoints' as br;
 
 .container {
-	padding-top: 20px;
 	position: relative;
 	overflow: hidden;
+	&__top {
+		padding-top: 20px;
+		transition: background-color vars.$dt, height vars.$dt;
+		overflow: hidden;
+		position: relative;
+		&:not(.active) .menu {
+			display: none;
+		}
+		&.active {
+			background-color: vars.$dark-blue-alt;
+			height: 100vh;
+			.header {
+				background-color: vars.$dark-blue-alt;
+			}
+		}
+	}
 }

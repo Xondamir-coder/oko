@@ -13,54 +13,132 @@
 		<script src="src/main.js" defer type="module"></script>
 	</head>
 	<body>
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="form-modal"
+			tabindex="-1"
+			aria-labelledby="form-modalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content popup__content">
+					<div class="popup">
+						<button data-bs-dismiss="modal" class="popup__close">
+							<svg viewBox="0 0 24 24" width="24" height="24">
+								<use href="src/icons/sprite.svg#x"></use>
+							</svg>
+						</button>
+						<div class="popup__container">
+							<div class="popup__box">
+								<div class="popup__header">
+									<h2 class="popup__header-title">
+										Почувствуйте <br />
+										жизнь в ОКО сами
+									</h2>
+									<p class="text-default">
+										Запишитесь на индивидуальный просмотр уже сегодня
+									</p>
+								</div>
+								<form class="form">
+									<input
+										type="text"
+										name="name"
+										id="modal-name"
+										autocomplete="given-name"
+										class="form__input"
+										required
+										placeholder="Имя" />
+									<input
+										type="tel"
+										name="tel"
+										id="modal-tel"
+										autocomplete="tel"
+										class="form__input"
+										required
+										placeholder="Телефон" />
+									<button class="form__button button" type="submit">
+										<span>Записаться на просмотр</span>
+										<svg viewBox="0 0 24 24" class="icon">
+											<use href="src/icons/sprite.svg#arrow-right-up"></use>
+										</svg>
+									</button>
+								</form>
+								<p class="popup__policy">
+									Отправляя данную форму вы соглашаетесь с политикой
+									<a href="/policy">обработки персональных данных.</a>
+								</p>
+							</div>
+							<div class="popup__success">
+								<svg viewBox="0 0 128 95" class="popup__success-icon">
+									<use href="src/icons/sprite.svg#colorful-check" />
+								</svg>
+								<div class="popup__header">
+									<h2 class="popup__header-title">Ваша заявка отправлена</h2>
+									<p class="text-default">
+										Наш менеджер свяжется с вами в ближайшее время
+									</p>
+								</div>
+								<button class="button" data-bs-dismiss="modal">Продолжить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="container">
 			<svg viewBox="0 0 1920 11486" class="wall">
 				<use href="src/icons/sprite.svg#wall"></use>
 			</svg>
-			<header class="header">
-				<div class="header__left">
-					<a href="/" class="logo-link">
-						<div class="logo-link__container">
-							<svg viewBox="0 0 80 28" class="logo-link__icon">
-								<use href="src/icons/sprite.svg#logo"></use>
-							</svg>
-						</div>
-					</a>
-					<nav class="header__nav">
-						<a href="#" class="header__link"> О проекте </a>
-						<a href="#" class="header__link"> Апартаменты </a>
-						<a href="#" class="header__link"> Виртуальный тур </a>
-						<a href="#" class="header__link"> Контакты </a>
-					</nav>
-				</div>
-				<div class="header__right">
-					<a href="tel:+7 (495) 182 39 05" class="button header__tel">
-						<span>+7 (495) 182-39-05</span>
-						<svg viewBox="0 0 24 24" class="icon">
-							<use href="src/icons/sprite.svg#phone"></use>
-						</svg>
-					</a>
-					<button class="button">
-						<span>Выбрать апартаменты</span>
-						<svg viewBox="0 0 24 24" class="icon">
-							<use href="src/icons/sprite.svg#add-circle-filled"></use>
-						</svg>
-					</button>
-					<a href="tel:+7 (495) 182 39 05" class="header__action">
-						<div class="header__action-container">
+			<div class="container__top">
+				<header class="header">
+					<div class="header__left">
+						<a href="/" class="logo-link">
+							<div class="logo-link__container">
+								<svg viewBox="0 0 80 28" class="logo-link__icon">
+									<use href="src/icons/sprite.svg#logo"></use>
+								</svg>
+							</div>
+						</a>
+						<nav class="header__nav">
+							<a href="#" class="header__link"> О проекте </a>
+							<a href="#" class="header__link"> Апартаменты </a>
+							<a href="#" class="header__link"> Виртуальный тур </a>
+							<a href="#" class="header__link"> Контакты </a>
+						</nav>
+					</div>
+					<div class="header__right">
+						<a href="tel:+7 (495) 182 39 05" class="button header__tel">
+							<span>+7 (495) 182-39-05</span>
 							<svg viewBox="0 0 24 24" class="icon">
 								<use href="src/icons/sprite.svg#phone"></use>
 							</svg>
-						</div>
-					</a>
-					<button class="header__action">
-						<div class="header__action-container">
+						</a>
+						<button class="button">
+							<span>Выбрать апартаменты</span>
 							<svg viewBox="0 0 24 24" class="icon">
-								<use href="src/icons/sprite.svg#menu"></use>
+								<use href="src/icons/sprite.svg#add-circle-filled"></use>
 							</svg>
-						</div>
-					</button>
-				</div>
+						</button>
+						<a href="tel:+7 (495) 182 39 05" class="header__action">
+							<div class="header__action-container">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#phone"></use>
+								</svg>
+							</div>
+						</a>
+						<button class="header__action header__action--menu">
+							<div class="header__action-container">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#menu"></use>
+								</svg>
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#x"></use>
+								</svg>
+							</div>
+						</button>
+					</div>
+				</header>
 				<div class="menu">
 					<nav class="menu__nav">
 						<a href="#" class="menu__link"> О проекте </a>
@@ -95,7 +173,7 @@
 						</div>
 					</div>
 				</div>
-			</header>
+			</div>
 			<main class="main">
 				<div class="main__container">
 					<section class="hero">
@@ -151,7 +229,10 @@
 								границы комфорта. В самом сердце Москва-Сити, там, где город
 								встречается с вашим образом жизни.
 							</p>
-							<button class="button">
+							<button
+								class="button"
+								data-bs-toggle="modal"
+								data-bs-target="#form-modal">
 								<span>Записаться на просмотр</span>
 								<svg viewBox="0 0 24 24" class="icon">
 									<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -250,7 +331,10 @@
 				<section class="gallery">
 					<div class="gallery__top">
 						<div class="section-label">История 2</div>
-						<h2 class="gallery__title">Место для любой мечты</h2>
+						<h2 class="gallery__title">
+							Место <br />
+							для любой мечты
+						</h2>
 						<p class="text-default">
 							Просторные апартаменты, в которых каждый находит место для вдохновения и
 							творчества.
@@ -1331,7 +1415,11 @@
 				<section class="gallery">
 					<div class="gallery__top">
 						<div class="section-label">История 5</div>
-						<h2 class="gallery__title">Тебе не нуженофис</h2>
+						<h2 class="gallery__title">
+							Тебе <br />
+							не нужен <br />
+							офис
+						</h2>
 						<p class="text-default">
 							Просторные апартаменты, в которых каждый находит место для вдохновения и
 							творчества.
@@ -1427,7 +1515,10 @@
 							Ваши виды <br />
 							из окон
 						</h2>
-						<button class="slider__button button">
+						<button
+							class="slider__button button"
+							data-bs-toggle="modal"
+							data-bs-target="#form-modal">
 							<span>Записаться на просмотр</span>
 							<svg viewBox="0 0 24 24" class="icon">
 								<use href="src/icons/sprite.svg#arrow-right-up"></use>

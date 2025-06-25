@@ -1,4 +1,5 @@
 // @use 'intl-tel-input/build/css/intlTelInput.css';
+@use 'modal-related';
 
 @use 'base/base';
 @use 'base/fonts';
@@ -10,6 +11,7 @@
 @use 'components/history';
 @use 'components/gallery';
 @use 'components/form';
+@use 'components/popup';
 
 @use 'layout/container';
 @use 'layout/header';

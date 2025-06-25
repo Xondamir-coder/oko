@@ -10,6 +10,7 @@
 	justify-content: space-between;
 	position: relative;
 	background-color: vars.$black;
+	transition: background-color vars.$dt;
 	@include br.large-mobile {
 		padding: 0;
 	}
@@ -44,6 +45,26 @@
 		stroke: #fff;
 		@media (min-width: vars.$bp-ipad-pro) {
 			display: none;
+		}
+		&--menu {
+			&.active {
+				.header__action-container > *:first-child {
+					transform: scale(0);
+				}
+				.header__action-container > *:last-child {
+					transform: scale(1);
+				}
+			}
+			.header__action-container {
+				display: grid;
+				place-items: center;
+				& > * {
+					grid-area: 1/1/2/2;
+					&:last-child {
+						transform: scale(0);
+					}
+				}
+			}
 		}
 		&-container {
 			position: relative;

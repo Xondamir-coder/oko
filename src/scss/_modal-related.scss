@@ -1,0 +1,50 @@
+// 1) Core SCSS APIs
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/maps';
+@import 'bootstrap/scss/mixins';
+
+// 2) Root/reset (you already have this)
+@import 'bootstrap/scss/root';
+
+// 3) Transition utilities (this is what defines .fade { transition: opacity … })
+@import 'bootstrap/scss/transitions';
+
+// 4) The modal component itself
+@import 'bootstrap/scss/modal';
+
+.modal {
+	@media screen and (max-width: 500px) {
+		// 1) Initial state when fade class is present
+		&.fade {
+			.modal-dialog {
+				transform: translateY(50px);
+				opacity: 0;
+				// needs your transition mixin + timing var
+				@include transition(transform $modal-transition, opacity $modal-transition);
+			}
+		}
+
+		// 2) Final state when show class is toggled
+		&.show {
+			.modal-dialog {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		}
+
+		// 3) Bottom-aligned dialog styling
+		.modal-dialog {
+			display: flex;
+			align-items: flex-end;
+			margin: 0;
+			min-height: 100%;
+
+			&::before {
+				display: block; // for IE10-11
+				height: calc(100vh - (#{$modal-dialog-margin} * 2));
+				content: '';
+			}
+		}
+	}
+}

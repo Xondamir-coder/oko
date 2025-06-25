@@ -326,9 +326,7 @@
 	border-radius: clamp(12px, 1.1vw, 20px);
 	overflow: hidden;
 	margin-bottom: 20px;
-	@media screen and (max-width: 550px) {
-		aspect-ratio: 345/585;
-	}
+
 	& > * {
 		grid-area: 1/1/2/2;
 		z-index: 2;
@@ -391,6 +389,10 @@
 	&__container {
 		display: grid;
 		z-index: 1;
+		aspect-ratio: 1840/860;
+		@media screen and (max-width: 550px) {
+			aspect-ratio: 345/585;
+		}
 	}
 }
 .cta {
