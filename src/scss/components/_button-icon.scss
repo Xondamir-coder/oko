@@ -21,8 +21,8 @@
 	}
 
 	@include br.large-mobile {
-		padding-block: 1.7rem;
-		padding-inline: 2rem;
+		padding-block: max(17px, 0.9vw);
+		padding-inline: max(20px, 1vw);
 	}
 }
 .icon {

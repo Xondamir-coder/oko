@@ -2,16 +2,16 @@
 @use '@utils/breakpoints' as br;
 @use '@utils/mixins' as mix;
 
-.main {
-	& > * {
-		padding-inline: vars.$spacing;
-	}
-}
 .wall {
 	position: absolute;
 	inset: 0;
 	z-index: -1;
 	width: 100%;
+}
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(80px, 8.4vw, 160px);
 }
 .hero {
 	aspect-ratio: 1918/1798;
@@ -113,5 +113,65 @@
 			display: flex;
 			flex-direction: column;
 		}
+	}
+}
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: clamp(24px, 3.4vw, 64px);
+	position: relative;
+	overflow-x: clip;
+	& > *:not(.about__bg) {
+		z-index: 2;
+	}
+	&__bg {
+		position: absolute;
+		top: -15%;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 120%;
+		aspect-ratio: 2182/446;
+		object-fit: cover;
+		z-index: 1;
+		object-position: bottom;
+		filter: blur(60px);
+		@media (max-width: vars.$bp-ipad-pro) {
+			filter: blur(25px);
+			width: 130%;
+		}
+		@include br.small-mobile {
+			left: 80%;
+			width: 236%;
+			aspect-ratio: 888/207;
+		}
+	}
+	&__image {
+		width: clamp(42px, 9.2vw, 176px);
+		aspect-ratio: 176/110;
+		border-radius: clamp(6px, 1.3vw, 24px);
+	}
+	&__title {
+		max-width: max(78.3%, 350px);
+		font-weight: 700;
+		font-size: clamp(32px, 5.2vw, 100px);
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		@include br.small-mobile {
+			align-items: center;
+			text-align: center;
+		}
+	}
+	&__text {
+		max-width: 36ch;
+		font-weight: 500;
+		font-size: clamp(15px, 1vw, 18px);
+		color: rgba(#ffffff, 0.6);
 	}
 }

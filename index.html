@@ -97,34 +97,155 @@
 				</div>
 			</header>
 			<main class="main">
-				<section class="hero">
-					<div class="hero__content">
-						<h1 class="hero__title">
-							<span>Посмотрите</span>
-							<span>истории, написанные</span>
-							<span class="clr-normal-white"> в Москва Сити </span>
-						</h1>
-						<div class="hero__box">
-							<div class="hero__ball">
-								<img src="src/images/ball.png" alt="ball" class="hero__image" />
+				<div class="main__container">
+					<section class="hero">
+						<div class="hero__content">
+							<h1 class="hero__title">
+								<span>Посмотрите</span>
+								<span>истории, написанные</span>
+								<span class="clr-normal-white"> в Москва Сити </span>
+							</h1>
+							<div class="hero__box">
+								<div class="hero__ball">
+									<img src="src/images/ball.png" alt="ball" class="hero__image" />
+									<img
+										src="src/images/ball-shadow.png"
+										alt="shadow"
+										class="hero__shadow" />
+								</div>
 								<img
-									src="src/images/ball-shadow.png"
-									alt="shadow"
-									class="hero__shadow" />
+									src="src/images/illustration.png"
+									alt="illustration"
+									class="hero__image" />
 							</div>
-							<img
-								src="src/images/illustration.png"
-								alt="illustration"
-								class="hero__image" />
+							<button class="hero__down">
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#arrow-down-fill"></use>
+								</svg>
+							</button>
 						</div>
-						<button class="hero__down">
-							<svg viewBox="0 0 24 24" class="icon">
-								<use href="src/icons/sprite.svg#arrow-down-fill"></use>
-							</svg>
-						</button>
+						<div class="hero__gradient"></div>
+						<img src="src/images/towers.png" alt="towers" class="hero__towers" />
+					</section>
+					<section class="about">
+						<img src="src/images/city.jpg" alt="city" class="about__bg" />
+						<div class="about__title">
+							<span>Истории</span>
+							<img src="src/images/about-1.jpg" alt="banner 1" class="about__image" />
+							<span>расказанные</span>
+							<span>в ОКО.</span>
+							<span>Здесь</span>
+							<img src="src/images/about-2.jpg" alt="banner 2" class="about__image" />
+							<span>все</span>
+							<img src="src/images/about-3.jpg" alt="banner 3" class="about__image" />
+							<span>продумано, чтобы</span>
+							<span>Каждый момент</span>
+							<img src="src/images/about-4.jpg" alt="banner 4" class="about__image" />
+							<span>имел</span>
+							<img src="src/images/about-5.jpg" alt="banner 5" class="about__image" />
+							<span>Значение</span>
+						</div>
+						<div class="about__content">
+							<p class="about__text">
+								Высота, открывающая новые перспективы. Пространство, стирающее
+								границы комфорта. В самом сердце Москва-Сити, там, где город
+								встречается с вашим образом жизни.
+							</p>
+							<button class="button">
+								<span>Записаться на просмотр</span>
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#arrow-right-up"></use>
+								</svg>
+							</button>
+						</div>
+					</section>
+				</div>
+				<section class="history">
+					<span class="history__label">История 1</span>
+					<div class="history__top">
+						<h2 class="history__title">
+							Пространство <br />
+							для твоей <span class="clr-normal-white">личности</span>
+						</h2>
+						<p class="history__text">
+							Просторные апартаменты, в которых каждый находит место для вдохновения и
+							творчества
+						</p>
 					</div>
-					<div class="hero__gradient"></div>
-					<img src="src/images/towers.png" alt="towers" class="hero__towers" />
+					<div class="history__grid">
+						<div class="history__card">
+							<img
+								src="src/images/history-1.jpg"
+								alt="banner"
+								class="history__card-image" />
+							<img
+								src="src/images/history-1.jpg"
+								alt="banner"
+								class="history__card-blur" />
+							<div class="history__card-content">
+								<h3 class="history__card-title">Там — город. Здесь — я.</h3>
+								<p class="history__card-text">
+									В движении я сильная. Дома — настоящая. Пишу свои мечты,
+									воплощая их в реальность.
+								</p>
+							</div>
+						</div>
+						<div class="history__card">
+							<img
+								src="src/images/history-2.jpg"
+								alt="banner"
+								class="history__card-image" />
+							<img
+								src="src/images/history-2.jpg"
+								alt="banner"
+								class="history__card-blur" />
+							<div class="history__card-content">
+								<h3 class="history__card-title">Летняя рутина</h3>
+								<p class="history__card-text">
+									Как Андрей научился наслаждаться круассаном в тишине»; «Андрей и
+									его утренний ритуал
+								</p>
+							</div>
+						</div>
+						<div class="history__card">
+							<img
+								src="src/images/history-3.jpg"
+								alt="banner"
+								class="history__card-image" />
+							<img
+								src="src/images/history-3.jpg"
+								alt="banner"
+								class="history__card-blur" />
+							<div class="history__card-content">
+								<h3 class="history__card-title">Пространство для вдохновения</h3>
+								<p class="history__card-text">
+									Место для моих желаний в любом масштабе.
+								</p>
+							</div>
+						</div>
+						<div class="history__card">
+							<img
+								src="src/images/history-4.png"
+								alt="banner"
+								class="history__card-image" />
+							<!-- <img
+								src="src/images/history-4.png"
+								alt="banner"
+								class="history__card-blur" /> -->
+							<div class="history__card-content">
+								<h3 class="history__card-title">Планировочные решения</h3>
+								<p class="history__card-text">
+									Как Андрей научился наслаждаться круассаном в тишине»
+								</p>
+								<button class="history__card-button">
+									<span>Смотреть</span>
+									<svg viewBox="0 0 24 24" class="icon">
+										<use href="src/icons/sprite.svg#arrow-right-up"></use>
+									</svg>
+								</button>
+							</div>
+						</div>
+					</div>
 				</section>
 			</main>
 		</div>
