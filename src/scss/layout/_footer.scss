@@ -9,6 +9,7 @@
 	display: grid;
 	font-weight: 500;
 	row-gap: clamp(30px, 9.8vw, 187px);
+	background-color: vars.$black;
 	@media screen and (min-width: 900px) {
 		grid-template-columns: 1.5fr 1fr 1fr;
 	}
