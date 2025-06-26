@@ -59,4 +59,9 @@
 			transition: opacity vars.$dt;
 		}
 	}
+	.section-label {
+		padding-block: clamp(12px, 0.9vw, 16px);
+		padding-inline: 16px;
+		border: 1px solid #ffffff1f;
+	}
 }

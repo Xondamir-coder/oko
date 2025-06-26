@@ -165,7 +165,8 @@ const handleHistoryAnimations = () => {
 		gsap.set(label, {
 			xPercent: -50,
 			yPercent: -50,
-			scale: 2
+			scale: 2,
+			color: '#fff'
 		});
 		const tl = gsap.timeline({
 			// onComplete: () => {
@@ -192,8 +193,17 @@ const handleHistoryAnimations = () => {
 			xPercent: 0,
 			left: 0,
 			scale: 1,
+			color: 'rgba(255, 255, 255, 0.6)',
 			marginLeft: window.innerWidth > 768 ? 'min(1.7vw, 32px)' : 'clamp(15px, 1.1vw, 20px)'
 		});
+		tl.to(
+			section.querySelector('.section-label__container'),
+			{
+				background: '#FFFFFF1F'
+			},
+			'-=0.5'
+		);
+
 		tl.from(
 			section.querySelectorAll('.history__card'),
 			{
