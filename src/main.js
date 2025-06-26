@@ -265,6 +265,74 @@ const handleBody = () => {
 	// 4. (Optional) Later, to stop observing:
 	// observer.disconnect();
 };
+const handleOtherAnimations = () => {
+	GSAPAnimation('.about__content', {
+		animProps: {
+			y: 50
+		}
+	});
+
+	document.querySelectorAll('.gallery__top').forEach(el => {
+		GSAPAnimation(el.firstElementChild, {
+			animProps: {
+				y: 25
+			}
+		});
+		GSAPAnimation(el.lastElementChild, {
+			animProps: {
+				y: 25
+			}
+		});
+	});
+
+	const allCards = document.querySelectorAll('.gallery__card');
+	const vals = Array.from({ length: allCards.length }, () => ({
+		x: Math.floor(Math.random() * 200) - 100,
+		y: Math.floor(Math.random() * 200) - 100,
+		rotation: Math.floor(Math.random() * 30) - 15
+	}));
+	allCards.forEach((el, i) => {
+		GSAPAnimation(el, {
+			animProps: {
+				y: vals[i].y,
+				x: vals[i].x,
+				rotation: vals[i].rotation
+			}
+		});
+	});
+
+	GSAPAnimation('.apartments>*', {
+		animProps: {
+			scale: 0.9,
+			stagger: 0.1
+		},
+		scrollTriggerOptions: {
+			scrub: false,
+			toggleActions: 'play none none reverse'
+		}
+	});
+
+	GSAPAnimation('.cta .form>*', {
+		animProps: {
+			y: 25,
+			stagger: 0.2
+		},
+		scrollTriggerOptions: {
+			trigger: '.cta .form'
+		}
+	});
+
+	GSAPAnimation('.footer>*', {
+		animProps: {
+			yPercent: 25,
+			stagger: 0.15
+		},
+		scrollTriggerOptions: {
+			scrub: false,
+			toggleActions: 'play none none reverse'
+		}
+	});
+};
 
 handleApartmentSelection();
 setCopyrightYear();
@@ -279,3 +347,4 @@ splitWordsAndAnimate();
 handleLinkTextDuplications();
 handleLinkClicks();
 handleBody();
+handleOtherAnimations();

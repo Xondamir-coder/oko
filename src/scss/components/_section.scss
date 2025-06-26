@@ -42,7 +42,7 @@
 					opacity: 0;
 				}
 			}
-			img[class*='-blur'] {
+			picture:last-of-type {
 				opacity: 0;
 			}
 		}

@@ -364,6 +364,7 @@
 		object-fit: cover;
 	}
 	&__nav {
+		pointer-events: none;
 		align-self: center;
 		display: flex;
 		justify-content: space-between;

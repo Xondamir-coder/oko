@@ -66,6 +66,7 @@
 }
 .arrow-button {
 	@include mix.flex-center;
+	pointer-events: all;
 	width: 54px;
 	aspect-ratio: 1;
 	background: #ffffff1f;
