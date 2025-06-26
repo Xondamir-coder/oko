@@ -20,15 +20,27 @@
 	gap: clamp(40px, 3.4vw, 65px);
 	padding-top: min(52px, 2.7vw);
 	grid-template-columns: 1fr 1.45fr;
-	@media screen and (max-width: vars.$bp-small-mobile) {
-		padding-top: clamp(15px, 1.1vw, 20px);
+	position: relative;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	@media screen and (max-width: 900px) {
+		grid-template-rows: 20px auto auto;
 		grid-template-columns: 1fr;
 	}
+	@media screen and (max-width: vars.$bp-small-mobile) {
+		padding-top: clamp(15px, 1.1vw, 20px);
+	}
 	.section-label {
-		place-self: flex-start;
-		margin-left: min(1.7vw, 32px);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		// margin-left: min(1.7vw, 32px);
+		// margin-top: min(52px, 2.7vw);
+
 		@include br.small-mobile {
-			margin-left: 0;
+			// margin-left: 0;
 		}
 	}
 	&--1 .history__grid {
@@ -71,16 +83,14 @@
 		}
 		@media screen and (max-width: 900px) {
 			@include mix.grid-scroll(max(30%, 300px));
+			overflow-y: clip;
+			grid-row: 3/4;
 		}
 	}
 	&__card {
 		@media screen and (max-width: 900px) {
 			aspect-ratio: 302/432;
 		}
-		&::after {
-			@include mix.card-counter;
-		}
-
 		&:first-child .history__card-blur,
 		&:nth-child(2) .history__card-blur {
 			@media screen and (min-width: vars.$bp-small-mobile) {
@@ -99,15 +109,6 @@
 		}
 		&:last-child {
 			background-color: #1f2431;
-			&::before {
-				content: '';
-				position: absolute;
-				width: 100%;
-				height: 50%;
-				bottom: 0;
-				left: 0;
-				background: linear-gradient(0deg, #070c19 0%, #242835 70%, transparent 100%);
-			}
 		}
 		@media screen and (min-width: 900px) {
 			&:first-child {
@@ -122,6 +123,14 @@
 			&:last-child {
 				grid-area: card-4;
 			}
+		}
+		&-gradient {
+			position: absolute;
+			width: 100%;
+			height: 50%;
+			bottom: 0;
+			left: 0;
+			background: linear-gradient(0deg, #070c19 0%, #242835 70%, transparent 100%);
 		}
 
 		// &:nth-child(3),
@@ -145,6 +154,8 @@
 			position: absolute;
 			filter: blur(144px);
 			z-index: 1;
+			transition: opacity vars.$dt;
+
 			@media screen and (max-width: vars.$bp-small-mobile) {
 				@include blur-bottom;
 			}
@@ -164,6 +175,12 @@
 		display: flex;
 		flex-direction: column;
 		gap: clamp(20px, 1.7vw, 32px);
+		@media screen and (min-width: 900px) {
+			grid-column: 2 / 3;
+		}
+		@media screen and (max-width: 900px) {
+			grid-row: 2/3;
+		}
 	}
 	&__text {
 		max-width: 40ch;

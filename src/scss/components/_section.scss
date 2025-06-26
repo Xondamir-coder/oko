@@ -21,6 +21,60 @@
 	@media screen and (max-width: 900px) {
 		aspect-ratio: 302/432;
 	}
+	&::after {
+		pointer-events: none;
+		@include mix.card-counter;
+	}
+	&:has(video) {
+		&:hover,
+		&.playing {
+			&::before {
+				opacity: 1;
+				transform: none;
+			}
+			.section-card__content {
+				transform: translateY(20px);
+				opacity: 0;
+			}
+			video {
+				opacity: 1;
+				& ~ .section-card__image {
+					opacity: 0;
+				}
+			}
+			img[class*='-blur'] {
+				opacity: 0;
+			}
+		}
+		&.playing {
+			&::before {
+				content: url(@/icons/pause.svg);
+			}
+		}
+		&::before {
+			@include mix.flex-center;
+			content: url(@/icons/play.svg);
+			position: absolute;
+			left: 16px;
+			bottom: 16px;
+			width: clamp(50px, 3.5vw, 66px);
+			aspect-ratio: 1;
+			background: #ffffff45;
+			border-radius: 50%;
+			backdrop-filter: blur(13.600000381469727px);
+			z-index: 10;
+			cursor: pointer;
+			transform: translate(0, 16px);
+			opacity: 0;
+			transition: opacity vars.$dt, transform vars.$dt;
+		}
+	}
+	&__video {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		transition: opacity vars.$dt;
+	}
 	&__title {
 		font-weight: 600;
 		font-size: clamp(26px, 2.6vw, 48px);
@@ -28,6 +82,7 @@
 		letter-spacing: -0.02em;
 	}
 	&__image {
+		transition: opacity vars.$dt;
 		position: absolute;
 		inset: 0;
 		width: 100%;
@@ -35,6 +90,7 @@
 		object-fit: cover;
 	}
 	&__content {
+		transition: opacity vars.$dt, transform vars.$dt;
 		display: flex;
 		flex-direction: column;
 		gap: clamp(10px, 1.3vw, 24px);

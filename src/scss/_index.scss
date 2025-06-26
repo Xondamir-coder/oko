@@ -46,6 +46,7 @@
 		}
 	}
 	&__down {
+		animation: slide-from-bottom-20px 0.6s backwards 2s;
 		width: clamp(40px, 2.9vw, 54px);
 		aspect-ratio: 1;
 		border-radius: 50%;
@@ -88,8 +89,13 @@
 		}
 	}
 	&__box {
+		pointer-events: none;
 		position: relative;
 		z-index: -1;
+		&-vector {
+			position: absolute;
+			inset: 0;
+		}
 	}
 	&__shadow {
 		position: absolute;
@@ -98,26 +104,38 @@
 		z-index: 1;
 	}
 	&__ball {
+		animation: spin 40s linear infinite;
 		display: flex;
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 35%;
+		z-index: 2;
 		.hero__image {
 			z-index: 2;
 		}
 	}
 	&__title {
-		max-width: 20ch;
+		overflow: hidden;
+		max-width: max(70%, 400px);
 		font-weight: 500;
 		font-size: clamp(32px, 2.5vw, 48px);
 		line-height: 110.00000000000001%;
 		letter-spacing: -0.04em;
 		text-align: center;
 		color: #ffffff80;
-		@include br.small-mobile {
-			display: flex;
-			flex-direction: column;
+		span {
+			animation: slide-from-bottom-50px 0.7s backwards;
+			@for $i from 1 through 10 {
+				&:nth-of-type(#{$i}) {
+					animation-delay: $i * 0.08s;
+				}
+			}
+		}
+		@include br.min-small-mobile {
+			br {
+				display: none;
+			}
 		}
 	}
 }
@@ -156,6 +174,7 @@
 		width: clamp(42px, 9.2vw, 176px);
 		aspect-ratio: 176/110;
 		border-radius: clamp(6px, 1.3vw, 24px);
+		vertical-align: center;
 	}
 	&__title {
 		max-width: max(78.3%, 350px);
@@ -163,12 +182,16 @@
 		font-size: clamp(32px, 5.2vw, 100px);
 		text-align: center;
 		text-transform: uppercase;
+		span {
+			display: inline-block;
+		}
 	}
 	&__content {
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 32px;
+		margin-top: clamp(24px, 3.4vw, 64px);
 		@include br.small-mobile {
 			align-items: center;
 			text-align: center;

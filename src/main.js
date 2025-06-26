@@ -1,8 +1,13 @@
 import './scss/main.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Modal from 'bootstrap/js/dist/modal';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 import { register } from 'swiper/element/bundle';
+import { splitAndAnimate, splitElementText } from './js/words';
+import { GSAPAnimation } from './js/gsap';
 
+gsap.registerPlugin(ScrollTrigger);
 register();
 
 const handleApartmentSelection = () => {
@@ -59,7 +64,7 @@ const handleFormSubmission = () => {
 			const popupContainer = e.target.closest('[data-container]');
 			popupContainer.classList.add('active');
 			setTimeout(() => {
-				popupContainer.classList.remove('active');
+				popupContainer.classList.remove('active', 'show-form');
 				form.reset();
 			}, 3000);
 		});
@@ -76,9 +81,160 @@ const handlePlanModal = () => {
 		btn.closest('[data-container]').classList.add('show-form');
 	});
 };
+const handleHeroAnimation = () => {
+	// 1) select the <path>, not the <svg>
+	const vector = document.querySelector('.hero__box-vector path');
+
+	// 2) now getTotalLength() exists
+	const length = vector.getTotalLength();
+
+	// 3) setting up
+	vector.style.strokeDasharray = `${length}px`;
+	vector.style.strokeDashoffset = `${length}px`;
+	gsap.set('.hero__ball, .hero__image', { opacity: 0 });
+	// document.body.classList.add('no-scroll');
+
+	// 4) animate:
+	const tl = gsap.timeline({
+		defaults: { ease: 'power2.inOut' },
+		onComplete: () => document.body.classList.remove('no-scroll')
+	});
+	tl.to(vector, { strokeDashoffset: 0, duration: 3 });
+	tl.to('.hero__ball, .hero__image', { opacity: 1, duration: 1 }, '-=1.5');
+};
+const splitWordsAndAnimate = () => {
+	document.querySelectorAll('section h2').forEach(title => {
+		splitAndAnimate(title, {
+			animProps: { yPercent: 120, stagger: 0.05 },
+			scrollTriggerOptions: { scrub: false, toggleActions: 'play none none reverse' }
+		});
+	});
+};
+const handleAboutAnimation = () => {
+	const aboutScrollTrigger = {
+		trigger: '.about__title',
+		start: 'center center',
+		end: '+=1000'
+	};
+	GSAPAnimation('.about__title>*:not(.about__image)', {
+		animProps: {
+			opacity: 0.4,
+			stagger: 0.1
+		},
+		scrollTriggerOptions: {
+			...aboutScrollTrigger,
+			pin: true,
+			pinSpacing: true
+		}
+	});
+	GSAPAnimation('.about__image', {
+		animProps: {
+			width: 0,
+			stagger: 0.2
+		},
+		scrollTriggerOptions: aboutScrollTrigger
+	});
+};
+const handleVideoStart = () => {
+	document.querySelectorAll('.section-card').forEach(el => {
+		el.addEventListener('click', e => {
+			if (e.target !== el) return;
+			el.classList.toggle('playing');
+			const videoEl = el.querySelector('video');
+			el.classList.contains('playing') ? videoEl.play() : videoEl.pause();
+		});
+	});
+};
+const handleHistoryAnimations = () => {
+	const sections = document.querySelectorAll('.history');
+
+	// 1) Define your four off-screen start positions (plus optional rotation)
+	const DIRS = [
+		{ x: -300, y: -200, rotation: 15 }, // ↖ from top-left
+		{ x: -500, y: 200, rotation: -15 }, // ↗ from top-right
+		{ x: 300, y: 400, rotation: 10 }, // ↙ from bottom-left
+		{ x: 300, y: -200, rotation: -40 } // ↘ from bottom-right
+	];
+
+	sections.forEach(section => {
+		const label = section.querySelector('.section-label');
+
+		gsap.set(label, {
+			xPercent: -50,
+			yPercent: -50,
+			scale: 2
+		});
+		const tl = gsap.timeline({
+			// onComplete: () => {
+			// 	section.style.maxHeight = '100vh';
+			// 	section.style.overflowY = 'auto';
+			// 	section.style.overflowX = 'hidden';
+			// },
+			scrollTrigger: {
+				trigger: section,
+				scrub: 1,
+				start: 'center center',
+				end: '+=1000',
+				pin: true,
+				pinSpacing: true
+			}
+		});
+		tl.to(section.querySelector('.section-label'), {
+			yPercent: 0,
+			top: 0,
+			marginTop: 'clamp(15px, 1.1vw, 20px)',
+			scale: 1.5
+		});
+		tl.to(section.querySelector('.section-label'), {
+			xPercent: 0,
+			left: 0,
+			scale: 1,
+			marginLeft: window.innerWidth > 768 ? 'min(1.7vw, 32px)' : 'clamp(15px, 1.1vw, 20px)'
+		});
+		tl.from(
+			section.querySelectorAll('.history__card'),
+			{
+				x: i => DIRS[i % DIRS.length].x,
+				y: i => DIRS[i % DIRS.length].y,
+				rotation: i => DIRS[i % DIRS.length].rotation,
+				opacity: 0,
+				duration: 1.2,
+				ease: 'power2.out',
+				stagger: 0 // zero stagger so they all start together
+			},
+			0
+		);
+
+		tl.from(
+			section.querySelector('.history__top'),
+			{
+				opacity: 0,
+				y: 25
+			},
+			'-=0.5'
+		);
+	});
+};
+const handleLinkTextDuplications = () => {
+	const links = document.querySelectorAll('a[href*="/"]:not(.button), a[href*="#"]:not(.button)');
+	links.forEach(link => {
+		if (!link.innerHTML.trim().includes('<')) {
+			link.innerHTML = `
+				<span class="link-span">${link.textContent.trim()}</span>
+				<span class="link-span">${link.textContent.trim()}</span>
+			`;
+		}
+	});
+};
 
 handleApartmentSelection();
 setCopyrightYear();
 handleMenu();
 handleFormSubmission();
 handlePlanModal();
+handleVideoStart();
+handleHeroAnimation();
+handleAboutAnimation();
+handleHistoryAnimations();
+splitWordsAndAnimate();
+handleLinkTextDuplications();

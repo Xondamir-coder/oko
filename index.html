@@ -14,12 +14,7 @@
 	</head>
 	<body>
 		<!-- Form Modal -->
-		<div
-			class="modal fade"
-			id="form-modal"
-			tabindex="-1"
-			aria-labelledby="form-modalLabel"
-			aria-hidden="true">
+		<div class="modal fade" id="form-modal" tabindex="-1" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content popup__content">
 					<div class="popup">
@@ -336,11 +331,36 @@
 					<section class="hero">
 						<div class="hero__content">
 							<h1 class="hero__title">
-								<span>Посмотрите</span>
-								<span>истории, написанные</span>
-								<span class="clr-normal-white"> в Москва Сити </span>
+								<span class="ds-inline-block">Посмотрите</span>
+								<br />
+								<span class="ds-inline-block">истории,</span>
+								<span class="ds-inline-block">написанные</span>
+								<span class="clr-normal-white ds-inline-block">
+									в Москва Сити
+								</span>
 							</h1>
 							<div class="hero__box">
+								<svg
+									class="hero__box-vector"
+									viewBox="0 0 1202 411"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M995.562 0.5C1109.2 0.500033 1201.21 92.2528 1201.21 205.5C1201.21 318.747 1109.2 410.5 995.562 410.5C881.923 410.5 789.823 318.747 789.823 205.5C789.823 92.2531 881.923 0.5 995.562 0.5ZM206.527 0.5C320.166 0.5 412.174 92.3444 412.174 205.5C412.174 318.655 320.166 410.408 206.527 410.408C92.8881 410.408 0.789062 318.747 0.789062 205.5C0.789062 92.2531 92.8884 0.500058 206.527 0.5ZM780.855 12.1455L675.522 204.802L675.392 205.041L675.522 205.281L780.855 398.12H465.262V12.1455H780.855Z"
+										stroke="url(#paint0_linear_126_9847)" />
+									<defs>
+										<linearGradient
+											id="paint0_linear_126_9847"
+											x1="516.726"
+											y1="-12.369"
+											x2="516.726"
+											y2="424.148"
+											gradientUnits="userSpaceOnUse">
+											<stop offset="0.192308" stop-color="#E41219" />
+											<stop offset="0.730769" stop-color="#E6087F" />
+										</linearGradient>
+									</defs>
+								</svg>
 								<div class="hero__ball">
 									<img src="src/images/ball.png" alt="ball" class="hero__image" />
 									<img
@@ -372,10 +392,12 @@
 							<span>Здесь</span>
 							<img src="src/images/about-2.jpg" alt="banner 2" class="about__image" />
 							<span>все</span>
+							<br />
 							<img src="src/images/about-3.jpg" alt="banner 3" class="about__image" />
 							<span>продумано, чтобы</span>
 							<span>Каждый момент</span>
 							<img src="src/images/about-4.jpg" alt="banner 4" class="about__image" />
+							<br />
 							<span>имел</span>
 							<img src="src/images/about-5.jpg" alt="banner 5" class="about__image" />
 							<span>Значение</span>
@@ -398,96 +420,113 @@
 						</div>
 					</section>
 				</div>
-				<section class="history history--1">
-					<span class="section-label">История 1</span>
-					<div class="history__top">
-						<h2 class="history__title">
-							Пространство <br />
-							для твоей <span class="clr-normal-white">личности</span>
-						</h2>
-						<p class="history__text text-default">
-							Просторные апартаменты, в которых каждый находит место для вдохновения и
-							творчества
-						</p>
-					</div>
-					<div class="history__grid">
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-1.jpg"
-								alt="banner"
-								class="section-card__image" />
-							<img
-								src="src/images/history-1.jpg"
-								alt="banner"
-								class="history__card-blur" />
-							<div class="section-card__content">
-								<h3 class="section-card__title">Там — город. Здесь — я.</h3>
-								<p class="history__card-text text-default">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
-								</p>
-							</div>
+				<div class="history__container">
+					<section class="history history--1">
+						<span class="section-label">История 1</span>
+						<div class="history__top">
+							<h2 class="history__title">
+								Пространство <br />
+								для твоей <span class="clr-normal-white">личности</span>
+							</h2>
+							<p class="history__text text-default">
+								Просторные апартаменты, в которых каждый находит место для
+								вдохновения и творчества
+							</p>
 						</div>
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-2.jpg"
-								alt="banner"
-								class="section-card__image" />
-							<img
-								src="src/images/history-2.jpg"
-								alt="banner"
-								class="history__card-blur" />
-							<div class="section-card__content">
-								<h3 class="section-card__title">Летняя рутина</h3>
-								<p class="history__card-text text-default">
-									Как Андрей научился наслаждаться круассаном в тишине»; «Андрей и
-									его утренний ритуал
-								</p>
+						<div class="history__grid">
+							<div class="history__card section-card">
+								<video loop muted class="section-card__video">
+									<source src="src/videos/horizontal.mp4" />
+									Video isn't supported
+								</video>
+								<img
+									src="src/images/history-1.jpg"
+									alt="banner"
+									class="section-card__image" />
+								<img
+									src="src/images/history-1.jpg"
+									alt="banner"
+									class="history__card-blur" />
+								<div class="section-card__content">
+									<h3 class="section-card__title">Там — город. Здесь — я.</h3>
+									<p class="history__card-text text-default">
+										В движении я сильная. Дома — настоящая. Пишу свои мечты,
+										воплощая их в реальность.
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-3.jpg"
-								alt="banner"
-								class="section-card__image" />
-							<img
-								src="src/images/history-3.jpg"
-								alt="banner"
-								class="history__card-blur" />
-							<div class="section-card__content">
-								<h3 class="section-card__title">Пространство для вдохновения</h3>
-								<p class="history__card-text text-default">
-									Место для моих желаний в любом масштабе.
-								</p>
+							<div class="history__card section-card">
+								<video loop muted class="section-card__video">
+									<source src="src/videos/horizontal.mp4" />
+									Video isn't supported
+								</video>
+								<img
+									src="src/images/history-2.jpg"
+									alt="banner"
+									class="section-card__image" />
+								<img
+									src="src/images/history-2.jpg"
+									alt="banner"
+									class="history__card-blur" />
+								<div class="section-card__content">
+									<h3 class="section-card__title">Летняя рутина</h3>
+									<p class="history__card-text text-default">
+										Как Андрей научился наслаждаться круассаном в тишине»;
+										«Андрей и его утренний ритуал
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-4.png"
-								alt="banner"
-								class="section-card__image" />
-							<!-- <img
+							<div class="history__card section-card">
+								<video loop muted class="section-card__video">
+									<source src="src/videos/vertical.mp4" />
+									Video isn't supported
+								</video>
+								<img
+									src="src/images/history-3.jpg"
+									alt="banner"
+									class="section-card__image" />
+								<img
+									src="src/images/history-3.jpg"
+									alt="banner"
+									class="history__card-blur" />
+								<div class="section-card__content">
+									<h3 class="section-card__title">
+										Пространство для вдохновения
+									</h3>
+									<p class="history__card-text text-default">
+										Место для моих желаний в любом масштабе.
+									</p>
+								</div>
+							</div>
+							<div class="history__card section-card">
+								<div class="history__card-gradient"></div>
+								<img
+									src="src/images/history-4.png"
+									alt="banner"
+									class="section-card__image" />
+								<!-- <img
 								src="src/images/history-4.png"
 								alt="banner"
 								class="history__card-blur" /> -->
-							<div class="section-card__content">
-								<h3 class="section-card__title">Планировочные решения</h3>
-								<p class="history__card-text text-default">
-									Как Андрей научился наслаждаться круассаном в тишине»
-								</p>
-								<button
-									class="section-card__button"
-									data-bs-toggle="modal"
-									data-bs-target="#plan-modal">
-									<span>Смотреть</span>
-									<svg viewBox="0 0 24 24" class="icon">
-										<use href="src/icons/sprite.svg#arrow-right-up"></use>
-									</svg>
-								</button>
+								<div class="section-card__content">
+									<h3 class="section-card__title">Планировочные решения</h3>
+									<p class="history__card-text text-default">
+										Как Андрей научился наслаждаться круассаном в тишине»
+									</p>
+									<button
+										class="section-card__button"
+										data-bs-toggle="modal"
+										data-bs-target="#plan-modal">
+										<span>Смотреть</span>
+										<svg viewBox="0 0 24 24" class="icon">
+											<use href="src/icons/sprite.svg#arrow-right-up"></use>
+										</svg>
+									</button>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
 				<section class="gallery">
 					<div class="gallery__top">
 						<div class="section-label">История 2</div>
@@ -502,6 +541,10 @@
 					</div>
 					<ul class="gallery__list">
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-1.jpg"
 								alt="girl looking"
@@ -519,6 +562,10 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-2.jpg"
 								alt="girl looking"
@@ -536,6 +583,10 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/history-2.jpg"
 								alt="girl looking"
@@ -1418,6 +1469,10 @@
 					</div>
 					<ul class="gallery__list">
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-3.jpg"
 								alt="girl looking"
@@ -1435,6 +1490,10 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-4.jpg"
 								alt="girl looking"
@@ -1452,6 +1511,10 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-5.jpg"
 								alt="girl looking"
@@ -1491,96 +1554,111 @@
 						</li>
 					</ul>
 				</section>
-				<section class="history history--2">
-					<span class="section-label">История 4</span>
-					<div class="history__top">
-						<h2 class="history__title">
-							Жизнь без <br />
-							верхней <span class="clr-normal-white">одежды</span>
-						</h2>
-						<p class="history__text text-default">
-							Жизнь в центре города, где не нужно подстраиваться под погоду
-						</p>
-					</div>
-					<div class="history__grid">
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-5.jpg"
-								alt="banner"
-								class="section-card__image" />
-							<img
-								src="src/images/history-5.jpg"
-								alt="banner"
-								class="history__card-blur" />
-							<div class="section-card__content">
-								<h3 class="section-card__title">Без прогноза</h3>
-								<p class="history__card-text text-default">
-									Место для моих желаний в любом масштабе.
-								</p>
-							</div>
+				<div class="history__container">
+					<section class="history history--2">
+						<span class="section-label">История 4</span>
+						<div class="history__top">
+							<h2 class="history__title">
+								Жизнь без <br />
+								верхней <span class="clr-normal-white">одежды</span>
+							</h2>
+							<p class="history__text text-default">
+								Жизнь в центре города, где не нужно подстраиваться под погоду
+							</p>
 						</div>
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-6.jpg"
-								alt="banner"
-								class="section-card__image" />
-							<img
-								src="src/images/history-6.jpg"
-								alt="banner"
-								class="history__card-blur" />
-							<div class="section-card__content">
-								<h3 class="section-card__title">Лёгкость выбора</h3>
-								<p class="history__card-text text-default">
-									Когда подготовка к выходу занимает секунды.Когда подготовка к
-									выходу занимает секунды.Когда подготовка к выходу занимает
-									секунды.
-								</p>
+						<div class="history__grid">
+							<div class="history__card section-card">
+								<video loop muted class="section-card__video">
+									<source src="src/videos/vertical.mp4" />
+									Video isn't supported
+								</video>
+								<img
+									src="src/images/history-5.jpg"
+									alt="banner"
+									class="section-card__image" />
+								<img
+									src="src/images/history-5.jpg"
+									alt="banner"
+									class="history__card-blur" />
+								<div class="section-card__content">
+									<h3 class="section-card__title">Без прогноза</h3>
+									<p class="history__card-text text-default">
+										Место для моих желаний в любом масштабе.
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-7.jpg"
-								alt="banner"
-								class="section-card__image" />
-							<img
-								src="src/images/history-7.jpg"
-								alt="banner"
-								class="history__card-blur" />
-							<div class="section-card__content">
-								<h3 class="section-card__title">Свой климат</h3>
-								<p class="history__card-text text-default">
-									Пока другие готовятся, ты уже живёшь.Пока другие готовятся, ты
-									уже живёшь.Пока другие готовятся, ты уже живёшь.
-								</p>
+							<div class="history__card section-card">
+								<video loop muted class="section-card__video">
+									<source src="src/videos/vertical.mp4" />
+									Video isn't supported
+								</video>
+								<img
+									src="src/images/history-6.jpg"
+									alt="banner"
+									class="section-card__image" />
+								<img
+									src="src/images/history-6.jpg"
+									alt="banner"
+									class="history__card-blur" />
+								<div class="section-card__content">
+									<h3 class="section-card__title">Лёгкость выбора</h3>
+									<p class="history__card-text text-default">
+										Когда подготовка к выходу занимает секунды.Когда подготовка
+										к выходу занимает секунды.Когда подготовка к выходу занимает
+										секунды.
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="history__card section-card">
-							<img
-								src="src/images/history-4.png"
-								alt="banner"
-								class="section-card__image" />
-							<!-- <img
+							<div class="history__card section-card">
+								<video loop muted class="section-card__video">
+									<source src="src/videos/horizontal.mp4" />
+									Video isn't supported
+								</video>
+								<img
+									src="src/images/history-7.jpg"
+									alt="banner"
+									class="section-card__image" />
+								<img
+									src="src/images/history-7.jpg"
+									alt="banner"
+									class="history__card-blur" />
+								<div class="section-card__content">
+									<h3 class="section-card__title">Свой климат</h3>
+									<p class="history__card-text text-default">
+										Пока другие готовятся, ты уже живёшь.Пока другие готовятся,
+										ты уже живёшь.Пока другие готовятся, ты уже живёшь.
+									</p>
+								</div>
+							</div>
+							<div class="history__card section-card">
+								<div class="history__card-gradient"></div>
+								<img
+									src="src/images/history-4.png"
+									alt="banner"
+									class="section-card__image" />
+								<!-- <img
 								src="src/images/history-4.png"
 								alt="banner"
 								class="history__card-blur" /> -->
-							<div class="section-card__content">
-								<h3 class="section-card__title">Планировочные решения</h3>
-								<p class="history__card-text text-default">
-									Как Андрей научился наслаждаться круассаном в тишине»
-								</p>
-								<button
-									class="section-card__button"
-									data-bs-toggle="modal"
-									data-bs-target="#plan-modal">
-									<span>Смотреть</span>
-									<svg viewBox="0 0 24 24" class="icon">
-										<use href="src/icons/sprite.svg#arrow-right-up"></use>
-									</svg>
-								</button>
+								<div class="section-card__content">
+									<h3 class="section-card__title">Планировочные решения</h3>
+									<p class="history__card-text text-default">
+										Как Андрей научился наслаждаться круассаном в тишине»
+									</p>
+									<button
+										class="section-card__button"
+										data-bs-toggle="modal"
+										data-bs-target="#plan-modal">
+										<span>Смотреть</span>
+										<svg viewBox="0 0 24 24" class="icon">
+											<use href="src/icons/sprite.svg#arrow-right-up"></use>
+										</svg>
+									</button>
+								</div>
 							</div>
 						</div>
-					</div>
-				</section>
+					</section>
+				</div>
 				<section class="gallery">
 					<div class="gallery__top">
 						<div class="section-label">История 5</div>
@@ -1596,6 +1674,10 @@
 					</div>
 					<ul class="gallery__list">
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-1.jpg"
 								alt="girl looking"
@@ -1613,6 +1695,10 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/gallery-2.jpg"
 								alt="girl looking"
@@ -1630,6 +1716,10 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
+							<video loop muted class="section-card__video">
+								<source src="src/videos/vertical.mp4" />
+								Video isn't supported
+							</video>
 							<img
 								src="src/images/history-2.jpg"
 								alt="girl looking"

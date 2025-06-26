@@ -1,0 +1,35 @@
+<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 13">
+    <defs>
+        <pattern x="0" y="0" width="25" height="25" patternUnits="userSpaceOnUse" viewBox="0 0 100 100" id="pattern-0">
+            <rect x="0" y="0" width="50" height="100" style="fill: black;"></rect>
+        </pattern>
+        <pattern id="pattern-0-0" href="#pattern-0" patternTransform="matrix(1, 0, 0, 1, 279.998001, 226.599998)">
+        </pattern>
+        <pattern id="pattern-0-1" href="#pattern-0" patternTransform="matrix(1, 0, 0, 1, 173.20401, 226.599998)">
+        </pattern>
+        <pattern id="pattern-0-2" href="#pattern-0" patternTransform="matrix(1, 0, 0, 1, 226.561996, 226.561996)">
+        </pattern>
+    </defs>
+    <g id="Capa_1" transform="matrix(0.02719, 0, 0, 0.02719, 1.5643, 3.420416)">
+        <g id="SVGRepo_bgCarrier" stroke-width="0" transform="matrix(1, 0, 0, 1, -57.532227, -125.796823)"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"
+            transform="matrix(1, 0, 0, 1, -57.532227, -125.796823)"></g>
+        <g id="SVGRepo_iconCarrier" transform="matrix(1, 0, 0, 1, -57.532227, -125.796823)">
+            <g>
+                <g>
+                    <g>
+                        <path
+                            d="M201.654,127.525h-31.9c-10.557,0-19.125,8.645-19.125,19.125v184.9c0,10.558,8.645,19.125,19.125,19.125h31.9 c10.557,0,19.125-8.645,19.125-19.125v-184.9C220.779,136.094,212.211,127.525,201.654,127.525z"
+                            style="fill: rgb(255, 255, 255);"></path>
+                        <path
+                            d="M308.448,127.525h-31.9c-10.558,0-19.125,8.645-19.125,19.125v184.9c0,10.558,8.645,19.125,19.125,19.125h31.9 c10.557,0,19.125-8.645,19.125-19.125v-184.9C327.573,136.094,318.929,127.525,308.448,127.525z"
+                            style="fill: rgb(255, 255, 255);"></path>
+                        <path
+                            d="M239.062,0C107.023,0,0,107.023,0,239.062s107.023,239.062,239.062,239.062s239.062-107.023,239.062-239.062 S371.102,0,239.062,0z M239.292,409.811c-94.171,0-170.519-76.424-170.519-170.519S145.197,68.773,239.292,68.773 c94.095,0,170.519,76.424,170.519,170.519S333.54,409.811,239.292,409.811z"
+                            style="fill: rgb(255, 255, 255);"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
