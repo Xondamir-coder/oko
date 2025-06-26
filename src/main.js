@@ -40,13 +40,16 @@ const handleMenu = () => {
 	const container = document.querySelector('.container__top');
 	const menu = document.querySelector('.menu');
 
-	btn.addEventListener('click', () => {
-		console.log('hello');
+	const handleToggles = () => {
 		document.body.classList.toggle('no-scroll');
 		document.body.classList.contains('no-scroll') ? lenis.stop() : lenis.start();
 		container.classList.toggle('active');
 		menu.classList.toggle('active');
 		btn.classList.toggle('active');
+	};
+	btn.addEventListener('click', handleToggles);
+	menu.addEventListener('click', e => {
+		if (e.target.closest('a')) handleToggles();
 	});
 };
 const handleFormSubmission = () => {

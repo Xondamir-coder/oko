@@ -8,7 +8,8 @@
 	z-index: -1;
 	width: 100%;
 	@include br.large-mobile {
-		width: 250%;
+		width: auto;
+		height: 100%;
 	}
 }
 .main {
@@ -359,6 +360,7 @@
 			&:last-child {
 				transform: translateY(20%);
 			}
+			&:hover,
 			&.active {
 				fill: #f5f5f5;
 			}
@@ -431,6 +433,8 @@
 	gap: 7.8vw;
 	@media screen and (max-width: 800px) {
 		gap: max(2vw, 40px);
+		padding-block: max(40px, 3.4vw);
+		padding-inline: max(15px, 3vw);
 	}
 	&__left {
 		display: flex;

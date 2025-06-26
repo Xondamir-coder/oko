@@ -30,6 +30,7 @@
 		max-width: 15ch;
 	}
 	&__list {
+		overflow-y: clip;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 11px;
