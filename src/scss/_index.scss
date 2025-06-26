@@ -172,9 +172,10 @@
 	}
 	&__image {
 		width: clamp(42px, 9.2vw, 176px);
-		aspect-ratio: 176/110;
+		height: clamp(26px, 5.73vw, 110px);
 		border-radius: clamp(6px, 1.3vw, 24px);
 		vertical-align: center;
+		object-fit: cover;
 	}
 	&__title {
 		max-width: max(78.3%, 350px);

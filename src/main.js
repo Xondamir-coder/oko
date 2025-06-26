@@ -6,9 +6,12 @@ import { ScrollTrigger } from 'gsap/all';
 import { register } from 'swiper/element/bundle';
 import { splitAndAnimate, splitElementText } from './js/words';
 import { GSAPAnimation } from './js/gsap';
+import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 register();
+
+const lenis = new Lenis({ autoRaf: true });
 
 const handleApartmentSelection = () => {
 	const buttons = document.querySelector('.apartments__buttons');
@@ -226,6 +229,42 @@ const handleLinkTextDuplications = () => {
 		}
 	});
 };
+const handleLinkClicks = () => {
+	const links = document.querySelectorAll('a[href*="#"]');
+	links.forEach(link => {
+		link.addEventListener('click', e => {
+			e.preventDefault();
+			const href = link.getAttribute('href');
+			lenis.scrollTo(href, {
+				offset: -25
+			});
+		});
+	});
+};
+const handleBody = () => {
+	// 1. Create your observer callback
+	const onBodyClassChange = mutationsList => {
+		for (let mutation of mutationsList) {
+			if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+				document.body.className === 'modal-open' || document.body.className === 'no-scroll'
+					? lenis.stop()
+					: lenis.start();
+			}
+		}
+	};
+
+	// 2. Instantiate the observer
+	const observer = new MutationObserver(onBodyClassChange);
+
+	// 3. Start observing <body> for class changes
+	observer.observe(document.body, {
+		attributes: true,
+		attributeFilter: ['class']
+	});
+
+	// 4. (Optional) Later, to stop observing:
+	// observer.disconnect();
+};
 
 handleApartmentSelection();
 setCopyrightYear();
@@ -238,3 +277,5 @@ handleAboutAnimation();
 handleHistoryAnimations();
 splitWordsAndAnimate();
 handleLinkTextDuplications();
+handleLinkClicks();
+handleBody();
