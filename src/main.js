@@ -43,6 +43,7 @@ const handleMenu = () => {
 	btn.addEventListener('click', () => {
 		console.log('hello');
 		document.body.classList.toggle('no-scroll');
+		document.body.classList.contains('no-scroll') ? lenis.stop() : lenis.start();
 		container.classList.toggle('active');
 		menu.classList.toggle('active');
 		btn.classList.toggle('active');
@@ -95,12 +96,16 @@ const handleHeroAnimation = () => {
 	vector.style.strokeDasharray = `${length}px`;
 	vector.style.strokeDashoffset = `${length}px`;
 	gsap.set('.hero__ball, .hero__image', { opacity: 0 });
-	// document.body.classList.add('no-scroll');
+	document.body.classList.add('no-scroll');
+	lenis.stop();
 
 	// 4) animate:
 	const tl = gsap.timeline({
 		defaults: { ease: 'power2.inOut' },
-		onComplete: () => document.body.classList.remove('no-scroll')
+		onComplete: () => {
+			document.body.classList.remove('no-scroll');
+			lenis.start();
+		}
 	});
 	tl.to(vector, { strokeDashoffset: 0, duration: 3 });
 	tl.to('.hero__ball, .hero__image', { opacity: 1, duration: 1 }, '-=1.5');
@@ -256,9 +261,7 @@ const handleBody = () => {
 	const onBodyClassChange = mutationsList => {
 		for (let mutation of mutationsList) {
 			if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-				document.body.className === 'modal-open' || document.body.className === 'no-scroll'
-					? lenis.stop()
-					: lenis.start();
+				document.body.className === 'modal-open' ? lenis.stop() : lenis.start();
 			}
 		}
 	};
