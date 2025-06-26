@@ -51,9 +51,14 @@ a {
 		text-decoration: none;
 	}
 }
+picture {
+	display: flex;
+	overflow: hidden;
+}
 img {
 	width: 100%;
 	height: auto;
+	object-fit: cover;
 }
 ul {
 	list-style: none;

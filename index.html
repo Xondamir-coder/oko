@@ -93,7 +93,7 @@
 						</button>
 						<div class="plan__wrapper">
 							<img
-								src="src/images/plan.png"
+								src="src/images/old/plan.png"
 								alt="plan"
 								class="plan__image plan--desktop" />
 							<div class="plan__container" data-container>
@@ -200,7 +200,7 @@
 								</li>
 							</ul>
 							<div class="plan__mobile">
-								<img src="src/images/plan.png" alt="plan" class="plan__image" />
+								<img src="src/images/old/plan.png" alt="plan" class="plan__image" />
 								<ul class="plan__details">
 									<li class="plan__detail">
 										<span class="clr-grey">Тип апартамента:</span>
@@ -362,16 +362,35 @@
 									</defs>
 								</svg>
 								<div class="hero__ball">
-									<img src="src/images/ball.png" alt="ball" class="hero__image" />
-									<img
-										src="src/images/ball-shadow.png"
-										alt="shadow"
-										class="hero__shadow" />
+									<picture class="hero__image">
+										<source srcset="src/images/ball.webp" type="image/webp" />
+										<img
+											width="1652"
+											height="1652"
+											src="src/images/old/ball.png"
+											alt="ball" />
+									</picture>
+									<picture class="hero__shadow">
+										<source
+											srcset="src/images/ball-shadow.webp"
+											type="image/webp" />
+										<img
+											width="1652"
+											height="1652"
+											src="src/images/old/ball-shadow.png"
+											alt="shadow" />
+									</picture>
 								</div>
-								<img
-									src="src/images/illustration.png"
-									alt="illustration"
-									class="hero__image" />
+								<picture class="hero__image">
+									<source
+										srcset="src/images/illustration.webp"
+										type="image/webp" />
+									<img
+										src="src/images/old/illustration.png"
+										width="2419"
+										height="838"
+										alt="illustration" />
+								</picture>
 							</div>
 							<button class="hero__down">
 								<svg viewBox="0 0 24 24" class="icon">
@@ -380,26 +399,81 @@
 							</button>
 						</div>
 						<div class="hero__gradient"></div>
-						<img src="src/images/towers.png" alt="towers" class="hero__towers" />
+						<picture class="hero__towers">
+							<source srcset="src/images/towers.webp" type="image/webp" />
+							<img
+								src="src/images/old/towers.png"
+								alt="towers"
+								width="2372"
+								height="1334" />
+						</picture>
 					</section>
 					<section class="about">
-						<img src="src/images/city.jpg" alt="city" class="about__bg" />
+						<picture class="about__bg">
+							<source srcset="src/images/city.avif" type="image/avif" />
+							<img
+								src="src/images/old/city.jpg"
+								alt="city"
+								decoding="async"
+								width="1920"
+								height="1397" />
+						</picture>
 						<div class="about__title">
 							<span>Истории</span>
-							<img src="src/images/about-1.jpg" alt="banner 1" class="about__image" />
+							<picture class="about__image">
+								<source srcset="src/images/old/about-1.jpg" />
+								<img
+									src="src/images/old/about-1.jpg"
+									alt="banner 1"
+									width="704"
+									height="440"
+									decoding="async" />
+							</picture>
 							<span>расказанные</span>
 							<span>в ОКО.</span>
 							<span>Здесь</span>
-							<img src="src/images/about-2.jpg" alt="banner 2" class="about__image" />
+							<picture class="about__image">
+								<source srcset="src/images/about-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/about-2.jpg"
+									alt="banner 2"
+									decoding="async"
+									width="704"
+									height="440" />
+							</picture>
 							<span>все</span>
 							<br />
-							<img src="src/images/about-3.jpg" alt="banner 3" class="about__image" />
+							<picture class="about__image">
+								<source srcset="src/images/about-3.avif" type="image/avif" />
+								<img
+									src="src/images/old/about-3.jpg"
+									alt="banner 3"
+									decoding="async"
+									width="704"
+									height="440" />
+							</picture>
 							<span>продумано, чтобы</span>
 							<span>Каждый момент</span>
-							<img src="src/images/about-4.jpg" alt="banner 4" class="about__image" />
+							<picture class="about__image">
+								<source srcset="src/images/about-4.avif" type="image/avif" />
+								<img
+									src="src/images/old/about-4.jpg"
+									alt="banner 4"
+									decoding="async"
+									width="704"
+									height="440" />
+							</picture>
 							<br />
 							<span>имел</span>
-							<img src="src/images/about-5.jpg" alt="banner 5" class="about__image" />
+							<picture class="about__image">
+								<source srcset="src/images/about-5.avif" type="image/avif" />
+								<img
+									src="src/images/old/about-5.jpg"
+									alt="banner 5"
+									decoding="async"
+									width="704"
+									height="440" />
+							</picture>
 							<span>Значение</span>
 						</div>
 						<div class="about__content">
@@ -439,14 +513,24 @@
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
 								</video>
-								<img
-									src="src/images/history-1.jpg"
-									alt="banner"
-									class="section-card__image" />
-								<img
-									src="src/images/history-1.jpg"
-									alt="banner"
-									class="history__card-blur" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-1.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-1.jpg"
+										alt="banner"
+										width="2298"
+										height="1167"
+										decoding="async" />
+								</picture>
+								<picture class="history__card-blur">
+									<source srcset="src/images/history-1.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-1.jpg"
+										alt="banner"
+										width="2298"
+										height="1167"
+										decoding="async" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Там — город. Здесь — я.</h3>
 									<p class="history__card-text text-default">
@@ -460,14 +544,24 @@
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
 								</video>
-								<img
-									src="src/images/history-2.jpg"
-									alt="banner"
-									class="section-card__image" />
-								<img
-									src="src/images/history-2.jpg"
-									alt="banner"
-									class="history__card-blur" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-2.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-2.jpg"
+										alt="banner"
+										width="2298"
+										height="1170"
+										decoding="async" />
+								</picture>
+								<picture class="history__card-blur">
+									<source srcset="src/images/history-2.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-2.jpg"
+										alt="banner"
+										width="2298"
+										height="1170"
+										decoding="async" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Летняя рутина</h3>
 									<p class="history__card-text text-default">
@@ -481,14 +575,24 @@
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
 								</video>
-								<img
-									src="src/images/history-3.jpg"
-									alt="banner"
-									class="section-card__image" />
-								<img
-									src="src/images/history-3.jpg"
-									alt="banner"
-									class="history__card-blur" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-3.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-3.jpg"
+										alt="banner"
+										width="1518"
+										height="2376"
+										decoding="async" />
+								</picture>
+								<picture class="history__card-blur">
+									<source srcset="src/images/history-3.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-3.jpg"
+										alt="banner"
+										width="1518"
+										height="2376"
+										decoding="async" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">
 										Пространство для вдохновения
@@ -500,14 +604,15 @@
 							</div>
 							<div class="history__card section-card">
 								<div class="history__card-gradient"></div>
-								<img
-									src="src/images/history-4.png"
-									alt="banner"
-									class="section-card__image" />
-								<!-- <img
-								src="src/images/history-4.png"
-								alt="banner"
-								class="history__card-blur" /> -->
+								<picture class="section-card__image">
+									<source srcset="src/images/history-4.webp" type="image/webp" />
+									<img
+										src="src/images/old/history-4.png"
+										alt="banner"
+										width="1518"
+										height="2376"
+										decoding="async" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Планировочные решения</h3>
 									<p class="history__card-text text-default">
@@ -545,14 +650,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-1.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-1.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-1.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-1.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Утро без суеты</h3>
 								<p class="gallery__card-text">
@@ -566,14 +681,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-2.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-2.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-2.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-2.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Летняя рутина</h3>
 								<p class="gallery__card-text">
@@ -587,14 +712,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/history-2.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/history-2.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/history-2.jpg"
+									alt="girl looking"
+									width="2298"
+									height="1170"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/history-2.jpg"
+									alt="girl looking"
+									width="2298"
+									height="1170"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Деловая среда</h3>
 								<p class="gallery__card-text">
@@ -604,10 +739,15 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
-							<img
-								src="src/images/history-4.png"
-								alt="banner"
-								class="section-card__image" />
+							<picture class="section-card__image">
+								<source srcset="src/images/history-4.webp" type="image/webp" />
+								<img
+									src="src/images/old/history-4.png"
+									alt="banner"
+									width="1518"
+									height="2376"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Планировочные решения</h3>
 								<p class="gallery__card-text">
@@ -1473,14 +1613,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-3.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-3.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-3.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-3.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-3.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-3.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Утро без суеты</h3>
 								<p class="gallery__card-text">
@@ -1494,14 +1644,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-4.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-4.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-4.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-4.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-4.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-4.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Выбирать всё</h3>
 								<p class="gallery__card-text">
@@ -1515,14 +1675,20 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-5.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-5.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-5.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-5.jpg"
+									alt="girl looking"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-5.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-5.jpg"
+									alt="girl looking"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Отдых на высоте</h3>
 								<p class="gallery__card-text">
@@ -1532,10 +1698,15 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
-							<img
-								src="src/images/history-4.png"
-								alt="banner"
-								class="section-card__image" />
+							<picture class="section-card__image">
+								<source srcset="src/images/history-4.webp" type="image/webp" />
+								<img
+									src="src/images/old/history-4.png"
+									alt="banner"
+									width="1518"
+									height="2376"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Планировочные решения</h3>
 								<p class="gallery__card-text">
@@ -1572,14 +1743,22 @@
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
 								</video>
-								<img
-									src="src/images/history-5.jpg"
-									alt="banner"
-									class="section-card__image" />
-								<img
-									src="src/images/history-5.jpg"
-									alt="banner"
-									class="history__card-blur" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-5.avif" type="image/avif" />
+									<img
+										width="2024"
+										height="3168"
+										src="src/images/old/history-5.jpg"
+										alt="banner" />
+								</picture>
+								<picture class="history__card-blur">
+									<source srcset="src/images/history-5.avif" type="image/avif" />
+									<img
+										width="2024"
+										height="3168"
+										src="src/images/old/history-5.jpg"
+										alt="banner" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Без прогноза</h3>
 									<p class="history__card-text text-default">
@@ -1592,14 +1771,22 @@
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
 								</video>
-								<img
-									src="src/images/history-6.jpg"
-									alt="banner"
-									class="section-card__image" />
-								<img
-									src="src/images/history-6.jpg"
-									alt="banner"
-									class="history__card-blur" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-6.avif" type="image/avif" />
+									<img
+										width="2024"
+										height="3168"
+										src="src/images/old/history-6.jpg"
+										alt="banner" />
+								</picture>
+								<picture class="history__card-blur">
+									<source srcset="src/images/history-6.avif" type="image/avif" />
+									<img
+										width="2024"
+										height="3168"
+										src="src/images/old/history-6.jpg"
+										alt="banner" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Лёгкость выбора</h3>
 									<p class="history__card-text text-default">
@@ -1614,14 +1801,22 @@
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
 								</video>
-								<img
-									src="src/images/history-7.jpg"
-									alt="banner"
-									class="section-card__image" />
-								<img
-									src="src/images/history-7.jpg"
-									alt="banner"
-									class="history__card-blur" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-7.avif" type="image/avif" />
+									<img
+										src="src/images/old/history-7.jpg"
+										width="3064"
+										height="1556"
+										alt="banner" />
+								</picture>
+								<picture class="history__card-blur">
+									<source srcset="src/images/history-7.avif" type="image/avif" />
+									<img
+										width="3064"
+										height="1556"
+										src="src/images/old/history-7.jpg"
+										alt="banner" />
+								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Свой климат</h3>
 									<p class="history__card-text text-default">
@@ -1632,12 +1827,17 @@
 							</div>
 							<div class="history__card section-card">
 								<div class="history__card-gradient"></div>
-								<img
-									src="src/images/history-4.png"
-									alt="banner"
-									class="section-card__image" />
+								<picture class="section-card__image">
+									<source srcset="src/images/history-4.webp" type="image/webp" />
+									<img
+										src="src/images/old/history-4.png"
+										alt="banner"
+										width="1518"
+										height="2376"
+										decoding="async" />
+								</picture>
 								<!-- <img
-								src="src/images/history-4.png"
+								src="src/images/old/history-4.png"
 								alt="banner"
 								class="history__card-blur" /> -->
 								<div class="section-card__content">
@@ -1678,14 +1878,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-1.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-1.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-1.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-1.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Там — город. Здесь — я</h3>
 								<p class="gallery__card-text">
@@ -1699,14 +1909,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/gallery-2.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/gallery-2.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-2.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/gallery-2.jpg"
+									alt="girl looking"
+									width="1796"
+									height="2784"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Пространство для вдохновения</h3>
 								<p class="gallery__card-text">
@@ -1720,14 +1940,24 @@
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
-							<img
-								src="src/images/history-2.jpg"
-								alt="girl looking"
-								class="section-card__image" />
-							<img
-								src="src/images/history-2.jpg"
-								alt="girl looking"
-								class="gallery__card-blur" />
+							<picture class="section-card__image">
+								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/history-2.jpg"
+									alt="girl looking"
+									width="2298"
+									height="1170"
+									decoding="async" />
+							</picture>
+							<picture class="gallery__card-blur">
+								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<img
+									src="src/images/old/history-2.jpg"
+									alt="girl looking"
+									width="2298"
+									height="1170"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Вид, достойный тебя</h3>
 								<p class="gallery__card-text">
@@ -1737,10 +1967,15 @@
 							</div>
 						</li>
 						<li class="gallery__card section-card">
-							<img
-								src="src/images/history-4.png"
-								alt="banner"
-								class="section-card__image" />
+							<picture class="section-card__image">
+								<source srcset="src/images/history-4.webp" type="image/webp" />
+								<img
+									src="src/images/old/history-4.png"
+									alt="banner"
+									width="1518"
+									height="2376"
+									decoding="async" />
+							</picture>
 							<div class="section-card__content">
 								<h3 class="section-card__title">Планировочные решения</h3>
 								<p class="gallery__card-text">
@@ -1796,22 +2031,34 @@
 						navigation-prev-el=".slider__nav-button:first-child"
 						navigation-next-el=".slider__nav-button:last-child">
 						<swiper-slide class="slider__slide">
-							<img
-								class="slider__image"
-								src="src/images/slider-1.jpg"
-								alt="slider banner" />
+							<picture class="slider__image">
+								<source srcset="src/images/slider-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/slider-1.jpg"
+									width="2000"
+									height="1333"
+									alt="slider banner" />
+							</picture>
 						</swiper-slide>
 						<swiper-slide class="slider__slide">
-							<img
-								class="slider__image"
-								src="src/images/slider-1.jpg"
-								alt="slider banner" />
+							<picture class="slider__image">
+								<source srcset="src/images/slider-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/slider-1.jpg"
+									width="2000"
+									height="1333"
+									alt="slider banner" />
+							</picture>
 						</swiper-slide>
 						<swiper-slide class="slider__slide">
-							<img
-								class="slider__image"
-								src="src/images/slider-1.jpg"
-								alt="slider banner" />
+							<picture class="slider__image">
+								<source srcset="src/images/slider-1.avif" type="image/avif" />
+								<img
+									src="src/images/old/slider-1.jpg"
+									width="2000"
+									height="1333"
+									alt="slider banner" />
+							</picture>
 						</swiper-slide>
 					</swiper-container>
 				</section>

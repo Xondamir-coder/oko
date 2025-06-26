@@ -156,10 +156,11 @@
 		transform: translateX(-50%);
 		width: 120%;
 		aspect-ratio: 2182/446;
-		object-fit: cover;
 		z-index: 1;
-		object-position: bottom;
 		filter: blur(60px);
+		img {
+			object-position: bottom;
+		}
 		@media (max-width: vars.$bp-ipad-pro) {
 			filter: blur(25px);
 			width: 130%;
@@ -171,11 +172,11 @@
 		}
 	}
 	&__image {
+		display: inline-flex;
 		width: clamp(42px, 9.2vw, 176px);
 		height: clamp(26px, 5.73vw, 110px);
 		border-radius: clamp(6px, 1.3vw, 24px);
-		vertical-align: center;
-		object-fit: cover;
+		vertical-align: bottom;
 	}
 	&__title {
 		max-width: max(78.3%, 350px);
