@@ -221,6 +221,27 @@
 		padding-top: 24px;
 		gap: max(5vw, 32px);
 	}
+	&:has(.apartments__button[data-lvl='cityline']:hover)
+		.apartments__vector-group[data-lvl='cityline'] {
+		fill: #f5f5f5;
+	}
+	&:has(.apartments__button[data-lvl='serviced']:hover)
+		.apartments__vector-group[data-lvl='serviced'] {
+		fill: #f5f5f5;
+	}
+	&:has(.apartments__button[data-lvl='meridian']:hover)
+		.apartments__vector-group[data-lvl='meridian'] {
+		fill: #f5f5f5;
+	}
+	&:has(.apartments__button[data-lvl='apogee']:hover)
+		.apartments__vector-group[data-lvl='apogee'] {
+		fill: #f5f5f5;
+	}
+	&:has(.apartments__button[data-lvl='horizont']:hover)
+		.apartments__vector-group[data-lvl='horizont'] {
+		fill: #f5f5f5;
+	}
+
 	&__left {
 		display: flex;
 		flex-direction: column;
