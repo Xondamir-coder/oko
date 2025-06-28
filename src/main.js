@@ -99,8 +99,8 @@ const handleHeroAnimation = () => {
 	vector.style.strokeDasharray = `${length}px`;
 	vector.style.strokeDashoffset = `${length}px`;
 	gsap.set('.hero__ball, .hero__image', { opacity: 0 });
-	document.body.classList.add('no-scroll');
-	lenis.stop();
+	// document.body.classList.add('no-scroll');
+	// lenis.stop();
 
 	// 4) animate:
 	const tl = gsap.timeline({
@@ -116,8 +116,7 @@ const handleHeroAnimation = () => {
 const splitWordsAndAnimate = () => {
 	document.querySelectorAll('section h2').forEach(title => {
 		splitAndAnimate(title, {
-			animProps: { yPercent: 120, stagger: 0.05 },
-			scrollTriggerOptions: { scrub: false, toggleActions: 'play none none reverse' }
+			animProps: { yPercent: 120, stagger: 0.05 }
 		});
 	});
 };
@@ -177,11 +176,6 @@ const handleHistoryAnimations = () => {
 			color: '#fff'
 		});
 		const tl = gsap.timeline({
-			// onComplete: () => {
-			// 	section.style.maxHeight = '100vh';
-			// 	section.style.overflowY = 'auto';
-			// 	section.style.overflowX = 'hidden';
-			// },
 			scrollTrigger: {
 				trigger: section,
 				scrub: 1,
@@ -321,10 +315,6 @@ const handleOtherAnimations = () => {
 		animProps: {
 			scale: 0.9,
 			stagger: 0.1
-		},
-		scrollTriggerOptions: {
-			scrub: false,
-			toggleActions: 'play none none reverse'
 		}
 	});
 
@@ -343,11 +333,13 @@ const handleOtherAnimations = () => {
 			yPercent: 25,
 			stagger: 0.15
 		},
-		scrollTriggerOptions: {
-			scrub: false,
-			toggleActions: 'play none none reverse'
-		}
+		scrollTriggerOptions: { scrub: false }
 	});
+};
+const handleSafari = () => {
+	if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {
+		document.querySelector('.container').classList.add('safari');
+	}
 };
 
 handleApartmentSelection();
@@ -364,3 +356,4 @@ handleLinkTextDuplications();
 handleLinkClicks();
 handleBody();
 handleOtherAnimations();
+handleSafari();

@@ -1,27 +1,27 @@
 // @use 'intl-tel-input/build/css/intlTelInput.css';
-@use 'modal-related';
+@use "modal-related";
 
-@use 'base/base';
-@use 'base/fonts';
+@use "base/base";
+@use "base/fonts";
 
-@use 'components/typography';
-@use 'components/components';
-@use 'components/section';
-@use 'components/socials';
-@use 'components/history';
-@use 'components/gallery';
-@use 'components/form';
-@use 'components/popup';
-@use 'components/plan';
-@use 'components/links';
+@use "components/typography";
+@use "components/components";
+@use "components/section";
+@use "components/socials";
+@use "components/history";
+@use "components/gallery";
+@use "components/form";
+@use "components/popup";
+@use "components/plan";
+@use "components/links";
 
-@use 'layout/container';
-@use 'layout/header';
-@use 'layout/footer';
-@use 'layout/menu';
+@use "index";
 
-@use 'index';
+@use "layout/container";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/menu";
 
-@use 'utils/utils';
-@use 'utils/animations';
-@use 'utils/colors';
+@use "utils/utils";
+@use "utils/animations";
+@use "utils/colors";

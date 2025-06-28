@@ -1,39 +1,44 @@
-@use '@utils/variables' as vars;
-@use '@utils/breakpoints' as br;
-@use '@utils/mixins' as mix;
+@use "@utils/variables" as vars;
+@use "@utils/breakpoints" as br;
+@use "@utils/mixins" as mix;
 
-a[href^='tel']:not(.button),
-a[href^='mailto'] {
-	position: relative;
-	&:hover::after {
-		transform: scaleX(1);
-		transform-origin: left;
-	}
-	&::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		bottom: -3px;
-		height: 1px;
-		width: 100%;
-		background-color: #fff;
-		transition: transform calc(vars.$dt + 0.3s);
-		transform-origin: right;
-		transform: scaleX(0);
-	}
+a[href^="tel"]:not(.button),
+a[href^="mailto"] {
+  position: relative;
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    height: 1px;
+    width: 100%;
+    background-color: #fff;
+    transition: transform calc(vars.$dt + 0.3s);
+    transform-origin: right;
+    transform: scaleX(0);
+  }
 }
 .link-span {
-	grid-area: 1/1/2/2;
-	transition: transform 0.6s cubic-bezier(0.31, 0.13, 0.11, 1);
+  grid-area: 1/1/2/2;
+  transition: transform 0.6s cubic-bezier(0.31, 0.13, 0.11, 1);
+  &:first-child {
+    transform: translateY(120%);
+  }
 }
 
 a:has(span.link-span) {
-	display: grid;
-	overflow: hidden;
-	&:hover .link-span:last-of-type {
-		transform: translateY(-120%);
-	}
-	&:not(:hover) .link-span:first-of-type {
-		transform: translateY(120%);
-	}
+  display: grid;
+  overflow: hidden;
+  &:hover {
+    .link-span:last-child {
+      transform: translateY(-120%);
+    }
+    .link-span:first-child {
+      transform: translateY(0);
+    }
+  }
 }
