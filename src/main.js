@@ -99,9 +99,8 @@ const handleHeroAnimation = () => {
 	vector.style.strokeDasharray = `${length}px`;
 	vector.style.strokeDashoffset = `${length}px`;
 	gsap.set('.hero__ball, .hero__image', { opacity: 0 });
-	//TODO: RETURN
-	// document.body.classList.add('no-scroll');
-	// lenis.stop();
+	document.body.classList.add('no-scroll');
+	lenis.stop();
 
 	// 4) animate:
 	const tl = gsap.timeline({
