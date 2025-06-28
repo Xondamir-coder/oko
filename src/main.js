@@ -158,7 +158,6 @@ const handleVideoStart = () => {
 };
 const handleHistoryAnimations = () => {
 	const sections = gsap.utils.toArray('.history');
-
 	// 1) Define your four off-screen start positions (plus optional rotation)
 	const DIRS = [
 		{ x: -300, y: -200, rotation: 15 }, // ↖ from top-left
@@ -206,9 +205,8 @@ const handleHistoryAnimations = () => {
 			},
 			'-=0.5'
 		);
-
 		tl.from(
-			gsap.utils.toArray('.history__card'),
+			section.querySelectorAll('.history__card'),
 			{
 				x: i => DIRS[i % DIRS.length].x,
 				y: i => DIRS[i % DIRS.length].y,
@@ -285,30 +283,32 @@ const handleOtherAnimations = () => {
 	});
 
 	const allCards = gsap.utils.toArray('.gallery__card');
+	const allGalleries = gsap.utils.toArray('.gallery__list');
 	const vals = Array.from({ length: allCards.length }, () => ({
 		x: Math.floor(Math.random() * 200) - 100,
 		y: Math.floor(Math.random() * 200) - 100,
 		rotation: Math.floor(Math.random() * 30) - 15
 	}));
-	allCards.forEach((el, i) => {
-		GSAPOnce(
-			el,
-			{
-				y: vals[i].y,
-				x: vals[i].x,
-				rotation: vals[i].rotation
-			},
-			{
-				markers: true
-			}
-		);
+	allGalleries.forEach((el, i) => {
+		[...el.children].forEach((child, index) => {
+			GSAPOnce(
+				child,
+				{
+					y: vals[i].y,
+					x: vals[i].x,
+					rotation: vals[i].rotation,
+					delay: index * 0.1
+				},
+				{
+					trigger: el
+				}
+			);
+		});
 	});
-
 	GSAPOnce('.apartments>*', {
 		scale: 0.9,
 		stagger: 0.1
 	});
-
 	GSAPOnce(
 		'.cta .form>*',
 		{
@@ -319,7 +319,6 @@ const handleOtherAnimations = () => {
 			trigger: '.cta .form'
 		}
 	);
-
 	GSAPOnce('.footer>*', {
 		yPercent: 25,
 		stagger: 0.15

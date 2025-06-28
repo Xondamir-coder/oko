@@ -12,6 +12,17 @@
 	object-fit: cover;
 }
 
+@keyframes rotateGradient {
+	to {
+		--gradient-angle: calc(96.47deg + 360deg);
+	}
+}
+
+@property --gradient-angle {
+	syntax: '<angle>';
+	initial-value: 96.47deg;
+	inherits: false;
+}
 .history {
 	@include mix.section-elevation;
 	font-weight: 500;
@@ -56,12 +67,13 @@
 			width: calc(100% + 2px);
 			height: calc(100% + 2px);
 			background: linear-gradient(
-				96.47deg,
+				var(--gradient-angle),
 				rgba(246, 163, 190, 0.5) 0.53%,
 				rgba(56, 56, 56, 0.5) 18.66%
 			);
 			border-radius: inherit;
 			z-index: -1;
+			animation: rotateGradient 5s linear infinite;
 		}
 	}
 	&--1 .history__grid {

@@ -69,7 +69,7 @@ export const GSAPOnce = (trigger, props, scrollTriggerOptions, method = 'from') 
 		...props,
 		scrollTrigger: {
 			trigger,
-			start: '10% bottom',
+			start: 'top 90%',
 			...(scrollTriggerOptions ? scrollTriggerOptions : {})
 		}
 	});
