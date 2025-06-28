@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { register } from 'swiper/element/bundle';
 import { splitAndAnimate, splitElementText } from './js/words';
-import { GSAPAnimation } from './js/gsap';
+import { GSAPOnce, GSAPScrub } from './js/gsap';
 import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -99,6 +99,7 @@ const handleHeroAnimation = () => {
 	vector.style.strokeDasharray = `${length}px`;
 	vector.style.strokeDashoffset = `${length}px`;
 	gsap.set('.hero__ball, .hero__image', { opacity: 0 });
+	//TODO: RETURN
 	// document.body.classList.add('no-scroll');
 	// lenis.stop();
 
@@ -126,7 +127,7 @@ const handleAboutAnimation = () => {
 		start: 'center center',
 		end: '+=1000'
 	};
-	GSAPAnimation('.about__title>*:not(.about__image)', {
+	GSAPScrub('.about__title>*:not(.about__image)', {
 		animProps: {
 			opacity: 0.4,
 			stagger: 0.1
@@ -137,7 +138,7 @@ const handleAboutAnimation = () => {
 			pinSpacing: true
 		}
 	});
-	GSAPAnimation('.about__image', {
+	GSAPScrub('.about__image', {
 		animProps: {
 			width: 0,
 			stagger: 0.2
@@ -156,7 +157,7 @@ const handleVideoStart = () => {
 	});
 };
 const handleHistoryAnimations = () => {
-	const sections = document.querySelectorAll('.history');
+	const sections = gsap.utils.toArray('.history');
 
 	// 1) Define your four off-screen start positions (plus optional rotation)
 	const DIRS = [
@@ -178,11 +179,11 @@ const handleHistoryAnimations = () => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: section,
-				scrub: 1,
-				start: 'center center',
-				end: '+=1000',
-				pin: true,
-				pinSpacing: true
+				start: 'center center'
+				// end: '+=1000',
+				// scrub: 1,
+				// pin: true,
+				// pinSpacing: true
 			}
 		});
 		tl.to(section.querySelector('.section-label'), {
@@ -207,7 +208,7 @@ const handleHistoryAnimations = () => {
 		);
 
 		tl.from(
-			section.querySelectorAll('.history__card'),
+			gsap.utils.toArray('.history__card'),
 			{
 				x: i => DIRS[i % DIRS.length].x,
 				y: i => DIRS[i % DIRS.length].y,
@@ -276,64 +277,52 @@ const handleBody = () => {
 	// observer.disconnect();
 };
 const handleOtherAnimations = () => {
-	GSAPAnimation('.about__content', {
-		animProps: {
-			y: 50
-		}
+	GSAPOnce('.about__content', { x: -50 });
+
+	gsap.utils.toArray('.gallery__top').forEach(el => {
+		GSAPOnce(el.firstElementChild, { y: 25 });
+		GSAPOnce(el.lastElementChild, { y: 25 });
 	});
 
-	document.querySelectorAll('.gallery__top').forEach(el => {
-		GSAPAnimation(el.firstElementChild, {
-			animProps: {
-				y: 25
-			}
-		});
-		GSAPAnimation(el.lastElementChild, {
-			animProps: {
-				y: 25
-			}
-		});
-	});
-
-	const allCards = document.querySelectorAll('.gallery__card');
+	const allCards = gsap.utils.toArray('.gallery__card');
 	const vals = Array.from({ length: allCards.length }, () => ({
 		x: Math.floor(Math.random() * 200) - 100,
 		y: Math.floor(Math.random() * 200) - 100,
 		rotation: Math.floor(Math.random() * 30) - 15
 	}));
 	allCards.forEach((el, i) => {
-		GSAPAnimation(el, {
-			animProps: {
+		GSAPOnce(
+			el,
+			{
 				y: vals[i].y,
 				x: vals[i].x,
 				rotation: vals[i].rotation
+			},
+			{
+				markers: true
 			}
-		});
+		);
 	});
 
-	GSAPAnimation('.apartments>*', {
-		animProps: {
-			scale: 0.9,
-			stagger: 0.1
-		}
+	GSAPOnce('.apartments>*', {
+		scale: 0.9,
+		stagger: 0.1
 	});
 
-	GSAPAnimation('.cta .form>*', {
-		animProps: {
+	GSAPOnce(
+		'.cta .form>*',
+		{
 			y: 25,
 			stagger: 0.2
 		},
-		scrollTriggerOptions: {
+		{
 			trigger: '.cta .form'
 		}
-	});
+	);
 
-	GSAPAnimation('.footer>*', {
-		animProps: {
-			yPercent: 25,
-			stagger: 0.15
-		},
-		scrollTriggerOptions: { scrub: false }
+	GSAPOnce('.footer>*', {
+		yPercent: 25,
+		stagger: 0.15
 	});
 };
 const handleSafari = () => {
