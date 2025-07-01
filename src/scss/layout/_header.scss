@@ -18,7 +18,7 @@
 	position: relative;
 	background-color: vars.$black;
 	transition: background-color vars.$dt;
-	animation: header-animate 1s backwards 2.2s;
+	animation: header-animate 1s backwards 3s;
 	@include br.large-mobile {
 		padding: 0;
 	}

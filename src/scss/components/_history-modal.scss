@@ -1,0 +1,94 @@
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
+@use '@utils/mixins' as mix;
+
+.modal-dialog:has(.history-modal) {
+	--bs-modal-margin: 0;
+}
+
+.history-modal {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: max-content 1fr max-content;
+	align-items: center;
+	gap: clamp(12px, 1.3vw, 24px);
+	@media screen and (max-width: 450px) {
+		grid-template-columns: 1fr;
+	}
+	.arrow-button {
+		@media screen and (max-width: 450px) {
+			display: none;
+		}
+		&:last-of-type {
+			order: 3;
+			transform: rotate(180deg);
+		}
+	}
+	.section-card {
+		color: #fff;
+		cursor: initial;
+
+		@media screen and (max-width: 450px) {
+			.section-card__content {
+				padding: 24px;
+			}
+		}
+		&::after {
+			display: none;
+		}
+	}
+	&__slider {
+		display: grid;
+	}
+	&__close {
+		align-self: flex-end;
+	}
+	&__top {
+		align-self: flex-start;
+		z-index: 2;
+		display: flex;
+		flex-direction: column;
+		padding: 12px;
+	}
+	&__bars {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-rows: 2px;
+		gap: 3px;
+	}
+	&__bar {
+		background: rgba(#ffffff, 0.5);
+		border-radius: 3px;
+		overflow: hidden;
+		position: relative;
+		&--inner {
+			background: #ffffff;
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			transform: scaleX(0);
+			transform-origin: left;
+		}
+	}
+	&__container {
+		display: grid;
+		aspect-ratio: 502/893;
+		border-radius: clamp(12px, 1.3vw, 24px);
+		overflow: hidden;
+		@media screen and (max-width: 450px) {
+			height: 100vh;
+			aspect-ratio: initial;
+		}
+		& > * {
+			grid-area: 1/1/2/2;
+		}
+	}
+	&__close {
+		@include mix.flex-center;
+		padding: 12px;
+	}
+	&__content {
+		--bs-modal-bg: transparent;
+	}
+}

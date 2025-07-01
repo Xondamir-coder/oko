@@ -67,8 +67,8 @@
 .arrow-button {
 	@include mix.flex-center;
 	pointer-events: all;
-	width: 54px;
-	aspect-ratio: 1;
+	width: clamp(30px, 2.95vw, 56px);
+	height: clamp(30px, 2.95vw, 56px);
 	background: #ffffff1f;
 	backdrop-filter: blur(144px);
 	border-radius: 50%;

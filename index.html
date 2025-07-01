@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="src/scss/main.scss" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
 			rel="stylesheet" />
@@ -234,6 +235,148 @@
 			</div>
 		</div>
 
+		<!-- History Modal -->
+		<div class="modal fade" id="history-modal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content history-modal__content">
+					<div class="history-modal">
+						<button class="arrow-button" id="history-modal-prev">
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
+						</button>
+						<button class="arrow-button" id="history-modal-next">
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
+						</button>
+						<div class="history-modal__container">
+							<div class="history-modal__top">
+								<div class="history-modal__bars">
+									<div class="history-modal__bar">
+										<div class="history-modal__bar--inner"></div>
+									</div>
+									<div class="history-modal__bar">
+										<div class="history-modal__bar--inner"></div>
+									</div>
+									<div class="history-modal__bar">
+										<div class="history-modal__bar--inner"></div>
+									</div>
+								</div>
+								<button data-bs-dismiss="modal" class="history-modal__close">
+									<svg viewBox="0 0 24 24" width="24" height="24">
+										<use href="src/icons/sprite.svg#x"></use>
+									</svg>
+								</button>
+							</div>
+							<swiper-container
+								class="history-modal__slider"
+								slides-per-view="1"
+								space-between="6"
+								navigation="true"
+								navigation-prev-el="#history-modal-prev"
+								navigation-next-el="#history-modal-next"
+								grab-cursor="true">
+								<swiper-slide class="section-card">
+									<picture class="section-card__image">
+										<source
+											srcset="src/images/gallery-1.avif"
+											type="image/avif" />
+										<img
+											src="src/images/old/gallery-1.jpg"
+											alt="girl looking"
+											width="1796"
+											height="2784"
+											decoding="async" />
+									</picture>
+									<picture class="section-card__blur">
+										<source
+											srcset="src/images/gallery-1.avif"
+											type="image/avif" />
+										<img
+											src="src/images/old/gallery-1.jpg"
+											alt="girl looking"
+											width="1796"
+											height="2784"
+											decoding="async" />
+									</picture>
+									<div class="section-card__content">
+										<h3 class="section-card__title">Там — город. Здесь — я.</h3>
+										<p class="history__card-text text-default">
+											В движении я сильная. Дома — настоящая. Пишу свои мечты,
+											воплощая их в реальность.
+										</p>
+									</div>
+								</swiper-slide>
+								<swiper-slide class="section-card">
+									<picture class="section-card__image">
+										<source
+											srcset="src/images/gallery-2.avif"
+											type="image/avif" />
+										<img
+											src="src/images/old/gallery-2.jpg"
+											alt="girl looking"
+											width="1796"
+											height="2784"
+											decoding="async" />
+									</picture>
+									<picture class="section-card__blur">
+										<source
+											srcset="src/images/gallery-2.avif"
+											type="image/avif" />
+										<img
+											src="src/images/old/gallery-2.jpg"
+											alt="girl looking"
+											width="1796"
+											height="2784"
+											decoding="async" />
+									</picture>
+									<div class="section-card__content">
+										<h3 class="section-card__title">Летняя рутина</h3>
+										<p class="gallery__card-text">
+											В движении я сильная. Дома — настоящая. Пишу свои мечты,
+											воплощая их в реальность.
+										</p>
+									</div>
+								</swiper-slide>
+								<swiper-slide class="section-card">
+									<picture class="section-card__image">
+										<source
+											srcset="src/images/history-2.avif"
+											type="image/avif" />
+										<img
+											src="src/images/old/history-2.jpg"
+											alt="girl looking"
+											width="2298"
+											height="1170"
+											decoding="async" />
+									</picture>
+									<picture class="section-card__blur">
+										<source
+											srcset="src/images/history-2.avif"
+											type="image/avif" />
+										<img
+											src="src/images/old/history-2.jpg"
+											alt="girl looking"
+											width="2298"
+											height="1170"
+											decoding="async" />
+									</picture>
+									<div class="section-card__content">
+										<h3 class="section-card__title">Деловая среда</h3>
+										<p class="gallery__card-text">
+											В движении я сильная. Дома — настоящая. Пишу свои мечты,
+											воплощая их в реальность.
+										</p>
+									</div>
+								</swiper-slide>
+							</swiper-container>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="container">
 			<svg viewBox="0 0 1920 11486" class="wall">
 				<use href="src/icons/sprite.svg#wall"></use>
@@ -328,6 +471,7 @@
 								<span class="ds-inline-block">Посмотрите</span>
 								<br />
 								<span class="ds-inline-block">истории,</span>
+								<br />
 								<span class="ds-inline-block">написанные</span>
 								<span class="clr-normal-white ds-inline-block">
 									в Москва Сити
@@ -425,6 +569,7 @@
 									height="440"
 									decoding="async" />
 							</picture>
+							<br />
 							<span>расказанные</span>
 							<span>в ОКО.</span>
 							<span>Здесь</span>
@@ -507,7 +652,10 @@
 							</p>
 						</div>
 						<div class="history__grid">
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#history-modal">
 								<video loop muted class="section-card__video">
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
@@ -538,7 +686,10 @@
 									</p>
 								</div>
 							</div>
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#history-modal">
 								<video loop muted class="section-card__video">
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
@@ -569,7 +720,10 @@
 									</p>
 								</div>
 							</div>
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#history-modal">
 								<video loop muted class="section-card__video">
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
@@ -644,7 +798,10 @@
 						</p>
 					</div>
 					<ul class="gallery__list">
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -675,7 +832,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -706,7 +866,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -1607,7 +1770,10 @@
 						<p class="text-default">ОКО. Жизнь по кругу твоих желаний.</p>
 					</div>
 					<ul class="gallery__list">
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -1638,7 +1804,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -1669,7 +1838,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -1740,7 +1912,10 @@
 							</p>
 						</div>
 						<div class="history__grid">
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#history-modal">
 								<video loop muted class="section-card__video">
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
@@ -1768,7 +1943,10 @@
 									</p>
 								</div>
 							</div>
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#history-modal">
 								<video loop muted class="section-card__video">
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
@@ -1875,7 +2053,10 @@
 						</p>
 					</div>
 					<ul class="gallery__list">
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -1906,7 +2087,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
@@ -1937,7 +2121,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#history-modal">
 							<video loop muted class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported

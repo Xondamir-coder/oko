@@ -1,4 +1,4 @@
-import './scss/main.scss';
+// import './scss/main.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import Modal from 'bootstrap/js/dist/modal';
 import gsap from 'gsap';
@@ -88,31 +88,6 @@ const handlePlanModal = () => {
 		btn.closest('[data-container]').classList.add('show-form');
 	});
 };
-const handleHeroAnimation = () => {
-	// 1) select the <path>, not the <svg>
-	const vector = document.querySelector('.hero__box-vector path');
-
-	// 2) now getTotalLength() exists
-	const length = vector.getTotalLength();
-
-	// 3) setting up
-	vector.style.strokeDasharray = `${length}px`;
-	vector.style.strokeDashoffset = `${length}px`;
-	gsap.set('.hero__ball, .hero__image', { opacity: 0 });
-	document.body.classList.add('no-scroll');
-	lenis.stop();
-
-	// 4) animate:
-	const tl = gsap.timeline({
-		defaults: { ease: 'power2.inOut' },
-		onComplete: () => {
-			document.body.classList.remove('no-scroll');
-			lenis.start();
-		}
-	});
-	tl.to(vector, { strokeDashoffset: 0, duration: 3 });
-	tl.to('.hero__ball, .hero__image', { opacity: 1, duration: 1 }, '-=1.5');
-};
 const splitWordsAndAnimate = () => {
 	document.querySelectorAll('section h2').forEach(title => {
 		splitAndAnimate(title, {
@@ -147,11 +122,11 @@ const handleAboutAnimation = () => {
 };
 const handleVideoStart = () => {
 	document.querySelectorAll('.section-card').forEach(el => {
-		el.addEventListener('click', e => {
-			if (e.target !== el) return;
-			el.classList.toggle('playing');
+		el.addEventListener('mouseenter', () => {
+			el.classList.add('playing');
 			const videoEl = el.querySelector('video');
-			el.classList.contains('playing') ? videoEl.play() : videoEl.pause();
+			if (!videoEl) return;
+			videoEl.play();
 		});
 	});
 };
@@ -177,7 +152,7 @@ const handleHistoryAnimations = () => {
 		const tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: section,
-				start: 'center center'
+				start: 'top center'
 				// end: '+=1000',
 				// scrub: 1,
 				// pin: true,
@@ -197,6 +172,14 @@ const handleHistoryAnimations = () => {
 			color: 'rgba(255, 255, 255, 0.6)',
 			marginLeft: window.innerWidth > 768 ? 'min(1.7vw, 32px)' : 'clamp(15px, 1.1vw, 20px)'
 		});
+		tl.from(
+			section.querySelector('.history__top'),
+			{
+				opacity: 0,
+				y: 25
+			},
+			'-=0.75'
+		);
 		tl.to(
 			section.querySelector('.section-label__container'),
 			{
@@ -204,6 +187,7 @@ const handleHistoryAnimations = () => {
 			},
 			'-=0.5'
 		);
+
 		tl.from(
 			section.querySelectorAll('.history__card'),
 			{
@@ -211,20 +195,11 @@ const handleHistoryAnimations = () => {
 				y: i => DIRS[i % DIRS.length].y,
 				rotation: i => DIRS[i % DIRS.length].rotation,
 				opacity: 0,
-				duration: 1.2,
+				duration: 1.5,
 				ease: 'power2.out',
-				stagger: 0 // zero stagger so they all start together
+				stagger: 0
 			},
 			0
-		);
-
-		tl.from(
-			section.querySelector('.history__top'),
-			{
-				opacity: 0,
-				y: 25
-			},
-			'-=0.5'
 		);
 	});
 };
@@ -328,6 +303,35 @@ const handleSafari = () => {
 		document.querySelector('.container').classList.add('safari');
 	}
 };
+const handleHistoryModal = () => {
+	const slider = document.querySelector('.history-modal__slider');
+	const barElements = document.querySelectorAll('.history-modal__bar--inner');
+	const timeline = gsap.timeline({
+		repeat: -1
+	});
+	setInterval(() => {
+		if (slider.swiper.activeIndex === slider.swiper.slides.length - 1) {
+			slider.swiper.slideTo(0);
+		} else {
+			slider.swiper.slideNext();
+		}
+	}, 3000);
+	barElements.forEach(bar => {
+		timeline.to(bar, {
+			scaleX: 1,
+			duration: 3
+		});
+	});
+};
+const handleHeroAnimation = () => {
+	// Hero animation is full CSS here we only toggle body overflow
+	document.body.classList.add('no-scroll');
+	lenis.stop();
+	setTimeout(() => {
+		document.body.classList.remove('no-scroll');
+		lenis.start();
+	}, 3000);
+};
 
 handleApartmentSelection();
 setCopyrightYear();
@@ -344,3 +348,4 @@ handleLinkClicks();
 handleBody();
 handleOtherAnimations();
 handleSafari();
+handleHistoryModal();

@@ -9,6 +9,7 @@
 	border-radius: 100px;
 }
 .section-card {
+	cursor: pointer;
 	counter-increment: card;
 	position: relative;
 	border-radius: clamp(12px, 1.3vw, 24px);
@@ -18,13 +19,15 @@
 	@media screen and (max-width: 900px) {
 		aspect-ratio: 302/432;
 	}
+	&:last-child {
+		cursor: initial;
+	}
 	&::after {
 		pointer-events: none;
 		@include mix.card-counter;
 	}
 	&:has(video) {
-		&:hover,
-		&.playing {
+		&:hover {
 			&::before {
 				opacity: 1;
 				transform: none;
@@ -41,11 +44,6 @@
 			}
 			picture:last-of-type {
 				opacity: 0;
-			}
-		}
-		&.playing {
-			&::before {
-				content: url(@/icons/pause.svg);
 			}
 		}
 		&::before {
@@ -65,6 +63,10 @@
 			opacity: 0;
 			transition: opacity vars.$dt, transform vars.$dt;
 		}
+	}
+	&__blur {
+		@include mix.card-blur;
+		position: absolute;
 	}
 	&__video {
 		position: absolute;
