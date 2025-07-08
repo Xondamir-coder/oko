@@ -21,6 +21,7 @@
 	}
 }
 .hero {
+	$preloader-duration: 3s;
 	aspect-ratio: 1918/1798;
 	display: grid;
 	grid-template-rows: 1fr 2fr 1fr;
@@ -49,17 +50,13 @@
 	&__down {
 		animation: slide-from-bottom-20px 0.6s backwards 2s;
 		width: clamp(40px, 2.9vw, 54px);
+		height: clamp(40px, 2.9vw, 54px);
 		aspect-ratio: 1;
 		border-radius: 50%;
 		background: #ffffff1f;
 		fill: #fff;
 		backdrop-filter: blur(10px);
-
-		@include mix.flex-center;
-		&:hover {
-			background: #fff;
-			fill: vars.$dark-blue;
-		}
+		@include mix.moving-button;
 	}
 	&__towers {
 		z-index: 1;
@@ -68,6 +65,7 @@
 		height: 100%;
 		width: 100%;
 		object-fit: cover;
+		animation: slide-from-bottom-50px 0.6s backwards 3.2s;
 		@include br.small-mobile {
 			aspect-ratio: 375/785;
 			object-position: 40%;
@@ -91,7 +89,7 @@
 		}
 	}
 	&__box {
-		pointer-events: none;
+		// pointer-events: none;
 		position: relative;
 		z-index: -1;
 		&-vector {
@@ -104,11 +102,8 @@
 			}
 		}
 	}
-	&__shadow {
-		position: absolute;
-		inset: 0;
-		scale: 2.5;
-		z-index: 1;
+	&__illustration {
+		animation: appear 1s backwards $preloader-duration;
 	}
 	&__ball {
 		animation: spin 40s linear infinite;
@@ -118,13 +113,99 @@
 		left: 0;
 		width: 35%;
 		z-index: 2;
-		.hero__image {
+		&-item {
+			transform-origin: center;
+			animation: 1.5s backwards;
+			&:first-child {
+				@keyframes animate-1st {
+					from {
+						opacity: 0;
+						transform: translate(-10%, -5%) rotate(10deg) scale(0.95);
+					}
+				}
+				animation-name: animate-1st;
+			}
+
+			&:nth-child(2) {
+				@keyframes animate-2nd {
+					from {
+						opacity: 0;
+						transform: translate(10%, 5%) rotate(-10deg) scale(0.95);
+					}
+				}
+				animation-name: animate-2nd;
+			}
+
+			&:nth-child(3) {
+				@keyframes animate-3rd {
+					from {
+						opacity: 0;
+						transform: translate(0, -10%) rotate(8deg) scale(1.05);
+					}
+				}
+				animation-name: animate-3rd;
+			}
+
+			&:nth-child(4) {
+				@keyframes animate-4th {
+					from {
+						opacity: 0;
+						transform: translate(-120%, -60%) rotate(360deg) scale(0.7);
+					}
+				}
+				animation-name: animate-4th;
+				animation-duration: 1.5s;
+			}
+
+			&:nth-child(5) {
+				@keyframes animate-5th {
+					from {
+						opacity: 0;
+						transform: translate(150%, -90%) rotate(-360deg) scale(0.8);
+					}
+				}
+				animation-name: animate-5th;
+				animation-duration: 1.7s;
+			}
+
+			&:nth-child(6) {
+				@keyframes animate-6th {
+					from {
+						opacity: 0;
+						transform: translate(-100%, 140%) rotate(300deg) scale(1);
+					}
+				}
+				animation-name: animate-6th;
+				animation-duration: 2s;
+			}
+
+			&:nth-child(7) {
+				@keyframes animate-7th {
+					from {
+						opacity: 0;
+						transform: translate(140%, 100%) rotate(-300deg) scale(0.95);
+					}
+				}
+				animation-name: animate-7th;
+				animation-duration: 2.3s;
+			}
+
+			@for $i from 1 through 10 {
+				&:nth-child(#{$i}) {
+					animation-delay: ($i - 1) * 0.1s + $preloader-duration;
+				}
+			}
+		}
+		&-shadow {
+			position: absolute;
+			inset: 0;
+			scale: 2.5;
+			z-index: 1;
+			animation: appear 1s backwards $preloader-duration;
+		}
+		&-vector {
 			z-index: 2;
 		}
-	}
-	&__image,
-	&__ball {
-		animation: appear backwards 1s 2s;
 	}
 	&__title {
 		overflow: hidden;

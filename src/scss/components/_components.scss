@@ -17,9 +17,10 @@
 	background-color: #fff;
 	fill: vars.$dark-blue;
 	&:hover {
-		background-color: vars.$dark-blue;
+		background-color: vars.$pink;
 		color: #fff;
 		fill: #fff;
+		transform: scale(1.05);
 	}
 
 	@include br.large-mobile {
@@ -28,7 +29,7 @@
 	}
 }
 .icon {
-	transition-property: fill, transform;
+	transition-property: fill, transform, translate;
 	transition-duration: vars.$dt;
 	width: clamp(20px, 1.3vw, 24px);
 }
@@ -84,6 +85,7 @@
 .close-button {
 	align-self: flex-end;
 	width: clamp(56px, 3.8vw, 72px);
+	height: clamp(56px, 3.8vw, 72px);
 	aspect-ratio: 1;
 	margin-bottom: min(27.5px, 1.5vw);
 	@include mix.flex-center;

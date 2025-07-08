@@ -44,7 +44,7 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
-	transition-property: color, background-color, border-color, fill;
+	transition-property: color, background-color, border-color, fill, transform;
 	transition-duration: vars.$dt;
 	&:hover {
 		color: inherit;
