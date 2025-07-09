@@ -55,10 +55,6 @@
 			font-size: clamp(15px, 0.9vw, 16px);
 			color: rgba(#ffffff, 0.75);
 		}
-		&-blur {
-			@include mix.card-blur(60px);
-			transition: opacity vars.$dt;
-		}
 	}
 	.section-label {
 		padding-block: clamp(12px, 0.9vw, 16px);

@@ -108,6 +108,9 @@
 	&__nav {
 		display: flex;
 		gap: clamp(10px, 2.25vw, 42px);
+		&:has(> *:hover) > *:not(:hover) {
+			opacity: 0.15;
+		}
 		@media (max-width: vars.$bp-ipad-pro) {
 			display: none;
 		}

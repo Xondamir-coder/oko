@@ -55,3 +55,9 @@
 .no-scroll {
 	overflow: hidden;
 }
+.bs-bg-transparent {
+	--bs-modal-bg: transparent;
+}
+.bs-border-0 {
+	--bs-modal-border-width: 0;
+}

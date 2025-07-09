@@ -3,7 +3,9 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="src/scss/main.scss" />
@@ -15,7 +17,12 @@
 	</head>
 	<body>
 		<!-- Form Modal -->
-		<div class="modal fade" id="form-modal" tabindex="-1" aria-hidden="true">
+		<div
+			class="modal fade"
+			data-lenis-prevent="true"
+			id="form-modal"
+			tabindex="-1"
+			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content popup__content">
 					<div class="popup">
@@ -81,7 +88,12 @@
 		</div>
 
 		<!-- Plan Modal -->
-		<div class="modal fade" id="plan-modal" tabindex="-1" aria-hidden="true">
+		<div
+			class="modal fade"
+			data-lenis-prevent="true"
+			id="plan-modal"
+			tabindex="-1"
+			aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered plan__dialog">
 				<div class="modal-content">
 					<div class="plan">
@@ -91,10 +103,6 @@
 							</svg>
 						</button>
 						<div class="plan__wrapper">
-							<img
-								src="src/images/old/plan.png"
-								alt="plan"
-								class="plan__image plan--desktop" />
 							<div class="plan__container" data-container>
 								<div class="plan__box">
 									<div class="plan__box-top">
@@ -104,7 +112,16 @@
 											Свобода в каждой детали. Свобода в каждой детали.
 										</p>
 									</div>
-									<button class="button">
+									<button class="button plan--desktop">
+										<span>Записаться на просмотр</span>
+										<svg viewBox="0 0 24 24" class="icon">
+											<use href="src/icons/sprite.svg#arrow-right-up"></use>
+										</svg>
+									</button>
+									<button
+										class="button plan--mobile"
+										data-bs-target="#form-modal"
+										data-bs-toggle="modal">
 										<span>Записаться на просмотр</span>
 										<svg viewBox="0 0 24 24" class="icon">
 											<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -115,8 +132,14 @@
 											<svg class="icon" viewBox="0 0 24 24">
 												<use href="src/icons/sprite.svg#arrow-left"></use>
 											</svg>
+											<svg class="icon" viewBox="0 0 24 24">
+												<use href="src/icons/sprite.svg#arrow-left"></use>
+											</svg>
 										</button>
 										<button class="plan__arrow arrow-button">
+											<svg class="icon" viewBox="0 0 24 24">
+												<use href="src/icons/sprite.svg#arrow-left"></use>
+											</svg>
 											<svg class="icon" viewBox="0 0 24 24">
 												<use href="src/icons/sprite.svg#arrow-left"></use>
 											</svg>
@@ -178,56 +201,185 @@
 									</button>
 								</div>
 							</div>
-							<ul class="plan__details plan--desktop">
-								<li class="plan__detail">
-									<span class="clr-grey">Тип апартамента:</span>
-									<span>Yellow</span>
-								</li>
-								<li class="plan__detail">
-									<span class="clr-grey">Площадь:</span>
-									<span>295 М2</span>
-								</li>
-								<li class="plan__detail">
-									<span class="clr-grey">Особенности:</span>
-									<span>Вид на Центр</span>
-								</li>
-								<li class="plan__detail">
-									<span class="clr-grey">Этаж:</span>
-									<span>47 - 64 этаж</span>
-								</li>
-							</ul>
+
+							<swiper-container
+								class="plan__slider"
+								slides-per-view="1"
+								navigation="true"
+								navigation-prev-el=".plan__arrow:first-child"
+								navigation-next-el=".plan__arrow:last-child">
+								<swiper-slide class="plan__slide">
+									<img
+										src="src/images/old/plan.png"
+										alt="plan"
+										class="plan__image plan--desktop" />
+									<ul class="plan__details plan--desktop">
+										<li class="plan__detail">
+											<span class="clr-grey">Тип апартамента:</span>
+											<span>Yellow</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Площадь:</span>
+											<span>295 М2</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Особенности:</span>
+											<span>Вид на Центр</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Этаж:</span>
+											<span>47 - 64 этаж</span>
+										</li>
+									</ul>
+								</swiper-slide>
+								<swiper-slide class="plan__slide">
+									<img
+										src="src/images/old/plan.png"
+										alt="plan"
+										class="plan__image plan--desktop" />
+									<ul class="plan__details plan--desktop">
+										<li class="plan__detail">
+											<span class="clr-grey">Тип апартамента:</span>
+											<span>Yellow</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Площадь:</span>
+											<span>295 М2</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Особенности:</span>
+											<span>Вид на Центр</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Этаж:</span>
+											<span>47 - 64 этаж</span>
+										</li>
+									</ul>
+								</swiper-slide>
+								<swiper-slide class="plan__slide">
+									<img
+										src="src/images/old/plan.png"
+										alt="plan"
+										class="plan__image plan--desktop" />
+									<ul class="plan__details plan--desktop">
+										<li class="plan__detail">
+											<span class="clr-grey">Тип апартамента:</span>
+											<span>Yellow</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Площадь:</span>
+											<span>295 М2</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Особенности:</span>
+											<span>Вид на Центр</span>
+										</li>
+										<li class="plan__detail">
+											<span class="clr-grey">Этаж:</span>
+											<span>47 - 64 этаж</span>
+										</li>
+									</ul>
+								</swiper-slide>
+							</swiper-container>
+
 							<div class="plan__mobile">
-								<img src="src/images/old/plan.png" alt="plan" class="plan__image" />
-								<ul class="plan__details">
-									<li class="plan__detail">
-										<span class="clr-grey">Тип апартамента:</span>
-										<span>Yellow</span>
-									</li>
-									<li class="plan__detail">
-										<span class="clr-grey">Площадь:</span>
-										<span>295 М2</span>
-									</li>
-									<li class="plan__detail">
-										<span class="clr-grey">Особенности:</span>
-										<span>Вид на Центр</span>
-									</li>
-									<li class="plan__detail">
-										<span class="clr-grey">Этаж:</span>
-										<span>47 - 64 этаж</span>
-									</li>
-								</ul>
 								<div class="plan__nav">
 									<button class="plan__arrow arrow-button">
 										<svg class="icon" viewBox="0 0 24 24">
 											<use href="src/icons/sprite.svg#arrow-left"></use>
 										</svg>
+										<svg class="icon" viewBox="0 0 24 24">
+											<use href="src/icons/sprite.svg#arrow-left"></use>
+										</svg>
 									</button>
 									<button class="plan__arrow arrow-button">
 										<svg class="icon" viewBox="0 0 24 24">
 											<use href="src/icons/sprite.svg#arrow-left"></use>
 										</svg>
+										<svg class="icon" viewBox="0 0 24 24">
+											<use href="src/icons/sprite.svg#arrow-left"></use>
+										</svg>
 									</button>
 								</div>
+								<swiper-container
+									class="plan__slider"
+									slides-per-view="1"
+									navigation="true"
+									navigation-prev-el=".plan__mobile .plan__arrow:first-child"
+									navigation-next-el=".plan__mobile .plan__arrow:last-child">
+									<swiper-slide class="plan__slide">
+										<img
+											src="src/images/old/plan.png"
+											alt="plan"
+											class="plan__image" />
+										<ul class="plan__details">
+											<li class="plan__detail">
+												<span class="clr-grey">Тип апартамента:</span>
+												<span>Yellow</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Площадь:</span>
+												<span>295 М2</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Особенности:</span>
+												<span>Вид на Центр</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Этаж:</span>
+												<span>47 - 64 этаж</span>
+											</li>
+										</ul>
+									</swiper-slide>
+									<swiper-slide class="plan__slide">
+										<img
+											src="src/images/old/plan.png"
+											alt="plan"
+											class="plan__image" />
+										<ul class="plan__details">
+											<li class="plan__detail">
+												<span class="clr-grey">Тип апартамента:</span>
+												<span>Yellow</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Площадь:</span>
+												<span>295 М2</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Особенности:</span>
+												<span>Вид на Центр</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Этаж:</span>
+												<span>47 - 64 этаж</span>
+											</li>
+										</ul>
+									</swiper-slide>
+									<swiper-slide class="plan__slide">
+										<img
+											src="src/images/old/plan.png"
+											alt="plan"
+											class="plan__image" />
+										<ul class="plan__details">
+											<li class="plan__detail">
+												<span class="clr-grey">Тип апартамента:</span>
+												<span>Yellow</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Площадь:</span>
+												<span>295 М2</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Особенности:</span>
+												<span>Вид на Центр</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Этаж:</span>
+												<span>47 - 64 этаж</span>
+											</li>
+										</ul>
+									</swiper-slide>
+								</swiper-container>
 							</div>
 						</div>
 					</div>
@@ -236,16 +388,27 @@
 		</div>
 
 		<!-- History Modal -->
-		<div class="modal fade" id="history-modal" tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content history-modal__content">
+		<div
+			class="modal fade"
+			data-lenis-prevent="true"
+			id="history-modal"
+			tabindex="-1"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered history-modal__dialog">
+				<div class="modal-content bs-bg-transparent bs-border-0">
 					<div class="history-modal">
 						<button class="arrow-button" id="history-modal-prev">
 							<svg class="icon" viewBox="0 0 24 24">
 								<use href="src/icons/sprite.svg#arrow-left"></use>
 							</svg>
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
 						</button>
 						<button class="arrow-button" id="history-modal-next">
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
 							<svg class="icon" viewBox="0 0 24 24">
 								<use href="src/icons/sprite.svg#arrow-left"></use>
 							</svg>
@@ -278,17 +441,10 @@
 								navigation-next-el="#history-modal-next"
 								grab-cursor="true">
 								<swiper-slide class="section-card">
-									<picture class="section-card__image">
-										<source
-											srcset="src/images/gallery-1.avif"
-											type="image/avif" />
-										<img
-											src="src/images/old/gallery-1.jpg"
-											alt="girl looking"
-											width="1796"
-											height="2784"
-											decoding="async" />
-									</picture>
+									<video loop muted autoplay class="section-card__video">
+										<source src="src/videos/vertical.mp4" />
+										Video isn't supported
+									</video>
 									<picture class="section-card__blur">
 										<source
 											srcset="src/images/gallery-1.avif"
@@ -309,17 +465,10 @@
 									</div>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<picture class="section-card__image">
-										<source
-											srcset="src/images/gallery-2.avif"
-											type="image/avif" />
-										<img
-											src="src/images/old/gallery-2.jpg"
-											alt="girl looking"
-											width="1796"
-											height="2784"
-											decoding="async" />
-									</picture>
+									<video loop muted autoplay class="section-card__video">
+										<source src="src/videos/vertical.mp4" />
+										Video isn't supported
+									</video>
 									<picture class="section-card__blur">
 										<source
 											srcset="src/images/gallery-2.avif"
@@ -340,7 +489,11 @@
 									</div>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<picture class="section-card__image">
+									<video loop muted autoplay class="section-card__video">
+										<source src="src/videos/vertical.mp4" />
+										Video isn't supported
+									</video>
+									<picture class="section-card__blur">
 										<source
 											srcset="src/images/history-2.avif"
 											type="image/avif" />
@@ -351,6 +504,19 @@
 											height="1170"
 											decoding="async" />
 									</picture>
+									<div class="section-card__content">
+										<h3 class="section-card__title">Деловая среда</h3>
+										<p class="gallery__card-text">
+											В движении я сильная. Дома — настоящая. Пишу свои мечты,
+											воплощая их в реальность.
+										</p>
+									</div>
+								</swiper-slide>
+								<swiper-slide class="section-card">
+									<video loop muted autoplay class="section-card__video">
+										<source src="src/videos/vertical.mp4" />
+										Video isn't supported
+									</video>
 									<picture class="section-card__blur">
 										<source
 											srcset="src/images/history-2.avif"
@@ -373,6 +539,862 @@
 							</swiper-container>
 						</div>
 					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Apartments Modal -->
+		<div
+			class="modal fade"
+			data-lenis-prevent="true"
+			id="apartments-modal"
+			tabindex="-1"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered apartments__dialog">
+				<div class="modal-content bs-bg-transparent">
+					<section class="apartments">
+						<button data-bs-dismiss="modal" class="apartments__close">
+							<svg viewBox="0 0 24 24" width="24" height="24">
+								<use href="src/icons/sprite.svg#x"></use>
+							</svg>
+						</button>
+						<div class="apartments__left">
+							<h2 class="apartments__title">
+								Выбирайте апартаменты
+								<span class="clr-normal-white">своего уровня</span>
+							</h2>
+							<p class="text-default">
+								Свобода в каждой детали. Свобода в каждой детали. Свобода в каждой
+								детали. Свобода в каждой детали.
+							</p>
+						</div>
+						<div class="apartments__middle">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 274 946"
+								fill="none"
+								class="apartments__vector">
+								<g class="apartments__vector-group" data-lvl="apogee">
+									<path
+										id="Vector"
+										d="M152.563 1.5957L153.377 8.11058L273.999 20.8212V12.7216L152.728 0L152.563 1.5957ZM153.542 9.54121L153.707 11.4451L154.686 19.2365L273.999 31.639V22.0978L153.542 9.54121ZM154.85 20.8212L155.015 22.2518L155.994 30.3624L273.845 42.4457V33.0696L154.861 20.8322L154.85 20.8212ZM156.313 32.1122L156.478 33.2237L157.456 41.6534L273.999 53.5716V44.1955L156.313 32.1122ZM157.786 44.0304V43.3922L157.621 41.9615L152.409 42.4347V44.5036L157.786 44.0304ZM156.478 33.0586L156.313 31.9471L156.148 30.9897L152.398 31.3088V33.3777L156.478 33.0586ZM155.015 22.2518L154.85 20.8212V20.348L152.409 20.6671V22.571L155.015 22.2518ZM153.707 11.4451L153.542 9.54121L152.398 9.69528V11.5991L153.707 11.434V11.4451Z" />
+								</g>
+								<g class="apartments__vector-group" data-lvl="meridian">
+									<path
+										id="Vector_2"
+										d="M152.078 274.505L184.867 272.161L184.383 268.188L152.078 270.532V274.505Z" />
+									<path
+										id="Vector_3"
+										d="M188.32 300.609L152.078 303.118V307.244L188.815 304.746L188.32 300.609Z" />
+									<path
+										id="Vector_4"
+										d="M273.674 307.245L190.008 300.972L190.887 308.279L273.674 314.398V307.245Z" />
+									<path
+										id="Vector_5"
+										d="M186.885 275.221L273.673 281.978V274.505L185.961 267.594L186.885 275.221Z" />
+									<path
+										id="Vector_6"
+										d="M273.502 384.015L199.469 379.162L200.271 385.842L273.502 390.695V384.015Z" />
+									<path
+										id="Vector_7"
+										d="M273.506 340.149L194.062 334.504L194.909 341.503L273.506 347.149V340.149Z" />
+									<path
+										id="Vector_8"
+										d="M273.503 373.208L198.117 368.036L198.953 374.87L273.503 379.888V373.208Z" />
+									<path
+										id="Vector_9"
+										d="M273.505 395.141L200.812 390.288L201.626 396.968L273.505 401.667V395.141Z" />
+									<path
+										id="Vector_10"
+										d="M152.078 285.466L186.176 282.968L185.692 278.995L152.078 281.493V285.466Z" />
+									<path
+										id="Vector_11"
+										d="M273.667 296.284L188.648 289.846L189.55 297.319L273.667 303.591V296.284Z" />
+									<path
+										id="Vector_12"
+										d="M273.671 285.312L187.301 278.709L188.213 286.192L273.671 292.784V285.312Z" />
+									<path
+										id="Vector_13"
+										d="M152.078 296.438L187.506 293.94L187 289.802L152.078 292.3V296.438Z" />
+									<path
+										id="Vector_14"
+										d="M273.504 406.113L202.164 401.414L202.956 407.928L273.504 412.473V406.113Z" />
+									<path
+										id="Vector_15"
+										d="M273.506 416.919L203.508 412.54L204.278 418.889L273.506 423.28V416.919Z" />
+									<path
+										id="Vector_16"
+										d="M151.914 362.247L195.413 359.264L194.852 354.653L151.914 357.636V362.247Z" />
+									<path
+										id="Vector_17"
+										d="M151.914 340.149L192.774 337.475L192.235 333.029L151.914 335.703V340.149Z" />
+									<path
+										id="Vector_18"
+										d="M152.078 351.275L194.104 348.458L193.554 343.858L152.078 346.664V351.275Z" />
+									<path
+										id="Vector_19"
+										d="M151.914 427.891L203.374 424.908L202.747 419.824L151.914 422.807V427.891Z" />
+									<path
+										id="Vector_20"
+										d="M151.914 373.054L196.743 370.226L196.171 365.461L151.914 368.289V373.054Z" />
+									<path
+										id="Vector_21"
+										d="M151.914 405.958L200.713 402.965L200.119 398.057L151.914 401.028V405.958Z" />
+									<path
+										id="Vector_22"
+										d="M151.914 394.987L199.393 392.158L198.81 387.239L151.914 390.056V394.987Z" />
+									<path
+										id="Vector_23"
+										d="M151.914 329.177L191.465 326.668L190.927 322.233L151.914 324.885V329.177Z" />
+									<path
+										id="Vector_24"
+										d="M205.629 430.015L273.67 434.252V428.045L204.859 423.654L205.629 430.015Z" />
+									<path
+										id="Vector_25"
+										d="M196.245 352.618L273.665 357.955V351.121L195.398 345.619L196.245 352.618Z" />
+									<path
+										id="Vector_26"
+										d="M193.58 330.531L273.672 336.331V329.343L192.711 323.378L193.58 330.531Z" />
+									<path
+										id="Vector_27"
+										d="M197.579 363.579L273.668 368.762V361.928L196.754 356.745L197.579 363.579Z" />
+									<path
+										id="Vector_28"
+										d="M192.225 319.394L273.834 325.37V318.217L191.367 312.252L192.225 319.394Z" />
+									<path
+										id="Vector_29"
+										d="M208.298 452.101L273.503 456.019V449.823L207.551 445.917L208.298 452.101Z" />
+									<path
+										id="Vector_30"
+										d="M206.962 440.976L273.507 445.058V438.863L206.203 434.78L206.962 440.976Z" />
+									<path
+										id="Vector_31"
+										d="M206.684 452.245L151.75 455.392V460.796L207.333 457.648L206.684 452.245Z" />
+									<path
+										id="Vector_32"
+										d="M205.375 441.438L151.75 444.42V449.669L206.024 446.841L205.375 441.438Z" />
+									<path
+										id="Vector_33"
+										d="M204.056 430.631L151.75 433.614V438.852L204.694 435.87L204.056 430.631Z" />
+									<path
+										id="Vector_34"
+										d="M201.439 409.007L151.75 411.989V417.084L202.044 413.937L201.439 409.007Z" />
+									<path
+										id="Vector_35"
+										d="M197.503 376.421L151.75 379.249V384.014L198.074 381.197L197.503 376.421Z" />
+									<path
+										id="Vector_36"
+										d="M189.641 311.57L151.75 314.244V318.536L190.146 315.707L189.641 311.57Z" />
+								</g>
+								<g class="apartments__vector-group" data-lvl="cityline">
+									<path
+										id="Vector_37"
+										d="M151.914 252.88L182.229 250.382L181.789 246.718L151.914 249.073V252.88Z" />
+									<path
+										id="Vector_38"
+										d="M273.668 241.601L181.898 234.062L182.855 242.008L273.668 249.392V241.601Z" />
+									<path
+										id="Vector_39"
+										d="M152.078 208.861L176.95 206.836L176.555 203.491L152.078 205.516V208.861Z" />
+									<path
+										id="Vector_40"
+										d="M273.671 175.792L173.754 166.845L174.776 175.263L273.671 184.056V175.792Z" />
+									<path
+										id="Vector_41"
+										d="M152.398 55.6297L158.556 54.9034L158.303 52.8345L152.398 53.4067V55.6297Z" />
+									<path
+										id="Vector_42"
+										d="M273.673 208.542L177.813 200.366L178.802 208.476L273.673 216.488V208.542Z" />
+									<path
+										id="Vector_43"
+										d="M273.835 197.735L176.469 189.24L177.469 197.515L273.835 205.835V197.735Z" />
+									<path
+										id="Vector_44"
+										d="M179.171 225.105L152.078 227.295V230.948L179.589 228.615L179.171 225.105Z" />
+									<path
+										id="Vector_45"
+										d="M273.833 219.503L179.172 211.646L180.139 219.591L273.833 227.459V219.503Z" />
+									<path
+										id="Vector_46"
+										d="M273.836 186.764L175.117 178.114L176.118 186.378L273.836 194.874V186.764Z" />
+									<path
+										id="Vector_47"
+										d="M152.238 197.735L175.637 195.875L175.23 192.541L152.238 194.39V197.735Z" />
+									<path
+										id="Vector_48"
+										d="M152.238 186.917L174.328 185.069L173.944 181.888L152.238 183.748V186.917Z" />
+									<path
+										id="Vector_49"
+										d="M152.238 175.957L173.009 174.251L172.624 171.082L152.238 172.777V175.957Z" />
+									<path
+										id="Vector_50"
+										d="M152.078 219.668L178.259 217.643L177.841 214.144L152.078 216.168V219.668Z" />
+									<path
+										id="Vector_51"
+										d="M152.238 164.984L171.69 163.29L171.327 160.274L152.238 161.969V164.984Z" />
+									<path
+										id="Vector_52"
+										d="M181.473 230.541L274.001 238.101V230.475L180.527 222.771L181.473 230.541Z" />
+									<path
+										id="Vector_53"
+										d="M184.166 252.804L273.835 260.034V252.407L183.242 245.177L184.166 252.804Z" />
+									<path
+										id="Vector_54"
+										d="M273.833 164.666L172.398 155.708L173.421 164.138L273.833 173.096V164.666Z" />
+									<path
+										id="Vector_55"
+										d="M152.238 99.3405L163.817 98.2731L163.509 95.731L152.238 96.7984V99.3405Z" />
+									<path
+										id="Vector_56"
+										d="M152.238 77.4084L161.178 76.506L160.903 74.272L152.238 75.0203V77.4084Z" />
+									<path
+										id="Vector_57"
+										d="M152.398 110.312L165.12 109.08L164.79 106.406L152.398 107.605V110.312Z" />
+									<path
+										id="Vector_58"
+										d="M152.398 64.2131V66.4361L159.864 65.6988L159.601 63.4868L152.398 64.2131Z" />
+									<path
+										id="Vector_59"
+										d="M152.238 88.3806L162.486 87.3131L162.178 84.771L152.238 85.8275V88.3806Z" />
+									<path
+										id="Vector_60"
+										d="M152.238 121.12L166.434 119.887L166.104 117.191L152.238 118.412V121.12Z" />
+									<path
+										id="Vector_61"
+										d="M152.238 143.053L169.073 141.666L168.721 138.805L152.238 140.191V143.053Z" />
+									<path
+										id="Vector_62"
+										d="M152.238 132.245L167.742 130.705L167.423 127.998L152.238 129.384V132.245Z" />
+									<path
+										id="Vector_63"
+										d="M161.539 65.9189L162.628 74.9759L274.002 85.9918V76.9348L161.539 65.9189Z" />
+									<path
+										id="Vector_64"
+										d="M273.835 120.8L166.969 110.742L168.035 119.634L273.835 129.538V120.8Z" />
+									<path
+										id="Vector_65"
+										d="M273.831 131.927L168.328 122.011L169.384 130.76L273.831 140.51V131.927Z" />
+									<path
+										id="Vector_66"
+										d="M273.832 109.993L165.613 99.6157L166.691 108.519L273.832 118.731V109.993Z" />
+									<path
+										id="Vector_67"
+										d="M273.835 142.733L169.695 133.302L170.74 141.897L273.835 151.317V142.733Z" />
+									<path
+										id="Vector_68"
+										d="M273.836 98.7026L164.242 88.314L165.32 97.2279L273.836 107.605V98.7026Z" />
+									<path
+										id="Vector_69"
+										d="M273.833 65.8089L160.16 54.6279L161.282 63.861L273.833 75.0199V65.8089Z" />
+									<path
+										id="Vector_70"
+										d="M273.834 88.0606L162.899 77.2098L163.998 86.2668L273.834 96.9636V88.0606Z" />
+									<path
+										id="Vector_71"
+										d="M180.459 235.757L151.914 237.947V241.601L180.899 239.411L180.459 235.757Z" />
+								</g>
+								<g class="apartments__vector-group" data-lvl="serviced">
+									<path
+										id="Vector_72"
+										d="M261.61 899.328L261.764 900.12L261.929 901.87L273.012 902.024V899.482L261.599 899.328H261.61ZM264.381 921.261L264.546 921.899L264.711 923.484L273.023 923.649V921.261H264.381ZM265.689 932.232L265.854 932.871L266.019 934.455H273.034V932.232H265.7H265.689ZM266.998 943.204L267.152 943.843L267.317 945.273H273.023V943.039L266.998 943.204ZM266.822 942.093L265.843 934.466L265.678 932.882L237.815 933.036L259.004 942.093H266.822ZM265.524 931.121L264.546 923.649L264.381 922.053L212.547 922.372L233.417 931.44L265.524 931.121ZM264.227 919.995L263.413 912.688L263.248 910.938L187.785 911.411L208.479 920.314L264.227 919.995ZM158.108 898.855L261.61 897.897L260.796 890.909L260.631 889.005L151.434 889.963V895.839L158.119 898.866L158.108 898.855Z" />
+									<path
+										id="Vector_73"
+										d="M263.08 910.3L263.234 910.928L263.399 912.677L273.174 912.842V910.454L263.069 910.3H263.08ZM262.915 908.87L262.101 901.717L261.936 899.967L162.844 900.759L183.219 909.497L262.926 908.859L262.915 908.87Z" />
+									<path
+										id="Vector_74"
+										d="M151.434 759.008L243.224 756.756L237.035 702.891L151.434 705.411V759.008Z" />
+									<path
+										id="Vector_75"
+										d="M273.187 723.856L241.102 722.92L241.585 726.893L273.187 727.829V723.856Z" />
+									<path
+										id="Vector_76"
+										d="M273.187 701.758L238.43 700.833L238.913 704.806L273.187 705.896V701.758Z" />
+									<path
+										id="Vector_77"
+										d="M273.186 734.981L242.453 734.046L242.915 737.865L273.186 738.789V734.981Z" />
+									<path
+										id="Vector_78"
+										d="M273.187 745.788L243.785 745.018L244.247 748.825L273.187 749.596V745.788Z" />
+									<path
+										id="Vector_79"
+										d="M273.019 811.751L251.809 811.289L252.193 814.469L273.019 814.932V811.751Z" />
+									<path
+										id="Vector_80"
+										d="M151.434 800.306L248.602 798.413L247.623 790.303L151.434 792.196V800.306Z" />
+									<path
+										id="Vector_81"
+										d="M151.27 865.95L256.641 864.696L255.596 856.101L151.27 857.367V865.95Z" />
+									<path
+										id="Vector_82"
+										d="M151.434 789.335L247.282 787.442L246.315 779.497L151.434 781.389V789.335Z" />
+									<path
+										id="Vector_83"
+										d="M151.434 778.528L245.93 776.327L244.984 768.535L151.434 770.582V778.528Z" />
+									<path
+										id="Vector_84"
+										d="M151.434 822.238L251.285 820.511L250.284 812.246L151.434 813.974V822.238Z" />
+									<path
+										id="Vector_85"
+										d="M250.868 803.498L273.189 803.96V800.625L250.461 800.163L250.868 803.498Z" />
+									<path
+										id="Vector_86"
+										d="M254.824 836.237L273.175 836.545V833.519L254.461 833.222L254.824 836.237Z" />
+									<path
+										id="Vector_87"
+										d="M248.204 781.565L273.186 782.182V778.847L247.797 778.231L248.204 781.565Z" />
+									<path
+										id="Vector_88"
+										d="M253.51 825.43L273.17 825.892V822.712L253.125 822.261L253.51 825.43Z" />
+									<path
+										id="Vector_89"
+										d="M249.532 792.537L273.172 793.153V789.819L249.125 789.191L249.532 792.537Z" />
+									<path
+										id="Vector_90"
+										d="M240.279 716.086L273.354 717.176V713.203L239.773 711.959L240.279 716.086Z" />
+									<path
+										id="Vector_91"
+										d="M245.569 759.797L273.355 760.568V756.914L245.129 756.144L245.569 759.797Z" />
+									<path
+										id="Vector_92"
+										d="M246.893 770.759L273.183 771.375V767.886L246.453 767.105L246.893 770.759Z" />
+									<path
+										id="Vector_93"
+										d="M260.127 879.948L273.025 880.102V877.395L259.797 877.241L260.127 879.948Z" />
+									<path
+										id="Vector_94"
+										d="M254.288 845.294L151.105 846.714V855.144L255.311 853.724L254.288 845.294Z" />
+									<path
+										id="Vector_95"
+										d="M256.915 867.073L151.27 868.339V877.077L257.982 875.822L256.915 867.073Z" />
+									<path
+										id="Vector_96"
+										d="M256.152 847.209L273.184 847.517V844.491L255.789 844.183L256.152 847.209Z" />
+									<path
+										id="Vector_97"
+										d="M252.957 834.333L151.27 835.907V844.337L253.958 842.598L252.957 834.333Z" />
+									<path
+										id="Vector_98"
+										d="M258.256 878.033L151.434 879.145V887.883L259.312 886.782L258.256 878.033Z" />
+									<path
+										id="Vector_99"
+										d="M261.463 891.074L273.02 891.217V888.521L261.145 888.367L261.463 891.074Z" />
+									<path
+										id="Vector_100"
+										d="M258.817 869.142L273.023 869.45V866.589L258.465 866.281L258.817 869.142Z" />
+									<path
+										id="Vector_101"
+										d="M257.485 858.181L273.176 858.478V855.617L257.145 855.309L257.485 858.181Z" />
+									<path
+										id="Vector_102"
+										d="M251.594 823.042L151.27 824.627V832.892L252.605 831.472L251.594 823.042Z" />
+									<path
+										id="Vector_103"
+										d="M248.977 801.429L151.27 803.167V811.267L249.955 809.539L248.977 801.429Z" />
+									<path
+										id="Vector_104"
+										d="M243.655 757.563L151.27 759.61V767.402L244.6 765.355L243.655 757.563Z" />
+								</g>
+								<g class="apartments__vector-group" data-lvl="horizont">
+									<path
+										id="Vector_105"
+										d="M273.189 614.181L227.711 612.31L228.294 617.086L273.189 618.946V614.181Z" />
+									<path
+										id="Vector_106"
+										d="M151.75 614.016L225.926 611.188L225.113 604.508L151.75 607.347V614.016Z" />
+									<path
+										id="Vector_107"
+										d="M273.336 679.979L235.742 678.735L236.27 683.027L273.336 684.271V679.979Z" />
+									<path
+										id="Vector_108"
+										d="M273.342 482.728L211.602 479.284L212.305 485.171L273.342 488.605V482.728Z" />
+									<path
+										id="Vector_109"
+										d="M273.188 647.24L231.734 645.523L232.284 650.134L273.188 651.686V647.24Z" />
+									<path
+										id="Vector_110"
+										d="M273.186 636.268L230.402 634.562L230.963 639.173L273.186 640.879V636.268Z" />
+									<path
+										id="Vector_111"
+										d="M273.186 658.201L233.074 656.649L233.613 661.106L273.186 662.658V658.201Z" />
+									<path
+										id="Vector_112"
+										d="M273.345 625.307L229.055 623.436L229.637 628.201L273.345 630.072V625.307Z" />
+									<path
+										id="Vector_113"
+										d="M273.341 515.468L215.625 512.497L216.296 518.065L273.341 521.036V515.468Z" />
+									<path
+										id="Vector_114"
+										d="M226.973 606.28L273.187 608.294V603.364L226.379 601.339L226.973 606.28Z" />
+									<path
+										id="Vector_115"
+										d="M273.34 493.689L212.941 490.41L213.634 496.132L273.34 499.412V493.689Z" />
+									<path
+										id="Vector_116"
+										d="M273.341 570.47L222.332 567.972L222.97 573.21L273.341 575.554V570.47Z" />
+									<path
+										id="Vector_117"
+										d="M273.34 559.498L221.012 557L221.638 562.249L273.34 564.747V559.498Z" />
+									<path
+										id="Vector_118"
+										d="M234.965 672.221L273.35 673.618V669.173L234.426 667.775L234.965 672.221Z" />
+									<path
+										id="Vector_119"
+										d="M225.628 595.143L273.338 597.322V592.403L225.023 590.213L225.628 595.143Z" />
+									<path
+										id="Vector_120"
+										d="M224.281 584.006L273.509 586.196V581.112L223.688 579.087L224.281 584.006Z" />
+									<path
+										id="Vector_121"
+										d="M217.636 529.18L273.515 531.997V526.593L216.965 523.622L217.636 529.18Z" />
+									<path
+										id="Vector_122"
+										d="M218.99 540.317L273.507 543.123V537.719L218.309 534.748L218.99 540.317Z" />
+									<path
+										id="Vector_123"
+										d="M220.294 551.123L273.502 553.776V548.526L219.656 545.874L220.294 551.123Z" />
+									<path
+										id="Vector_124"
+										d="M214.966 507.093L273.507 510.219V504.496L214.274 501.371L214.966 507.093Z" />
+									<path
+										id="Vector_125"
+										d="M210.957 474.045L273.5 477.644V471.756L210.242 468.158L210.957 474.045Z" />
+									<path
+										id="Vector_126"
+										d="M209.334 474.178L151.75 477.006V482.563L209.994 479.581L209.334 474.178Z" />
+									<path
+										id="Vector_127"
+										d="M210.642 484.984L151.75 487.966V493.689L211.313 490.552L210.642 484.984Z" />
+									<path
+										id="Vector_128"
+										d="M211.951 495.802L151.75 498.784V504.507L212.644 501.514L211.951 495.802Z" />
+									<path
+										id="Vector_129"
+										d="M213.281 506.762L151.75 509.745V515.632L213.974 512.485L213.281 506.762Z" />
+									<path
+										id="Vector_130"
+										d="M226.444 615.48L151.586 618.308V624.988L227.258 622.149L226.444 615.48Z" />
+									<path
+										id="Vector_131"
+										d="M231.744 659.191L151.586 661.866V668.854L232.591 666.179L231.744 659.191Z" />
+									<path
+										id="Vector_132"
+										d="M227.753 626.287L151.586 629.115V635.949L228.588 633.121L227.753 626.287Z" />
+									<path
+										id="Vector_133"
+										d="M229.105 637.413L151.586 640.087V646.921L229.93 644.247L229.105 637.413Z" />
+									<path
+										id="Vector_134"
+										d="M233.053 669.998L151.586 672.672V679.825L233.91 677.151L233.053 669.998Z" />
+									<path
+										id="Vector_135"
+										d="M234.407 681.113L151.434 683.633V690.786L235.264 688.266L234.407 681.113Z" />
+									<path
+										id="Vector_136"
+										d="M230.414 648.219L151.586 650.893V657.892L231.26 655.207L230.414 648.219Z" />
+									<path
+										id="Vector_137"
+										d="M218.559 550.309L151.75 553.137V559.344L219.285 556.35L218.559 550.309Z" />
+									<path
+										id="Vector_138"
+										d="M223.805 593.701L151.586 596.529V603.044L224.597 600.216L223.805 593.701Z" />
+									<path
+										id="Vector_139"
+										d="M217.207 539.183L151.75 542.331V548.372L217.954 545.39L217.207 539.183Z" />
+									<path
+										id="Vector_140"
+										d="M214.59 517.57L151.75 520.552V526.44L215.304 523.446L214.59 517.57Z" />
+									<path
+										id="Vector_141"
+										d="M215.898 528.365L151.75 531.37V537.4L216.635 534.418L215.898 528.365Z" />
+									<path
+										id="Vector_142"
+										d="M222.508 582.895L151.586 585.888V592.238L223.277 589.244L222.508 582.895Z" />
+									<path
+										id="Vector_143"
+										d="M221.176 571.922L151.75 574.916V581.276L221.946 578.283L221.176 571.922Z" />
+									<path
+										id="Vector_144"
+										d="M219.868 561.116L151.75 564.109V570.305L220.615 567.323L219.868 561.116Z" />
+								</g>
+								<g class="apartments__vector-group" data-lvl="other">
+									<path
+										id="Vector_145"
+										d="M119.97 673.145L50.7198 669.062L49.7852 674.312L119.97 678.395V673.145Z" />
+									<path
+										id="Vector_146"
+										d="M119.973 684.271L48.7322 680.188L47.8086 685.273L119.973 689.366V684.271Z" />
+									<path
+										id="Vector_147"
+										d="M0.164185 652.478L52.4924 649.98L53.548 644.093L0.164185 646.756V652.478Z" />
+									<path
+										id="Vector_148"
+										d="M0.164185 663.45L50.4912 661.106L51.5467 655.23L0.164185 657.574V663.45Z" />
+									<path
+										id="Vector_149"
+										d="M0.164185 674.422L48.5339 672.078L49.6115 666.036L0.164185 668.38V674.422Z" />
+									<path
+										id="Vector_150"
+										d="M0.164185 685.229L46.5327 683.204L47.6433 677.008L0.164185 679.187V685.229Z" />
+									<path
+										id="Vector_151"
+										d="M0.164185 641.517L54.4936 638.854L55.5272 633.132L0.164185 635.949V641.517Z" />
+									<path
+										id="Vector_152"
+										d="M0.164185 586.999L64.4776 583.235L65.3902 578.151L0.164185 581.915V586.999Z" />
+									<path
+										id="Vector_153"
+										d="M0.164185 630.864L56.4838 627.739L57.4954 622.17L0.164185 625.307V630.864Z" />
+									<path
+										id="Vector_154"
+										d="M0.164185 565.221L68.502 560.83L69.3706 556.054L0.164185 560.456V565.221Z" />
+									<path
+										id="Vector_155"
+										d="M0.164185 576.027L66.5118 571.944L67.3914 567.014L0.164185 571.097V576.027Z" />
+									<path
+										id="Vector_156"
+										d="M0.164185 597.806L62.4874 594.361L63.422 589.112L0.164185 592.711V597.806Z" />
+									<path
+										id="Vector_157"
+										d="M0.164185 619.739L58.485 616.603L59.4636 611.199L0.164185 614.336V619.739Z" />
+									<path
+										id="Vector_158"
+										d="M0.164062 608.767L60.4861 605.477L61.4317 600.238L0.164062 603.529V608.767Z" />
+									<path
+										id="Vector_159"
+										d="M0.164185 739.901L36.5707 738.668L37.8022 731.834L0.164185 733.232V739.901Z" />
+									<path
+										id="Vector_160"
+										d="M0.164185 772.805L30.6331 771.727L31.9196 764.574L0.164185 765.652V772.805Z" />
+									<path
+										id="Vector_161"
+										d="M0.164062 761.833L32.6122 760.755L33.8547 753.756L0.164062 754.845V761.833Z" />
+									<path
+										id="Vector_162"
+										d="M0.164185 750.873L34.6025 749.629L35.823 742.795L0.164185 744.039V750.873Z" />
+									<path
+										id="Vector_163"
+										d="M0.164185 554.249L70.5032 549.704L71.3609 544.928L0.164185 549.638V554.249Z" />
+									<path
+										id="Vector_164"
+										d="M120.13 783.139L30.8891 779.519L30.1523 783.645L120.13 787.277V783.139Z" />
+									<path
+										id="Vector_165"
+										d="M0.164185 783.612L28.6319 782.841L29.9513 775.534L0.164185 776.459V783.612Z" />
+									<path
+										id="Vector_166"
+										d="M120.125 794.111L28.8944 790.633L28.1797 794.606L120.125 798.073V794.111Z" />
+									<path
+										id="Vector_167"
+										d="M119.978 750.08L36.862 746.294L36.0703 750.751L119.978 754.526V750.08Z" />
+									<path
+										id="Vector_168"
+										d="M0.164185 696.189L44.5315 694.329L45.6751 687.969L0.164185 689.993V696.189Z" />
+									<path
+										id="Vector_169"
+										d="M119.973 761.206L34.8555 757.42L34.0858 761.723L119.973 765.498V761.206Z" />
+									<path
+										id="Vector_170"
+										d="M0.164185 729.094L38.5719 727.542L39.7704 720.862L0.164185 722.425V729.094Z" />
+									<path
+										id="Vector_171"
+										d="M119.974 772.013L32.8891 768.393L32.1523 772.519L119.974 776.14V772.013Z" />
+									<path
+										id="Vector_172"
+										d="M0.164185 707.161L42.5303 705.444L43.6739 699.083L0.164185 700.8V707.161Z" />
+									<path
+										id="Vector_173"
+										d="M0.164185 718.133L40.5621 716.417L41.7386 709.902L0.164185 711.607V718.133Z" />
+									<path
+										id="Vector_174"
+										d="M119.973 585.085L66.4792 581.332L65.3906 587.374L119.973 591.291V585.085Z" />
+									<path
+										id="Vector_175"
+										d="M0.164062 871.2L12.831 870.903L14.3154 862.627L0.164062 862.935V871.2Z" />
+									<path
+										id="Vector_176"
+										d="M0.164062 849.256L16.7895 848.805L18.2189 840.859L0.164062 841.311V849.256Z" />
+									<path
+										id="Vector_177"
+										d="M0.164185 882.006L10.8629 881.852L12.3473 873.588L0.164185 873.742V882.006Z" />
+									<path
+										id="Vector_178"
+										d="M0.164185 860.228L14.7884 859.931L16.2508 851.82L0.164185 852.128V860.228Z" />
+									<path
+										id="Vector_179"
+										d="M120.127 837.976L20.9353 834.982L20.3086 838.471L120.127 841.475V837.976Z" />
+									<path
+										id="Vector_180"
+										d="M120.126 849.102L18.9336 846.098L18.3398 849.443L120.126 852.436V849.102Z" />
+									<path
+										id="Vector_181"
+										d="M120.13 871.035L14.9351 868.35L14.3633 871.53L120.13 874.215V871.035Z" />
+									<path
+										id="Vector_182"
+										d="M0.164185 838.295L18.7688 837.833L20.1652 830.052L0.164185 830.504V838.295Z" />
+									<path
+										id="Vector_183"
+										d="M119.974 859.909L16.9336 857.234L16.3398 860.569L119.974 863.408V859.909Z" />
+									<path
+										id="Vector_184"
+										d="M0.328125 827.169L20.736 826.861L22.1215 819.08L0.328125 819.531V827.169Z" />
+									<path
+										id="Vector_185"
+										d="M120.124 827.004L22.9222 823.856L22.2734 827.51L120.124 830.668V827.004Z" />
+									<path
+										id="Vector_186"
+										d="M0.164185 816.517L22.7052 815.9L24.0687 808.274L0.164185 808.89V816.517Z" />
+									<path
+										id="Vector_187"
+										d="M0.164185 798.083V805.555L24.6954 804.785L26.0369 797.313L0.164185 798.083Z" />
+									<path
+										id="Vector_188"
+										d="M119.978 365.262L105.563 363.766L104.078 372.03L119.978 373.692V365.262Z" />
+									<path
+										id="Vector_189"
+										d="M0.164185 488.77L82.5764 482.475L83.2911 478.491L0.164185 484.797V488.77Z" />
+									<path
+										id="Vector_190"
+										d="M0.164185 477.798L84.5776 471.349L85.2593 467.53L0.164185 473.979V477.798Z" />
+									<path
+										id="Vector_191"
+										d="M0.164185 499.577L80.5532 493.744L81.2899 489.628L0.164185 495.604V499.577Z" />
+									<path
+										id="Vector_192"
+										d="M0.164185 532.481L74.5276 527.287L75.3303 522.83L0.164185 528.024V532.481Z" />
+									<path
+										id="Vector_193"
+										d="M0.164185 510.537L78.552 504.881L79.3217 500.589L0.164185 506.41V510.537Z" />
+									<path
+										id="Vector_194"
+										d="M119.974 493.37V486.227L84.1168 483.124L82.8633 490.112L119.974 493.37Z" />
+									<path
+										id="Vector_195"
+										d="M0.164185 521.51L76.5288 516.172L77.2985 511.88L0.164185 517.218V521.51Z" />
+									<path
+										id="Vector_196"
+										d="M119.972 515.148V508.16L80.2117 504.892L78.9802 511.726L119.972 515.148Z" />
+									<path
+										id="Vector_197"
+										d="M0.164185 543.442L72.5044 538.578L73.3291 533.967L0.164185 538.831V543.442Z" />
+									<path
+										id="Vector_198"
+										d="M120.125 815.878L24.9254 812.73L24.2656 816.384L120.125 819.696V815.878Z" />
+									<path
+										id="Vector_199"
+										d="M119.974 428.21V420.265L95.8496 417.811L94.4531 425.602L119.974 428.21Z" />
+									<path
+										id="Vector_200"
+										d="M0.164185 787.266V794.584L26.6636 793.814L27.9831 786.506L0.164185 787.266Z" />
+									<path
+										id="Vector_201"
+										d="M119.975 596.056L64.5126 592.292L63.457 598.18L119.975 602.098V596.056Z" />
+									<path
+										id="Vector_202"
+										d="M120.128 739.109L38.8261 735.323L38.0234 739.78L120.128 743.555V739.109Z" />
+									<path
+										id="Vector_203"
+										d="M119.971 321.396L113.318 320.56L111.746 329.287L119.971 330.299V321.396Z" />
+									<path
+										id="Vector_204"
+										d="M113.265 311.625L0.164185 322.663V324.731L112.891 313.694L113.265 311.625Z" />
+									<path
+										id="Vector_205"
+										d="M109.263 333.876L0.164185 344.276V346.664L108.834 336.253L109.263 333.876Z" />
+									<path
+										id="Vector_206"
+										d="M111.264 322.74L0.164185 333.469V335.703L110.868 324.963L111.264 322.74Z" />
+									<path
+										id="Vector_207"
+										d="M107.273 344.991L0.164185 355.094V357.471L106.811 347.534L107.273 344.991Z" />
+									<path
+										id="Vector_208"
+										d="M105.238 356.282L0.164185 365.901V368.443L104.788 358.824L105.238 356.282Z" />
+									<path
+										id="Vector_209"
+										d="M101.247 378.523L0.164185 387.514V390.376L100.73 381.385L101.247 378.523Z" />
+									<path
+										id="Vector_210"
+										d="M103.248 367.408L0.164185 376.707V379.404L102.753 370.116L103.248 367.408Z" />
+									<path
+										id="Vector_211"
+										d="M119.398 286.677L119.97 286.743V283.519L119.398 286.677Z" />
+									<path
+										id="Vector_212"
+										d="M99.2458 389.66L0.164185 398.321V401.347L98.707 392.687L99.2458 389.66Z" />
+									<path
+										id="Vector_213"
+										d="M117.488 297.341L120.127 297.715V288.493L119.093 288.405L117.488 297.341Z" />
+									<path
+										id="Vector_214"
+										d="M115.288 300.334L0.164185 311.856V313.76L114.926 302.403L115.288 300.334Z" />
+									<path
+										id="Vector_215"
+										d="M117.323 289.054L0.164185 301.049V302.953L116.971 290.969L117.323 289.054Z" />
+									<path
+										id="Vector_216"
+										d="M119.291 278.093L0.164185 290.561V291.992L119.005 279.677L119.291 278.093Z" />
+									<path
+										id="Vector_217"
+										d="M89.2507 445.278L0.164185 452.365V455.865L88.602 448.943L89.2507 445.278Z" />
+									<path
+										id="Vector_218"
+										d="M26.2344 805.412L120.291 808.725V804.917L26.9271 801.594L26.2344 805.412Z" />
+									<path
+										id="Vector_219"
+										d="M97.2556 400.775L0.164185 409.139V412.154L96.6838 403.956L97.2556 400.775Z" />
+									<path
+										id="Vector_220"
+										d="M120.128 728.137L40.8279 724.208L39.9922 728.819L120.128 732.748V728.137Z" />
+									<path
+										id="Vector_221"
+										d="M12.3906 882.491L54.108 883.437L58.0225 882.326H120.291V881.842L12.9404 879.476L12.3906 882.491Z" />
+									<path
+										id="Vector_222"
+										d="M93.2532 423.037L0.164185 430.752V434.086L92.6594 426.372L93.2532 423.037Z" />
+									<path
+										id="Vector_223"
+										d="M95.2543 411.912L0.164185 419.946V423.115L94.6826 415.082L95.2543 411.912Z" />
+									<path
+										id="Vector_224"
+										d="M91.252 434.152L0.164185 441.559V445.058L90.6252 437.652L91.252 434.152Z" />
+									<path
+										id="Vector_225"
+										d="M120.126 299.299L117.202 298.925L115.574 307.982L120.126 308.522V299.299Z" />
+									<path
+										id="Vector_226"
+										d="M87.2613 456.393L0 463.172V466.826L86.6015 460.058L87.2613 456.393Z" />
+									<path
+										id="Vector_227"
+										d="M120.124 607.182L62.54 603.265L61.4844 609.141L120.124 613.224V607.182Z" />
+									<path
+										id="Vector_228"
+										d="M120.125 618.154L60.5726 614.226L59.5391 619.948L120.125 624.031V618.154Z" />
+									<path
+										id="Vector_229"
+										d="M120.126 574.278L68.4465 570.371L67.3359 576.567L120.126 580.485V574.278Z" />
+									<path
+										id="Vector_230"
+										d="M120.127 552.191L72.3623 548.592L71.2188 554.953L120.127 558.706V552.191Z" />
+									<path
+										id="Vector_231"
+										d="M120.126 541.219L74.3296 537.631L73.1641 544.146L120.126 547.888V541.219Z" />
+									<path
+										id="Vector_232"
+										d="M120.123 629.115L58.5912 625.197L57.6016 630.754L120.123 634.837V629.115Z" />
+									<path
+										id="Vector_233"
+										d="M120.128 563.317L70.417 559.399L69.2734 565.76L120.128 569.666V563.317Z" />
+									<path
+										id="Vector_234"
+										d="M120.126 640.241L56.6373 636.158L55.6367 641.716L120.126 645.809V640.241Z" />
+									<path
+										id="Vector_235"
+										d="M120.128 695.243L46.7546 691.149L45.875 696.079L120.128 700.162V695.243Z" />
+									<path
+										id="Vector_236"
+										d="M120.129 705.885L44.7873 702.11L43.9297 706.886L120.129 710.815V705.885Z" />
+									<path
+										id="Vector_237"
+										d="M120.127 717.176L42.7952 713.236L41.9375 718.001L120.127 721.941V717.176Z" />
+									<path
+										id="Vector_238"
+										d="M120.125 530.247L76.2963 526.659L75.0978 533.328L120.125 536.927V530.247Z" />
+									<path
+										id="Vector_239"
+										d="M120.127 651.213L54.6701 647.119L53.6915 652.522L120.127 656.616V651.213Z" />
+									<path
+										id="Vector_240"
+										d="M120.129 662.019L52.7034 658.09L51.7578 663.34L120.129 667.422V662.019Z" />
+									<path
+										id="Vector_241"
+										d="M120.125 409.447L97.7597 407.147L96.3633 414.938L120.125 417.403V409.447Z" />
+									<path
+										id="Vector_242"
+										d="M120.132 387.36L101.681 385.379L100.219 393.479L120.132 395.625V387.36Z" />
+									<path
+										id="Vector_243"
+										d="M120.123 398.32L99.7373 396.186L98.2969 404.131L120.123 406.431V398.32Z" />
+									<path
+										id="Vector_244"
+										d="M120.129 376.542L103.614 374.572L102.141 382.826L120.129 384.807V376.542Z" />
+									<path
+										id="Vector_245"
+										d="M120.126 332.523L111.352 331.5L109.812 340.072L120.126 341.261V332.523Z" />
+									<path
+										id="Vector_246"
+										d="M120.129 354.291L107.495 352.948L105.988 361.378L120.129 362.886V354.291Z" />
+									<path
+										id="Vector_247"
+										d="M120.13 310.271L115.259 309.721L113.664 318.624L120.13 319.328V310.271Z" />
+									<path
+										id="Vector_248"
+										d="M120.126 343.329L109.438 342.152L107.898 350.725L120.126 352.067V343.329Z" />
+									<path
+										id="Vector_249"
+										d="M120.126 431.226L93.8791 428.761L92.5156 436.387L120.126 439.017V431.226Z" />
+									<path
+										id="Vector_250"
+										d="M120.128 519.286L78.2454 515.853L77.0469 522.521L120.128 526.12V519.286Z" />
+									<path
+										id="Vector_251"
+										d="M120.129 497.354L82.1502 494.085L80.9297 500.908L120.129 504.342V497.354Z" />
+									<path
+										id="Vector_252"
+										d="M120.127 464.284L88.0304 461.346L86.7109 468.653L120.127 471.756V464.284Z" />
+									<path
+										id="Vector_253"
+										d="M120.124 475.256L86.0819 472.153L84.7734 479.46L120.124 482.563V475.256Z" />
+									<path
+										id="Vector_254"
+										d="M120.126 453.323L89.9647 450.539L88.6562 457.846L120.126 460.796V453.323Z" />
+									<path
+										id="Vector_255"
+										d="M120.127 442.351L91.9118 439.721L90.5703 447.193L120.127 449.977V442.351Z" />
+								</g>
+							</svg>
+						</div>
+						<div class="apartments__buttons">
+							<button class="apartments__button" data-lvl="serviced">
+								<div class="apartments__button-container">
+									<span class="apartments__button-label">Serviced apartment</span>
+									<span class="apartments__button-lvl"> Эт. 8 - 26 </span>
+								</div>
+							</button>
+							<button class="apartments__button" data-lvl="horizont">
+								<div class="apartments__button-container">
+									<span class="apartments__button-label">Horizont level</span>
+									<span class="apartments__button-lvl"> Эт. 28 - 45 </span>
+								</div>
+							</button>
+							<button class="apartments__button" data-lvl="meridian">
+								<div class="apartments__button-container">
+									<span class="apartments__button-label">Meridian Level</span>
+									<span class="apartments__button-lvl"> Эт. 47 - 64 </span>
+								</div>
+							</button>
+							<button class="apartments__button" data-lvl="cityline">
+								<div class="apartments__button-container">
+									<span class="apartments__button-label">Cityline Level</span>
+									<span class="apartments__button-lvl"> Эт. 66 - 74 </span>
+								</div>
+							</button>
+							<button class="apartments__button" data-lvl="apogee">
+								<div class="apartments__button-container">
+									<span class="apartments__button-label">Apogee level</span>
+									<span class="apartments__button-lvl"> Эт. 75 - 82 </span>
+								</div>
+							</button>
+							<button
+								class="button"
+								data-bs-target="#plan-modal"
+								data-bs-toggle="modal">
+								<span>Узнать подробности</span>
+								<svg viewBox="0 0 24 24" class="icon">
+									<use href="src/icons/sprite.svg#arrow-right-up"></use>
+								</svg>
+							</button>
+						</div>
+					</section>
 				</div>
 			</div>
 		</div>
@@ -403,12 +1425,15 @@
 								<use href="src/icons/sprite.svg#phone"></use>
 							</svg>
 						</a>
-						<a href="#apartments" class="button">
+						<button
+							data-bs-toggle="modal"
+							data-bs-target="#apartments-modal"
+							class="button">
 							<span>Выбрать апартаменты</span>
 							<svg viewBox="0 0 24 24" class="icon">
 								<use href="src/icons/sprite.svg#add-circle-filled"></use>
 							</svg>
-						</a>
+						</button>
 						<a href="tel:+7 (495) 182 39 05" class="header__action">
 							<div class="header__action-container">
 								<svg viewBox="0 0 24 24" class="icon">
@@ -875,21 +1900,23 @@
 							</picture>
 							<span>Значение</span>
 						</div>
-						<div class="about__content">
-							<p class="about__text text-default">
-								Высота, открывающая новые перспективы. Пространство, стирающее
-								границы комфорта. В самом сердце Москва-Сити, там, где город
-								встречается с вашим образом жизни.
-							</p>
-							<button
-								class="button"
-								data-bs-toggle="modal"
-								data-bs-target="#form-modal">
-								<span>Записаться на просмотр</span>
-								<svg viewBox="0 0 24 24" class="icon">
-									<use href="src/icons/sprite.svg#arrow-right-up"></use>
-								</svg>
-							</button>
+						<div class="about__wrapper">
+							<div class="about__content">
+								<p class="about__text text-default">
+									Высота, открывающая новые перспективы. Пространство, стирающее
+									границы комфорта. В самом сердце Москва-Сити, там, где город
+									встречается с вашим образом жизни.
+								</p>
+								<button
+									class="button"
+									data-bs-toggle="modal"
+									data-bs-target="#form-modal">
+									<span>Записаться на просмотр</span>
+									<svg viewBox="0 0 24 24" class="icon">
+										<use href="src/icons/sprite.svg#arrow-right-up"></use>
+									</svg>
+								</button>
+							</div>
 						</div>
 					</section>
 				</div>
@@ -927,7 +1954,7 @@
 										height="1167"
 										decoding="async" />
 								</picture>
-								<picture class="history__card-blur">
+								<picture class="section-card__blur">
 									<source srcset="src/images/history-1.avif" type="image/avif" />
 									<img
 										src="src/images/old/history-1.jpg"
@@ -961,7 +1988,7 @@
 										height="1170"
 										decoding="async" />
 								</picture>
-								<picture class="history__card-blur">
+								<picture class="section-card__blur">
 									<source srcset="src/images/history-2.avif" type="image/avif" />
 									<img
 										src="src/images/old/history-2.jpg"
@@ -995,7 +2022,7 @@
 										height="2376"
 										decoding="async" />
 								</picture>
-								<picture class="history__card-blur">
+								<picture class="section-card__blur--bottom">
 									<source srcset="src/images/history-3.avif" type="image/avif" />
 									<img
 										src="src/images/old/history-3.jpg"
@@ -1013,7 +2040,10 @@
 									</p>
 								</div>
 							</div>
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#plan-modal">
 								<div class="history__card-gradient"></div>
 								<picture class="section-card__image">
 									<source srcset="src/images/history-4.webp" type="image/webp" />
@@ -1029,10 +2059,7 @@
 									<p class="history__card-text text-default">
 										Как Андрей научился наслаждаться круассаном в тишине»
 									</p>
-									<button
-										class="section-card__button"
-										data-bs-toggle="modal"
-										data-bs-target="#plan-modal">
+									<button class="section-card__button">
 										<span>Смотреть</span>
 										<svg viewBox="0 0 24 24" class="icon">
 											<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -1073,7 +2100,7 @@
 									height="2784"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-1.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-1.jpg"
@@ -1107,7 +2134,7 @@
 									height="2784"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-2.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-2.jpg"
@@ -1141,7 +2168,7 @@
 									height="1170"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/history-2.avif" type="image/avif" />
 								<img
 									src="src/images/old/history-2.jpg"
@@ -1158,7 +2185,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#plan-modal">
 							<picture class="section-card__image">
 								<source srcset="src/images/history-4.webp" type="image/webp" />
 								<img
@@ -1173,10 +2203,7 @@
 								<p class="gallery__card-text">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button
-									class="section-card__button"
-									data-bs-toggle="modal"
-									data-bs-target="#plan-modal">
+								<button class="section-card__button">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -1186,7 +2213,7 @@
 						</li>
 					</ul>
 				</section>
-				<section class="apartments" id="apartments">
+				<section class="apartments">
 					<div class="apartments__left">
 						<h2 class="apartments__title">
 							Выбирайте апартаменты
@@ -2045,7 +3072,7 @@
 									height="2784"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-3.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-3.jpg"
@@ -2079,7 +3106,7 @@
 									height="2784"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-4.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-4.jpg"
@@ -2111,7 +3138,7 @@
 									alt="girl looking"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-5.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-5.jpg"
@@ -2126,7 +3153,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#plan-modal">
 							<picture class="section-card__image">
 								<source srcset="src/images/history-4.webp" type="image/webp" />
 								<img
@@ -2141,10 +3171,7 @@
 								<p class="gallery__card-text">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button
-									class="section-card__button"
-									data-bs-toggle="modal"
-									data-bs-target="#plan-modal">
+								<button class="section-card__button">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -2186,7 +3213,7 @@
 										src="src/images/old/history-5.jpg"
 										alt="banner" />
 								</picture>
-								<picture class="history__card-blur">
+								<picture class="section-card__blur--bottom">
 									<source srcset="src/images/history-5.avif" type="image/avif" />
 									<img
 										width="2024"
@@ -2217,7 +3244,7 @@
 										src="src/images/old/history-6.jpg"
 										alt="banner" />
 								</picture>
-								<picture class="history__card-blur">
+								<picture class="section-card__blur--bottom">
 									<source srcset="src/images/history-6.avif" type="image/avif" />
 									<img
 										width="2024"
@@ -2234,7 +3261,10 @@
 									</p>
 								</div>
 							</div>
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#history-modal">
 								<video loop muted class="section-card__video">
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
@@ -2247,7 +3277,7 @@
 										height="1556"
 										alt="banner" />
 								</picture>
-								<picture class="history__card-blur">
+								<picture class="section-card__blur">
 									<source srcset="src/images/history-7.avif" type="image/avif" />
 									<img
 										width="3064"
@@ -2263,7 +3293,10 @@
 									</p>
 								</div>
 							</div>
-							<div class="history__card section-card">
+							<div
+								class="history__card section-card"
+								data-bs-toggle="modal"
+								data-bs-target="#plan-modal">
 								<div class="history__card-gradient"></div>
 								<picture class="section-card__image">
 									<source srcset="src/images/history-4.webp" type="image/webp" />
@@ -2277,16 +3310,13 @@
 								<!-- <img
 								src="src/images/old/history-4.png"
 								alt="banner"
-								class="history__card-blur" /> -->
+								class="section-card__blur" /> -->
 								<div class="section-card__content">
 									<h3 class="section-card__title">Планировочные решения</h3>
 									<p class="history__card-text text-default">
 										Как Андрей научился наслаждаться круассаном в тишине»
 									</p>
-									<button
-										class="section-card__button"
-										data-bs-toggle="modal"
-										data-bs-target="#plan-modal">
+									<button class="section-card__button">
 										<span>Смотреть</span>
 										<svg viewBox="0 0 24 24" class="icon">
 											<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -2328,7 +3358,7 @@
 									height="2784"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-1.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-1.jpg"
@@ -2362,7 +3392,7 @@
 									height="2784"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/gallery-2.avif" type="image/avif" />
 								<img
 									src="src/images/old/gallery-2.jpg"
@@ -2396,7 +3426,7 @@
 									height="1170"
 									decoding="async" />
 							</picture>
-							<picture class="gallery__card-blur">
+							<picture class="section-card__blur--bottom">
 								<source srcset="src/images/history-2.avif" type="image/avif" />
 								<img
 									src="src/images/old/history-2.jpg"
@@ -2413,7 +3443,10 @@
 								</p>
 							</div>
 						</li>
-						<li class="gallery__card section-card">
+						<li
+							class="gallery__card section-card"
+							data-bs-toggle="modal"
+							data-bs-target="#plan-modal">
 							<picture class="section-card__image">
 								<source srcset="src/images/history-4.webp" type="image/webp" />
 								<img
@@ -2428,10 +3461,7 @@
 								<p class="gallery__card-text">
 									Как Андрей научился наслаждаться круассаном в тишине»
 								</p>
-								<button
-									class="section-card__button"
-									data-bs-toggle="modal"
-									data-bs-target="#plan-modal">
+								<button class="section-card__button">
 									<span>Смотреть</span>
 									<svg viewBox="0 0 24 24" class="icon">
 										<use href="src/icons/sprite.svg#arrow-right-up"></use>
@@ -2447,8 +3477,14 @@
 							<svg class="icon" viewBox="0 0 24 24">
 								<use href="src/icons/sprite.svg#arrow-left"></use>
 							</svg>
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
 						</button>
 						<button class="slider__nav-button arrow-button">
+							<svg class="icon" viewBox="0 0 24 24">
+								<use href="src/icons/sprite.svg#arrow-left"></use>
+							</svg>
 							<svg class="icon" viewBox="0 0 24 24">
 								<use href="src/icons/sprite.svg#arrow-left"></use>
 							</svg>
@@ -2586,7 +3622,9 @@
 				<div class="footer__bottom">
 					<span class="footer__year">© {year}. OKO. Все права защищены</span>
 					<a href="/policy"> Политика конфиденциальности </a>
-					<span>Создание сайта — <span class="clr-normal-white">Karanikola</span></span>
+					<svg viewBox="0 0 200 27" class="footer__logo">
+						<use href="src/icons/sprite.svg#footer-logo"></use>
+					</svg>
 				</div>
 			</footer>
 		</div>

@@ -2,16 +2,6 @@
 @use '@utils/breakpoints' as br;
 @use '@utils/mixins' as mix;
 
-@mixin blur-bottom {
-	bottom: 0;
-	width: 120%;
-	left: 50%;
-	height: 50%;
-	filter: blur(30px);
-	transform: translate(-50%, 20%);
-	object-fit: cover;
-}
-
 @keyframes rotateGradient {
 	to {
 		--gradient-angle: calc(96.47deg + 360deg);
@@ -89,6 +79,10 @@
 				aspect-ratio: 766 / 390;
 			}
 		}
+		& > *:nth-child(3) .section-card__blur--bottom img {
+			object-fit: cover;
+			object-position: top;
+		}
 	}
 	&--2 .history__grid {
 		@media screen and (min-width: 900px) {
@@ -96,6 +90,12 @@
 			grid-template-areas:
 				'card-1 card-2 card-3'
 				'card-1 card-2 card-4';
+		}
+		& > *:first-child,
+		& > *:nth-child(2) {
+			img {
+				object-fit: cover;
+			}
 		}
 		& > *:last-child,
 		& > *:nth-child(3) {
@@ -123,22 +123,6 @@
 	&__card {
 		@media screen and (max-width: 900px) {
 			aspect-ratio: 302/432;
-		}
-		&:first-child .history__card-blur,
-		&:nth-child(2) .history__card-blur {
-			@media screen and (min-width: vars.$bp-small-mobile) {
-				width: 200%;
-				height: 100%;
-				top: 50%;
-				right: 5%;
-				transform: rotate(-5deg);
-			}
-			@media screen and (max-width: vars.$bp-small-mobile) {
-				filter: blur(50px);
-			}
-		}
-		&:nth-child(3) .history__card-blur {
-			@include blur-bottom;
 		}
 		&:last-child {
 			background-color: #1f2431;
@@ -185,13 +169,9 @@
 		&-blur {
 			content: '';
 			position: absolute;
-			filter: blur(144px);
+			// filter: blur(144px);
 			z-index: 1;
 			transition: opacity vars.$dt;
-
-			@media screen and (max-width: vars.$bp-small-mobile) {
-				@include blur-bottom;
-			}
 		}
 		&-text {
 			color: rgba(#fff, 0.75);

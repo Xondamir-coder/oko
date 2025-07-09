@@ -18,8 +18,31 @@
 		margin-top: max(40px, 2.1vw);
 	}
 
+	a[href^='tel']:not(.button),
+	a[href^='mailto'] {
+		position: relative;
+		&:hover::after {
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -3px;
+			height: 1px;
+			width: 100%;
+			background-color: #fff;
+			transition: transform calc(vars.$dt + 0.3s);
+			transform-origin: right;
+			transform: scaleX(0);
+		}
+	}
 	& > *:first-child {
 		place-self: flex-start;
+	}
+	&__logo {
+		width: clamp(125px, 7.7vw, 150px);
 	}
 	&__bottom {
 		font-size: clamp(15px, 0.95vw, 18px);
@@ -46,12 +69,16 @@
 		flex-direction: column;
 		gap: clamp(15px, 1.7vw, 32px);
 		place-self: flex-start;
+		&:has(> *:hover) > *:not(:hover) {
+			opacity: 0.15;
+		}
 		&-link {
 			font-size: clamp(32px, 2.2vw, 42px);
 			line-height: 100%;
 		}
 	}
 	&__right {
+		align-items: flex-start;
 		justify-self: flex-end;
 		display: flex;
 		flex-direction: column;

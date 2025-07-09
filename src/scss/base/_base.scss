@@ -7,6 +7,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	-webkit-tap-highlight-color: transparent;
 }
 html {
 	font-size: calc(100vw / (1920 / 10));
@@ -44,7 +45,7 @@ body {
 a {
 	text-decoration: none;
 	color: inherit;
-	transition-property: color, background-color, border-color, fill, transform;
+	transition-property: color, background-color, border-color, fill, transform, opacity;
 	transition-duration: vars.$dt;
 	&:hover {
 		color: inherit;
@@ -58,7 +59,6 @@ picture {
 img {
 	width: 100%;
 	height: auto;
-	object-fit: cover;
 }
 ul {
 	list-style: none;
@@ -69,8 +69,11 @@ button {
 	cursor: pointer;
 	color: inherit;
 	font: inherit;
-	transition-property: color, background-color, border-color, transform, outline, fill;
+	transition-property: color, background-color, border-color, transform, outline, fill, opacity;
 	transition-duration: vars.$dt;
+	&:disabled {
+		cursor: not-allowed;
+	}
 }
 textarea {
 	resize: none;

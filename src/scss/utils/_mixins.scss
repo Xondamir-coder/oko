@@ -17,24 +17,32 @@
 	background: #ffffff1f;
 	backdrop-filter: blur(144px);
 }
-@mixin card-blur($blur: 144px) {
+@mixin card-blur-bottom($blur: 50px) {
+	bottom: 0;
+	width: 120%;
+	left: 50%;
+	height: 50%;
+	filter: blur($blur);
+	transform: translate(-50%, 20%);
+}
+@mixin card-blur-init() {
 	content: '';
 	position: absolute;
-	filter: blur($blur);
 	z-index: 1;
-	width: 200%;
-	height: 100%;
-	top: 50%;
-	right: 5%;
-	transform: rotate(-5deg);
+	transition: opacity vars.$dt;
+}
+@mixin card-blur($blur-start: 50px, $blur-end: 80px) {
+	@include card-blur-init;
+	@media screen and (min-width: vars.$bp-small-mobile) {
+		filter: blur($blur-start);
+		width: 170%;
+		height: 122%;
+		top: 58%;
+		right: 3.9%;
+		transform: rotate(-5deg);
+	}
 	@media screen and (max-width: vars.$bp-small-mobile) {
-		bottom: 0;
-		width: 120%;
-		left: 50%;
-		height: 50%;
-		filter: blur(30px);
-		transform: translate(-50%, 20%);
-		object-fit: cover;
+		@include card-blur-bottom($blur-end);
 	}
 }
 @mixin section-elevation {
@@ -46,60 +54,53 @@
 	font-size: clamp(30px, 3.3vw, 62px);
 	line-height: 100%;
 }
-
-// helper to compute translate arguments
-@function _translate($axis, $distance) {
-	@if $axis == x {
-		@return ($distance, 0);
-	} @else {
-		@return (0, $distance);
-	}
-}
-
-// 1. Define the mixin
+// 1. Define the mixin without any @function
 @mixin moving-button($axis: y, $distance: 200%) {
 	display: grid;
-	place-content: center;
+	place-items: center;
 	overflow: hidden;
 
+	// stack both children in the same grid cell
 	& > * {
 		grid-area: 1/1/2/2;
-		transition-property: transform, opacity;
+		transition-property: transform, translate, opacity;
 		transition-timing-function: cubic-bezier(0.18, 0.71, 0.11, 1);
 		transition-duration: 0.8s;
+	}
 
-		// initial off-screen state for the “second” element
-		&:last-of-type {
-			$t: _translate($axis, $distance);
-			translate: nth($t, 1) nth($t, 2);
-			opacity: 0;
-			// scale in the same direction you’re translating
-			@if $axis == x {
-				transform: scaleX(2);
-			} @else {
-				transform: scaleY(2);
-			}
+	// initial off-screen state for the “second” element
+	& > *:last-of-type {
+		@if $axis == x {
+			translate: $distance 0;
+			transform: scaleX(2);
+		} @else {
+			translate: 0 $distance;
+			transform: scaleY(2);
 		}
+		opacity: 0;
 	}
 
 	// hover toggles the two children
-	&:hover {
+	&:not(:disabled):hover {
 		transform: scale(1.1);
 
+		// bring second element in
 		& > *:last-of-type {
 			translate: 0 0;
 			opacity: 1;
 			transform: none;
 		}
+
+		// push first element out
 		& > *:first-of-type {
-			$t: _translate($axis, $distance * -1);
-			translate: nth($t, 1) nth($t, 2);
-			opacity: 0;
 			@if $axis == x {
+				translate: -#{$distance} 0;
 				transform: scaleX(2);
 			} @else {
+				translate: 0 -#{$distance};
 				transform: scaleY(2);
 			}
+			opacity: 0;
 		}
 	}
 }

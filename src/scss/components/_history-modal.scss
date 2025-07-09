@@ -2,10 +2,6 @@
 @use '@utils/breakpoints' as br;
 @use '@utils/mixins' as mix;
 
-.modal-dialog:has(.history-modal) {
-	--bs-modal-margin: 0;
-}
-
 .history-modal {
 	display: grid;
 	grid-auto-flow: column;
@@ -14,6 +10,31 @@
 	gap: clamp(12px, 1.3vw, 24px);
 	@media screen and (max-width: 450px) {
 		grid-template-columns: 1fr;
+	}
+	&__dialog {
+		@media screen and (max-width: vars.$bp-ipad-pro) {
+			--bs-modal-margin: 0;
+		}
+	}
+	.section-card {
+		position: relative;
+		video {
+			z-index: 1;
+			opacity: 1;
+			transform: none !important;
+		}
+		.section-card__content {
+			z-index: 4;
+		}
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 4;
+			background: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.3));
+		}
 	}
 	.arrow-button {
 		@media screen and (max-width: 450px) {
@@ -26,7 +47,7 @@
 	}
 	.section-card {
 		color: #fff;
-		cursor: initial;
+		pointer-events: none;
 
 		@media screen and (max-width: 450px) {
 			.section-card__content {
@@ -44,8 +65,8 @@
 		align-self: flex-end;
 	}
 	&__top {
+		z-index: 4;
 		align-self: flex-start;
-		z-index: 2;
 		display: flex;
 		flex-direction: column;
 		padding: 12px;
