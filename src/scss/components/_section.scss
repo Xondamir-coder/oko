@@ -32,28 +32,9 @@
 				}
 			}
 		}
-		&::before {
-			@include mix.flex-center;
-			content: url(@/icons/arrow-right-up.svg);
-			position: absolute;
-			left: 16px;
-			bottom: 16px;
-			width: clamp(50px, 3.5vw, 66px);
-			height: clamp(50px, 3.5vw, 66px);
-			aspect-ratio: 1;
-			background: #ffffff45;
-			border-radius: 50%;
-			backdrop-filter: blur(13.600000381469727px);
-			z-index: 10;
-			cursor: pointer;
-			transform: translate(0, 25%) rotate(-180deg);
-			opacity: 0;
-			transition: opacity 0.5s, transform 0.5s;
-		}
 	}
 }
 .section-card {
-	cursor: pointer;
 	counter-increment: card;
 	position: relative;
 	border-radius: clamp(12px, 1.3vw, 24px);
@@ -62,6 +43,9 @@
 	align-items: flex-end;
 	@media screen and (max-width: 900px) {
 		aspect-ratio: 302/432;
+	}
+	&:last-child {
+		cursor: pointer;
 	}
 	&::after {
 		pointer-events: none;

@@ -70,7 +70,7 @@
 		gap: clamp(15px, 1.7vw, 32px);
 		place-self: flex-start;
 		&:has(> *:hover) > *:not(:hover) {
-			opacity: 0.15;
+			color: rgba(255, 255, 255, 0.5);
 		}
 		&-link {
 			font-size: clamp(32px, 2.2vw, 42px);

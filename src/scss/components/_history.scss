@@ -15,6 +15,7 @@
 }
 .history {
 	@include mix.section-elevation;
+	overflow: hidden;
 	font-weight: 500;
 	padding: clamp(15px, 1.1vw, 20px);
 	display: grid;

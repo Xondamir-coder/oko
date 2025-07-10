@@ -13,27 +13,29 @@ register();
 const lenis = new Lenis({ autoRaf: true, lerp: 0.15 });
 
 const handleApartmentSelection = () => {
-	const buttons = document.querySelector('.main .apartments__buttons');
-	const vectors = document.querySelector('.main .apartments__vector');
-	const bsModal = Modal.getOrCreateInstance('#plan-modal');
-	buttons.addEventListener('click', e => {
-		const btn = e.target.closest('button.apartments__button');
-		if (!btn) return;
-		const lvl = btn.dataset.lvl;
-		const svgGroup = document.querySelector(`.main .apartments__vector g[data-lvl="${lvl}"]`);
-		document
-			.querySelectorAll('.main .apartments__vector g')
-			.forEach(g => g.classList.remove('active'));
-		[...buttons.children].forEach(btn => btn.classList.remove('active'));
-		if (!svgGroup) return;
-		svgGroup.classList.add('active');
-		btn.classList.add('active');
-	});
-	vectors.addEventListener('click', e => {
-		const vector = e.target.closest('.apartments__vector-group');
-		if (!vector) return;
-		console.log(vector.dataset.lvl);
-		bsModal.show();
+	const apartments = document.querySelectorAll('.apartments');
+	apartments.forEach(apartment => {
+		const buttons = apartment.querySelector('.apartments__buttons');
+		const vectors = apartment.querySelector('.apartments__vector');
+		const bsModal = Modal.getOrCreateInstance('#plan-modal');
+		buttons.addEventListener('click', e => {
+			const btn = e.target.closest('button.apartments__button');
+			if (!btn) return;
+			const lvl = btn.dataset.lvl;
+			const svgGroup = apartment.querySelector(`.apartments__vector g[data-lvl="${lvl}"]`);
+			apartment
+				.querySelectorAll('.apartments__vector g')
+				.forEach(g => g.classList.remove('active'));
+			[...buttons.children].forEach(btn => btn.classList.remove('active'));
+			if (!svgGroup) return;
+			svgGroup.classList.add('active');
+			btn.classList.add('active');
+		});
+		vectors.addEventListener('click', e => {
+			const vector = e.target.closest('.apartments__vector-group');
+			if (!vector) return;
+			bsModal.show();
+		});
 	});
 };
 const setCopyrightYear = () => {
@@ -106,7 +108,7 @@ const splitWordsAndAnimate = () => {
 };
 const handleAboutAnimation = () => {
 	const aboutScrollTrigger = {
-		trigger: window.innerWidth > 768 ? '.about__title' : '.about',
+		trigger: '.about',
 		start: 'center center',
 		end: '+=1000'
 	};
@@ -117,7 +119,7 @@ const handleAboutAnimation = () => {
 		},
 		scrollTriggerOptions: {
 			...aboutScrollTrigger,
-			pin: '.about',
+			pin: window.innerWidth > 1024 ? '.about' : '.main__container',
 			pinSpacing: true
 			// pin: true,
 		}
@@ -147,10 +149,10 @@ const handleHistoryAnimations = () => {
 	const getDIRS = () => {
 		const w = window.innerWidth;
 		return [
-			{ x: -0.3 * w, y: -0.2 * w, rotation: 15 }, // ↖ from top-left
-			{ x: -0.5 * w, y: 0.2 * w, rotation: -15 }, // ↗ from top-right
-			{ x: 0.3 * w, y: 0.4 * w, rotation: 10 }, // ↙ from bottom-left
-			{ x: 0.3 * w, y: -0.2 * w, rotation: -40 } // ↘ from bottom-right
+			{ x: -0.2 * w, y: -0.15 * w, rotation: 15 }, // ↖ from top-left
+			{ x: -0.35 * w, y: 0.15 * w, rotation: -15 }, // ↗ from top-right
+			{ x: 0.2 * w, y: 0.3 * w, rotation: 10 }, // ↙ from bottom-left
+			{ x: 0.2 * w, y: -0.15 * w, rotation: -40 } // ↘ from bottom-right
 		];
 	};
 	const DIRS = getDIRS();
@@ -218,7 +220,6 @@ const handleHistoryAnimations = () => {
 				x: i => DIRS[i % DIRS.length].x,
 				y: i => DIRS[i % DIRS.length].y,
 				rotation: i => DIRS[i % DIRS.length].rotation,
-				opacity: 0,
 				duration: 1.5,
 				ease: 'power2.out',
 				stagger: 0
@@ -335,7 +336,6 @@ const handleHistoryModal = () => {
 		updateBars(swiper.activeIndex);
 	});
 };
-
 const handleHeroAnimation = () => {
 	// Hero animation is full CSS here we only toggle body overflow
 	document.body.classList.add('no-scroll');
@@ -346,16 +346,16 @@ const handleHeroAnimation = () => {
 	}, 3000);
 };
 const handleParallax = () => {
-	gsap.from('.hero__towers img', {
-		yPercent: 10,
-		ease: 'none',
-		scrollTrigger: {
-			scrub: 1,
-			trigger: '.hero__towers',
-			start: 'top 80%',
-			end: 'bottom center'
-		}
-	});
+	// gsap.from('.hero__towers img', {
+	// 	yPercent: 10,
+	// 	ease: 'none',
+	// 	scrollTrigger: {
+	// 		scrub: 1,
+	// 		trigger: '.hero__towers',
+	// 		start: 'top 80%',
+	// 		end: 'bottom center'
+	// 	}
+	// });
 };
 const handleButtons = () => {
 	const buttons = document.querySelectorAll('.button, .section-card__button');
@@ -370,6 +370,38 @@ const handleButtons = () => {
 		box.appendChild(svgIcon.cloneNode(true));
 
 		button.appendChild(box);
+	});
+};
+const handleDownScroll = () => {
+	const btn = document.querySelector('.hero__down');
+	btn.addEventListener('click', () => {
+		lenis.scrollTo('#about-title', {
+			offset: -100
+		});
+	});
+};
+const handlePointer = () => {
+	const containers = document.querySelectorAll('.section-card[data-bs-target="#history-modal"]');
+	const pointer = document.querySelector('.pointer');
+	if (!containers || !pointer) return;
+
+	const onMouseMove = e => {
+		const x = e.clientX;
+		const y = e.clientY;
+		gsap.to(pointer, { x, y, duration: 0.25 });
+	};
+	containers.forEach(container => {
+		container.addEventListener('mouseenter', () => {
+			container.style.cursor = 'none';
+			gsap.to(pointer, { scale: 1 });
+			document.addEventListener('mousemove', onMouseMove);
+		});
+
+		container.addEventListener('mouseleave', () => {
+			container.style.cursor = '';
+			document.removeEventListener('mousemove', onMouseMove);
+			gsap.to(pointer, { scale: 0 });
+		});
 	});
 };
 
@@ -391,3 +423,5 @@ handleSafari();
 handleHistoryModal();
 handleParallax();
 handleButtons();
+handleDownScroll();
+handlePointer();

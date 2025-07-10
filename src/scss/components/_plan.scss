@@ -22,7 +22,6 @@
 	// 	border-radius: 20px;
 	// }
 	aspect-ratio: 1608/874;
-	padding-bottom: clamp(32px, 4vw, 77px);
 	display: flex;
 	flex-direction: column;
 	.close-button {
@@ -36,9 +35,12 @@
 		flex-grow: 1;
 		position: relative;
 		overflow: hidden;
-		margin-inline: clamp(24px, 4.22vw, 81px);
+		padding-inline: clamp(24px, 4.22vw, 81px);
+		margin-right: clamp(24px, 4.22vw, 81px);
 		display: grid;
 		grid-template-columns: 1fr 1.35fr;
+		padding-bottom: clamp(32px, 4vw, 77px);
+
 		@media screen and (max-width: 900px) {
 			gap: 20px;
 		}
@@ -200,6 +202,7 @@
 		}
 	}
 	&__slider {
+		padding-bottom: clamp(32px, 4vw, 77px);
 		display: grid;
 		position: absolute;
 		inset: 0;
@@ -213,6 +216,10 @@
 	&__slide {
 		display: grid;
 		grid-template-columns: 1fr 1.35fr;
+		transition: opacity 0.15s;
+		&:not(.swiper-slide-active) {
+			opacity: 0;
+		}
 		@include br.large-mobile {
 			display: flex;
 			ul {

@@ -132,7 +132,7 @@
 				@keyframes animate-1st {
 					from {
 						opacity: 0;
-						transform: translate(-10%, -5%) rotate(10deg) scale(0.95);
+						transform: rotate(10deg) scale(0.95);
 					}
 				}
 				animation-name: animate-1st;
@@ -142,7 +142,7 @@
 				@keyframes animate-2nd {
 					from {
 						opacity: 0;
-						transform: translate(10%, 5%) rotate(-10deg) scale(0.95);
+						transform: rotate(-10deg) scale(0.95);
 					}
 				}
 				animation-name: animate-2nd;
@@ -152,7 +152,7 @@
 				@keyframes animate-3rd {
 					from {
 						opacity: 0;
-						transform: translate(0, -10%) rotate(8deg) scale(1.05);
+						transform: rotate(8deg) scale(1.05);
 					}
 				}
 				animation-name: animate-3rd;

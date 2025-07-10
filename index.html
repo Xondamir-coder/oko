@@ -2,7 +2,7 @@
 <html lang="ru">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta
 			name="viewport"
 			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
@@ -16,6 +16,22 @@
 		<script src="src/main.js" defer type="module"></script>
 	</head>
 	<body>
+		<!-- Pointer -->
+		<div class="pointer">
+			<svg viewBox="0 0 24 24" id="add-circle-filled" class="pointer__icon">
+				<g clip-path="url(#clip0_126_2929)">
+					<path
+						d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11 11H7V13H11V17H13V13H17V11H13V7H11V11Z"
+						fill="inherit" />
+				</g>
+				<defs>
+					<clipPath id="clip0_126_2929">
+						<rect width="24" height="24" fill="white" />
+					</clipPath>
+				</defs>
+			</svg>
+		</div>
+
 		<!-- Form Modal -->
 		<div
 			class="modal fade"
@@ -439,13 +455,14 @@
 								navigation="true"
 								navigation-prev-el="#history-modal-prev"
 								navigation-next-el="#history-modal-next"
-								grab-cursor="true">
+								grab-cursor="true"
+								rewind="true">
 								<swiper-slide class="section-card">
 									<video loop muted autoplay class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur">
+									<picture class="section-card__blur--bottom">
 										<source
 											srcset="src/images/gallery-1.avif"
 											type="image/avif" />
@@ -469,7 +486,7 @@
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur">
+									<picture class="section-card__blur--bottom">
 										<source
 											srcset="src/images/gallery-2.avif"
 											type="image/avif" />
@@ -493,7 +510,7 @@
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur">
+									<picture class="section-card__blur--bottom">
 										<source
 											srcset="src/images/history-2.avif"
 											type="image/avif" />
@@ -517,7 +534,7 @@
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur">
+									<picture class="section-card__blur--bottom">
 										<source
 											srcset="src/images/history-2.avif"
 											type="image/avif" />
@@ -574,12 +591,18 @@
 								viewBox="0 0 274 946"
 								fill="none"
 								class="apartments__vector">
-								<g class="apartments__vector-group" data-lvl="apogee">
+								<g
+									class="apartments__vector-group"
+									data-bs-dismiss="modal"
+									data-lvl="apogee">
 									<path
 										id="Vector"
 										d="M152.563 1.5957L153.377 8.11058L273.999 20.8212V12.7216L152.728 0L152.563 1.5957ZM153.542 9.54121L153.707 11.4451L154.686 19.2365L273.999 31.639V22.0978L153.542 9.54121ZM154.85 20.8212L155.015 22.2518L155.994 30.3624L273.845 42.4457V33.0696L154.861 20.8322L154.85 20.8212ZM156.313 32.1122L156.478 33.2237L157.456 41.6534L273.999 53.5716V44.1955L156.313 32.1122ZM157.786 44.0304V43.3922L157.621 41.9615L152.409 42.4347V44.5036L157.786 44.0304ZM156.478 33.0586L156.313 31.9471L156.148 30.9897L152.398 31.3088V33.3777L156.478 33.0586ZM155.015 22.2518L154.85 20.8212V20.348L152.409 20.6671V22.571L155.015 22.2518ZM153.707 11.4451L153.542 9.54121L152.398 9.69528V11.5991L153.707 11.434V11.4451Z" />
 								</g>
-								<g class="apartments__vector-group" data-lvl="meridian">
+								<g
+									class="apartments__vector-group"
+									data-bs-dismiss="modal"
+									data-lvl="meridian">
 									<path
 										id="Vector_2"
 										d="M152.078 274.505L184.867 272.161L184.383 268.188L152.078 270.532V274.505Z" />
@@ -686,7 +709,10 @@
 										id="Vector_36"
 										d="M189.641 311.57L151.75 314.244V318.536L190.146 315.707L189.641 311.57Z" />
 								</g>
-								<g class="apartments__vector-group" data-lvl="cityline">
+								<g
+									class="apartments__vector-group"
+									data-bs-dismiss="modal"
+									data-lvl="cityline">
 									<path
 										id="Vector_37"
 										d="M151.914 252.88L182.229 250.382L181.789 246.718L151.914 249.073V252.88Z" />
@@ -793,7 +819,10 @@
 										id="Vector_71"
 										d="M180.459 235.757L151.914 237.947V241.601L180.899 239.411L180.459 235.757Z" />
 								</g>
-								<g class="apartments__vector-group" data-lvl="serviced">
+								<g
+									class="apartments__vector-group"
+									data-bs-dismiss="modal"
+									data-lvl="serviced">
 									<path
 										id="Vector_72"
 										d="M261.61 899.328L261.764 900.12L261.929 901.87L273.012 902.024V899.482L261.599 899.328H261.61ZM264.381 921.261L264.546 921.899L264.711 923.484L273.023 923.649V921.261H264.381ZM265.689 932.232L265.854 932.871L266.019 934.455H273.034V932.232H265.7H265.689ZM266.998 943.204L267.152 943.843L267.317 945.273H273.023V943.039L266.998 943.204ZM266.822 942.093L265.843 934.466L265.678 932.882L237.815 933.036L259.004 942.093H266.822ZM265.524 931.121L264.546 923.649L264.381 922.053L212.547 922.372L233.417 931.44L265.524 931.121ZM264.227 919.995L263.413 912.688L263.248 910.938L187.785 911.411L208.479 920.314L264.227 919.995ZM158.108 898.855L261.61 897.897L260.796 890.909L260.631 889.005L151.434 889.963V895.839L158.119 898.866L158.108 898.855Z" />
@@ -894,7 +923,10 @@
 										id="Vector_104"
 										d="M243.655 757.563L151.27 759.61V767.402L244.6 765.355L243.655 757.563Z" />
 								</g>
-								<g class="apartments__vector-group" data-lvl="horizont">
+								<g
+									class="apartments__vector-group"
+									data-bs-dismiss="modal"
+									data-lvl="horizont">
 									<path
 										id="Vector_105"
 										d="M273.189 614.181L227.711 612.31L228.294 617.086L273.189 618.946V614.181Z" />
@@ -1016,7 +1048,10 @@
 										id="Vector_144"
 										d="M219.868 561.116L151.75 564.109V570.305L220.615 567.323L219.868 561.116Z" />
 								</g>
-								<g class="apartments__vector-group" data-lvl="other">
+								<g
+									class="apartments__vector-group"
+									data-bs-dismiss="modal"
+									data-lvl="other">
 									<path
 										id="Vector_145"
 										d="M119.97 673.145L50.7198 669.062L49.7852 674.312L119.97 678.395V673.145Z" />
@@ -1841,7 +1876,7 @@
 									height="1397" />
 							</picture>
 						</div>
-						<div class="about__title">
+						<div class="about__title" id="about-title">
 							<span>Истории</span>
 							<picture class="about__image">
 								<source srcset="src/images/old/about-1.jpg" />
@@ -2230,12 +2265,18 @@
 							viewBox="0 0 274 946"
 							fill="none"
 							class="apartments__vector">
-							<g class="apartments__vector-group" data-lvl="apogee">
+							<g
+								class="apartments__vector-group"
+								data-bs-dismiss="modal"
+								data-lvl="apogee">
 								<path
 									id="Vector"
 									d="M152.563 1.5957L153.377 8.11058L273.999 20.8212V12.7216L152.728 0L152.563 1.5957ZM153.542 9.54121L153.707 11.4451L154.686 19.2365L273.999 31.639V22.0978L153.542 9.54121ZM154.85 20.8212L155.015 22.2518L155.994 30.3624L273.845 42.4457V33.0696L154.861 20.8322L154.85 20.8212ZM156.313 32.1122L156.478 33.2237L157.456 41.6534L273.999 53.5716V44.1955L156.313 32.1122ZM157.786 44.0304V43.3922L157.621 41.9615L152.409 42.4347V44.5036L157.786 44.0304ZM156.478 33.0586L156.313 31.9471L156.148 30.9897L152.398 31.3088V33.3777L156.478 33.0586ZM155.015 22.2518L154.85 20.8212V20.348L152.409 20.6671V22.571L155.015 22.2518ZM153.707 11.4451L153.542 9.54121L152.398 9.69528V11.5991L153.707 11.434V11.4451Z" />
 							</g>
-							<g class="apartments__vector-group" data-lvl="meridian">
+							<g
+								class="apartments__vector-group"
+								data-bs-dismiss="modal"
+								data-lvl="meridian">
 								<path
 									id="Vector_2"
 									d="M152.078 274.505L184.867 272.161L184.383 268.188L152.078 270.532V274.505Z" />
@@ -2342,7 +2383,10 @@
 									id="Vector_36"
 									d="M189.641 311.57L151.75 314.244V318.536L190.146 315.707L189.641 311.57Z" />
 							</g>
-							<g class="apartments__vector-group" data-lvl="cityline">
+							<g
+								class="apartments__vector-group"
+								data-bs-dismiss="modal"
+								data-lvl="cityline">
 								<path
 									id="Vector_37"
 									d="M151.914 252.88L182.229 250.382L181.789 246.718L151.914 249.073V252.88Z" />
@@ -2449,7 +2493,10 @@
 									id="Vector_71"
 									d="M180.459 235.757L151.914 237.947V241.601L180.899 239.411L180.459 235.757Z" />
 							</g>
-							<g class="apartments__vector-group" data-lvl="serviced">
+							<g
+								class="apartments__vector-group"
+								data-bs-dismiss="modal"
+								data-lvl="serviced">
 								<path
 									id="Vector_72"
 									d="M261.61 899.328L261.764 900.12L261.929 901.87L273.012 902.024V899.482L261.599 899.328H261.61ZM264.381 921.261L264.546 921.899L264.711 923.484L273.023 923.649V921.261H264.381ZM265.689 932.232L265.854 932.871L266.019 934.455H273.034V932.232H265.7H265.689ZM266.998 943.204L267.152 943.843L267.317 945.273H273.023V943.039L266.998 943.204ZM266.822 942.093L265.843 934.466L265.678 932.882L237.815 933.036L259.004 942.093H266.822ZM265.524 931.121L264.546 923.649L264.381 922.053L212.547 922.372L233.417 931.44L265.524 931.121ZM264.227 919.995L263.413 912.688L263.248 910.938L187.785 911.411L208.479 920.314L264.227 919.995ZM158.108 898.855L261.61 897.897L260.796 890.909L260.631 889.005L151.434 889.963V895.839L158.119 898.866L158.108 898.855Z" />
@@ -2550,7 +2597,10 @@
 									id="Vector_104"
 									d="M243.655 757.563L151.27 759.61V767.402L244.6 765.355L243.655 757.563Z" />
 							</g>
-							<g class="apartments__vector-group" data-lvl="horizont">
+							<g
+								class="apartments__vector-group"
+								data-bs-dismiss="modal"
+								data-lvl="horizont">
 								<path
 									id="Vector_105"
 									d="M273.189 614.181L227.711 612.31L228.294 617.086L273.189 618.946V614.181Z" />
@@ -2672,7 +2722,10 @@
 									id="Vector_144"
 									d="M219.868 561.116L151.75 564.109V570.305L220.615 567.323L219.868 561.116Z" />
 							</g>
-							<g class="apartments__vector-group" data-lvl="other">
+							<g
+								class="apartments__vector-group"
+								data-bs-dismiss="modal"
+								data-lvl="other">
 								<path
 									id="Vector_145"
 									d="M119.97 673.145L50.7198 669.062L49.7852 674.312L119.97 678.395V673.145Z" />
@@ -3512,7 +3565,8 @@
 						space-between="10"
 						navigation="true"
 						navigation-prev-el=".slider__nav-button:first-child"
-						navigation-next-el=".slider__nav-button:last-child">
+						navigation-next-el=".slider__nav-button:last-child"
+						loop="true">
 						<swiper-slide class="slider__slide">
 							<picture class="slider__image">
 								<source srcset="src/images/slider-1.avif" type="image/avif" />
