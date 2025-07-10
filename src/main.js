@@ -119,7 +119,7 @@ const handleAboutAnimation = () => {
 		},
 		scrollTriggerOptions: {
 			...aboutScrollTrigger,
-			pin: window.innerWidth > 1024 ? '.about' : '.main__container',
+			pin: '.about',
 			pinSpacing: true
 			// pin: true,
 		}
@@ -145,88 +145,95 @@ const handleVideoStart = () => {
 };
 const handleHistoryAnimations = () => {
 	const sections = gsap.utils.toArray('.history');
-	// 1) Define your four off-screen start positions (plus optional rotation)
-	const getDIRS = () => {
-		const w = window.innerWidth;
-		return [
-			{ x: -0.2 * w, y: -0.15 * w, rotation: 15 }, // ↖ from top-left
-			{ x: -0.35 * w, y: 0.15 * w, rotation: -15 }, // ↗ from top-right
-			{ x: 0.2 * w, y: 0.3 * w, rotation: 10 }, // ↙ from bottom-left
-			{ x: 0.2 * w, y: -0.15 * w, rotation: -40 } // ↘ from bottom-right
-		];
-	};
-	const DIRS = getDIRS();
-	const scrollTriggerObj =
-		window.innerWidth > 900
-			? {
-					start: 'center center',
-					end: '+=1000',
-					scrub: 1,
-					pin: true,
-					pinSpacing: true
-			  }
-			: {
-					start: 'top center'
-			  };
 
-	sections.forEach(section => {
-		const label = section.querySelector('.section-label');
+	if (window.innerWidth > 900) {
+		// 1) Define your four off-screen start positions (plus optional rotation)
+		const getDIRS = () => {
+			const w = window.innerWidth;
+			return [
+				{ x: -0.2 * w, y: -0.15 * w, rotation: 15 }, // ↖ from top-left
+				{ x: -0.35 * w, y: 0.15 * w, rotation: -15 }, // ↗ from top-right
+				{ x: 0.2 * w, y: 0.3 * w, rotation: 10 }, // ↙ from bottom-left
+				{ x: 0.2 * w, y: -0.15 * w, rotation: -40 } // ↘ from bottom-right
+			];
+		};
+		const DIRS = getDIRS();
 
-		gsap.set(label, {
-			xPercent: -50,
-			yPercent: -50,
-			scale: 2,
-			color: '#fff'
-		});
-		const tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: section,
-				...scrollTriggerObj
-			}
-		});
-		tl.to(section.querySelector('.section-label'), {
-			yPercent: 0,
-			top: 0,
-			marginTop: 'clamp(15px, 2.8vw, 52px)',
-			scale: 1.5
-		});
-		tl.to(section.querySelector('.section-label'), {
-			xPercent: 0,
-			left: 0,
-			scale: 1,
-			color: 'rgba(255, 255, 255, 0.6)',
-			marginLeft: 'clamp(15px, 2.8vw, 52px)'
-		});
-		tl.from(
-			section.querySelector('.history__top'),
-			{
-				opacity: 0,
-				y: 25
-			},
-			// '-=0.75'
-			'-=0.5'
-		);
-		// tl.to(
-		// 	section.querySelector('.section-label__container'),
-		// 	{
-		// 		background: '#FFFFFF1F'
-		// 	},
-		// 	'-=0.5'
-		// );
+		const scrollTriggerObj = {
+			start: 'center center',
+			end: '+=1000',
+			scrub: 1,
+			pin: true,
+			pinSpacing: true
+		};
 
-		tl.from(
-			section.querySelectorAll('.history__card'),
-			{
-				x: i => DIRS[i % DIRS.length].x,
-				y: i => DIRS[i % DIRS.length].y,
-				rotation: i => DIRS[i % DIRS.length].rotation,
-				duration: 1.5,
-				ease: 'power2.out',
-				stagger: 0
-			},
-			0
-		);
-	});
+		sections.forEach(section => {
+			const label = section.querySelector('.section-label');
+
+			gsap.set(label, {
+				xPercent: -50,
+				yPercent: -50,
+				scale: 2,
+				color: '#fff'
+			});
+			const tl = gsap.timeline({
+				scrollTrigger: {
+					trigger: section,
+					...scrollTriggerObj
+				}
+			});
+			tl.to(section.querySelector('.section-label'), {
+				yPercent: 0,
+				top: 0,
+				marginTop: 'clamp(15px, 2.8vw, 52px)',
+				scale: 1.5
+			});
+			tl.to(section.querySelector('.section-label'), {
+				xPercent: 0,
+				left: 0,
+				scale: 1,
+				color: 'rgba(255, 255, 255, 0.6)',
+				marginLeft: 'clamp(15px, 2.8vw, 52px)'
+			});
+			tl.from(
+				section.querySelector('.history__top'),
+				{
+					opacity: 0,
+					y: 25
+				},
+				// '-=0.75'
+				'-=0.5'
+			);
+			// tl.to(
+			// 	section.querySelector('.section-label__container'),
+			// 	{
+			// 		background: '#FFFFFF1F'
+			// 	},
+			// 	'-=0.5'
+			// );
+
+			tl.from(
+				section.querySelectorAll('.history__card'),
+				{
+					x: i => DIRS[i % DIRS.length].x,
+					y: i => DIRS[i % DIRS.length].y,
+					rotation: i => DIRS[i % DIRS.length].rotation,
+					duration: 1.5,
+					ease: 'power2.out',
+					stagger: 0
+				},
+				0
+			);
+		});
+	} else {
+		sections.forEach(section => {
+			const label = section.querySelector('.section-label');
+			const content = section.querySelector('.history__top');
+			GSAPOnce(label, { x: -25 });
+			GSAPOnce(content, { x: -25 });
+			GSAPOnce(section.querySelectorAll('.history__card'), { y: 100, stagger: 0.1 });
+		});
+	}
 };
 const handleLinkTextDuplications = () => {
 	const links = document.querySelectorAll('a[href*="/"]:not(.button), a[href*="#"]:not(.button)');
@@ -346,16 +353,16 @@ const handleHeroAnimation = () => {
 	}, 3000);
 };
 const handleParallax = () => {
-	// gsap.from('.hero__towers img', {
-	// 	yPercent: 10,
-	// 	ease: 'none',
-	// 	scrollTrigger: {
-	// 		scrub: 1,
-	// 		trigger: '.hero__towers',
-	// 		start: 'top 80%',
-	// 		end: 'bottom center'
-	// 	}
-	// });
+	gsap.from('.hero__towers img', {
+		yPercent: 10,
+		ease: 'none',
+		scrollTrigger: {
+			scrub: 1,
+			trigger: '.hero__towers',
+			start: 'top 80%',
+			end: 'bottom center'
+		}
+	});
 };
 const handleButtons = () => {
 	const buttons = document.querySelectorAll('.button, .section-card__button');
@@ -381,6 +388,7 @@ const handleDownScroll = () => {
 	});
 };
 const handlePointer = () => {
+	if (window.innerWidth < 900) return;
 	const containers = document.querySelectorAll('.section-card[data-bs-target="#history-modal"]');
 	const pointer = document.querySelector('.pointer');
 	if (!containers || !pointer) return;

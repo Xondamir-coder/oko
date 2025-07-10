@@ -8,12 +8,12 @@
 	grid-template-columns: max-content 1fr max-content;
 	align-items: center;
 	gap: clamp(12px, 1.3vw, 24px);
-	@media screen and (max-width: 450px) {
+	@media screen and (max-width: 500px) {
 		grid-template-columns: 1fr;
 	}
 	&__dialog {
-		--bs-modal-width: 35%;
-		@media screen and (max-width: vars.$bp-ipad-pro) {
+		--bs-modal-width: max(35%, 500px);
+		@media screen and (max-width: 500px) {
 			--bs-modal-margin: 0;
 		}
 	}
@@ -38,7 +38,7 @@
 		}
 	}
 	.arrow-button {
-		@media screen and (max-width: 450px) {
+		@media screen and (max-width: 500px) {
 			display: none;
 		}
 		&:last-of-type {
@@ -50,7 +50,7 @@
 		color: #fff;
 		pointer-events: none;
 
-		@media screen and (max-width: 450px) {
+		@media screen and (max-width: 500px) {
 			.section-card__content {
 				padding: 24px;
 			}
@@ -98,7 +98,7 @@
 		aspect-ratio: 502/893;
 		border-radius: clamp(12px, 1.3vw, 24px);
 		overflow: hidden;
-		@media screen and (max-width: 450px) {
+		@media screen and (max-width: 500px) {
 			height: 100vh;
 			aspect-ratio: initial;
 		}

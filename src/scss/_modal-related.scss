@@ -14,10 +14,11 @@
 @import 'bootstrap/scss/modal';
 
 .modal {
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 500px) {
 		// 1) Initial state when fade class is present
 		&.fade {
 			.modal-dialog {
+				--bs-modal-width: 100%;
 				transform: translateY(100%);
 				opacity: 0;
 				// needs your transition mixin + timing var
