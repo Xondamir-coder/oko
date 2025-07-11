@@ -444,5 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Once images are loaded refresh ScrollTrigger
 imagesLoaded(document.body, () => {
-	ScrollTrigger.refresh();
+	requestAnimationFrame(() => {
+		ScrollTrigger.refresh();
+		console.log('ScrollTrigger refreshed after paint');
+	});
 });
