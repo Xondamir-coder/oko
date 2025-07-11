@@ -2,7 +2,7 @@ import Lenis from 'lenis';
 import imagesLoaded from 'imagesloaded';
 import Modal from 'bootstrap/js/dist/modal';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { register } from 'swiper/element/bundle';
 import { splitAndAnimate } from './js/words';
 import { GSAPOnce, GSAPScrub } from './js/gsap';
