@@ -1,11 +1,11 @@
-// import './scss/main.scss';
+import Lenis from 'lenis';
+import imagesLoaded from 'imagesloaded';
 import Modal from 'bootstrap/js/dist/modal';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
 import { register } from 'swiper/element/bundle';
 import { splitAndAnimate } from './js/words';
 import { GSAPOnce, GSAPScrub } from './js/gsap';
-import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 register();
@@ -416,23 +416,33 @@ const handlePointer = () => {
 	});
 };
 
-handleApartmentSelection();
+// Functions
+handleSafari();
 setCopyrightYear();
+handleLinkTextDuplications();
+handleApartmentSelection();
 handleMenu();
+handleBody();
 handleFormSubmission();
 handlePlanModal();
-handleVideoStart();
-handleHeroAnimation();
-handleAboutAnimation();
-handleHistoryAnimations();
-splitWordsAndAnimate();
-handleLinkTextDuplications();
-handleLinkClicks();
-handleBody();
-handleOtherAnimations();
-handleSafari();
-handleHistoryModal();
-handleParallax();
 handleButtons();
+handleVideoStart();
 handleDownScroll();
 handlePointer();
+handleLinkClicks();
+handleHistoryModal();
+
+// Animations related
+document.addEventListener('DOMContentLoaded', () => {
+	handleHeroAnimation();
+	handleAboutAnimation();
+	handleHistoryAnimations();
+	splitWordsAndAnimate();
+	handleOtherAnimations();
+	handleParallax();
+});
+
+// Once images are loaded refresh ScrollTrigger
+imagesLoaded(document.body, () => {
+	ScrollTrigger.refresh();
+});
