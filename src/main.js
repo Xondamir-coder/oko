@@ -308,6 +308,9 @@ const handleOtherAnimations = () => {
 		yPercent: 25,
 		stagger: 0.15
 	});
+	GSAPOnce('.slider__bottom', {
+		y: 50
+	});
 };
 const handleSafari = () => {
 	if (/^((?!chrome|android).)*safari/i.test(navigator.userAgent)) {

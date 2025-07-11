@@ -558,8 +558,10 @@
 		display: flex;
 	}
 	&__image {
-		object-fit: cover;
 		width: 100%;
+		img {
+			object-fit: cover;
+		}
 	}
 	&__nav {
 		pointer-events: none;
