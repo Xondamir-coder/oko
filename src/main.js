@@ -170,12 +170,6 @@ const handleHistoryAnimations = () => {
 		sections.forEach(section => {
 			const label = section.querySelector('.section-label');
 
-			gsap.set(label, {
-				xPercent: -50,
-				yPercent: -50,
-				scale: 2,
-				color: '#fff'
-			});
 			const tl = gsap.timeline({
 				scrollTrigger: {
 					trigger: section,
@@ -231,7 +225,10 @@ const handleHistoryAnimations = () => {
 			const content = section.querySelector('.history__top');
 			GSAPOnce(label, { x: -25 });
 			GSAPOnce(content, { x: -25 });
-			GSAPOnce(section.querySelectorAll('.history__card'), { y: 100, stagger: 0.1 });
+			GSAPOnce(section.querySelectorAll('.history__card'), {
+				y: 100,
+				stagger: 0.1
+			});
 		});
 	}
 };
