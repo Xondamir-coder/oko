@@ -71,11 +71,21 @@ const handleFormSubmission = () => {
 
 			// console.log(...formData);
 
+			if (form.hasAttribute('data-standalone')) {
+				const successModal = Modal.getOrCreateInstance('#success-modal');
+				successModal.show();
+				setTimeout(() => {
+					successModal.hide();
+				}, 3000);
+				return;
+			}
+
 			if (!e.target.closest('[data-container]')) {
 				modal.show();
 			}
 
 			const popupContainer = e.target.closest('[data-container]');
+			if (!popupContainer) return;
 			popupContainer.classList.add('active');
 			setTimeout(() => {
 				popupContainer.classList.remove('active', 'show-form');
@@ -108,7 +118,7 @@ const splitWordsAndAnimate = () => {
 };
 const handleAboutAnimation = () => {
 	const aboutScrollTrigger = {
-		trigger: '.about',
+		trigger: '.about__container',
 		start: 'center center',
 		end: '+=1000'
 	};
@@ -353,12 +363,12 @@ const handleHeroAnimation = () => {
 	}, 3000);
 };
 const handleParallax = () => {
-	gsap.from('.hero__towers img', {
+	gsap.from('.about__towers img', {
 		yPercent: 10,
 		ease: 'none',
 		scrollTrigger: {
 			scrub: 1,
-			trigger: '.hero__towers',
+			trigger: '.about__towers',
 			start: 'top 80%',
 			end: 'bottom center'
 		}

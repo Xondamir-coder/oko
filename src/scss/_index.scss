@@ -22,14 +22,12 @@
 }
 .hero {
 	$preloader-duration: 3s;
-	aspect-ratio: 1918/1798;
-	display: grid;
-	grid-template-rows: 1fr 2fr 1fr;
 	position: relative;
 	padding-inline: 0;
 	margin-top: clamp(64px, 7.7vw, 147px);
+	display: flex;
+	flex-direction: column;
 	@include br.small-mobile {
-		aspect-ratio: 375/800;
 	}
 	&__gradient {
 		content: '';
@@ -58,23 +56,7 @@
 		backdrop-filter: blur(10px);
 		@include mix.moving-button;
 	}
-	&__towers {
-		z-index: 1;
-		grid-column: 1 / 2;
-		grid-row: 2 / 4;
-		height: 100%;
-		width: 100%;
-		animation: slide-from-bottom-50px 0.6s backwards 3.2s;
-		@include br.small-mobile {
-			aspect-ratio: 375/785;
-			object-position: 40%;
-		}
-		img {
-			@media screen and (max-width: vars.$bp-ipad-pro) {
-				object-fit: cover;
-			}
-		}
-	}
+
 	&__content {
 		z-index: 3;
 		grid-column: 1 / 2;
@@ -252,37 +234,67 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: clamp(24px, 3.4vw, 64px);
 	position: relative;
 	overflow-x: clip;
 	z-index: 2;
-	& > *:not(.about__bg) {
+	& > *:not(.about__box) {
 		z-index: 2;
 	}
-	&__bg {
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: clamp(24px, 3.4vw, 64px);
+	}
+	&__towers {
+		z-index: 1;
+		height: auto;
 		width: 100%;
-		&-container {
-			width: 113.6%;
-			height: 50%;
-			z-index: 1;
-			position: absolute;
-			top: 0;
-			left: 0;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		animation: uslide-from-bottom-50px 0.6s backwards 3.2s;
+		@media screen and (max-width: 900px) {
+			height: 100%;
+			width: 862px;
+			transform: translateX(25%);
+		}
+		@media screen and (max-width: 500px) {
+			height: 100%;
+			width: 862px;
+			transform: translateX(20%);
+		}
+		img {
+			@media screen and (max-width: vars.$bp-ipad-pro) {
+				object-fit: cover;
+			}
+		}
+	}
+	&__box {
+		position: relative;
+		@media screen and (max-width: 900px) {
+			aspect-ratio: 862/375;
+		}
+	}
+	&__bg {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 70%);
+		width: 113.6%;
+		z-index: 1;
+		filter: blur(65px);
+		display: flex;
+		@media (max-width: vars.$bp-ipad-pro) {
+			filter: blur(48px);
+			width: 130%;
+			height: 207px;
+			left: -10%;
+			transform: translate(5%, 60%);
+		}
+		@include br.small-mobile {
+			width: 236%;
+		}
+		&-pic {
 			display: flex;
-			filter: blur(55px);
-
-			@media (max-width: vars.$bp-ipad-pro) {
-				filter: blur(48px);
-				width: 130%;
-				height: 15%;
-			}
-			@include br.small-mobile {
-				left: 80%;
-				width: 236%;
-				height: 207px;
-			}
+			width: 100%;
 		}
 	}
 	&__image {
@@ -296,6 +308,8 @@
 		}
 	}
 	&__title {
+		grid-row: 2 / span 2;
+		justify-self: center;
 		max-width: max(78.3%, 350px);
 		font-weight: 700;
 		font-size: clamp(28px, 5.2vw, 100px);
@@ -312,6 +326,7 @@
 	}
 	&__wrapper {
 		@media screen and (min-width: vars.$bp-ipad-pro) {
+			grid-row: 3/4;
 			padding-inline: clamp(15px, 1.1vw, 20px);
 			margin-inline: vars.$spacing;
 			gap: clamp(40px, 3.4vw, 65px);

@@ -1,28 +1,23 @@
-@use "@utils/variables" as vars;
-@use "@utils/breakpoints" as br;
+@use '@utils/variables' as vars;
+@use '@utils/breakpoints' as br;
 
 .container {
-  position: relative;
-  overflow: hidden;
-  &__top {
-    padding-top: 20px;
-    transition: background-color vars.$dt, height vars.$dt;
-    overflow: hidden;
-    position: relative;
-    &:not(.active) .menu {
-      display: none;
-    }
-    &.active {
-      background-color: vars.$dark-blue-alt;
-      height: 100vh;
-      .header {
-        background-color: vars.$dark-blue-alt;
-      }
-    }
-  }
-  &.safari {
-    .about__bg {
-      backdrop-filter: blur(60px);
-    }
-  }
+	position: relative;
+	overflow: hidden;
+	&__top {
+		padding-top: 20px;
+		transition: background-color vars.$dt, height vars.$dt;
+		overflow: hidden;
+		position: relative;
+		&:not(.active) .menu {
+			display: none;
+		}
+		&.active {
+			background-color: vars.$dark-blue-alt;
+			height: 100vh;
+			.header {
+				background-color: vars.$dark-blue-alt;
+			}
+		}
+	}
 }
