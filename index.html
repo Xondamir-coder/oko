@@ -576,7 +576,7 @@
 								class="history__card section-card"
 								data-bs-toggle="modal"
 								data-bs-target="#history-modal">
-								<video loop muted class="section-card__video">
+								<video loop muted playsinline class="section-card__video">
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
 								</video>
@@ -610,7 +610,7 @@
 								class="history__card section-card"
 								data-bs-toggle="modal"
 								data-bs-target="#history-modal">
-								<video loop muted class="section-card__video">
+								<video loop muted playsinline class="section-card__video">
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
 								</video>
@@ -644,7 +644,7 @@
 								class="history__card section-card"
 								data-bs-toggle="modal"
 								data-bs-target="#history-modal">
-								<video loop muted class="section-card__video">
+								<video loop muted playsinline class="section-card__video">
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
 								</video>
@@ -722,7 +722,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -756,7 +756,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -790,7 +790,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -1730,7 +1730,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -1764,7 +1764,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -1798,7 +1798,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -1872,7 +1872,7 @@
 								class="history__card section-card"
 								data-bs-toggle="modal"
 								data-bs-target="#history-modal">
-								<video loop muted class="section-card__video">
+								<video loop muted playsinline class="section-card__video">
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
 								</video>
@@ -1903,7 +1903,7 @@
 								class="history__card section-card"
 								data-bs-toggle="modal"
 								data-bs-target="#history-modal">
-								<video loop muted class="section-card__video">
+								<video loop muted playsinline class="section-card__video">
 									<source src="src/videos/vertical.mp4" />
 									Video isn't supported
 								</video>
@@ -1936,7 +1936,7 @@
 								class="history__card section-card"
 								data-bs-toggle="modal"
 								data-bs-target="#history-modal">
-								<video loop muted class="section-card__video">
+								<video loop muted playsinline class="section-card__video">
 									<source src="src/videos/horizontal.mp4" />
 									Video isn't supported
 								</video>
@@ -2016,7 +2016,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -2050,7 +2050,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -2084,7 +2084,7 @@
 							class="gallery__card section-card"
 							data-bs-toggle="modal"
 							data-bs-target="#history-modal">
-							<video loop muted class="section-card__video">
+							<video loop muted playsinline class="section-card__video">
 								<source src="src/videos/vertical.mp4" />
 								Video isn't supported
 							</video>
@@ -2521,8 +2521,7 @@
 								</div>
 							</div>
 							<swiper-container
-								class="plan__slider"
-								effect="fade"
+								class="plan__slider plan__slider--desktop"
 								navigation="true"
 								navigation-prev-el=".plan__arrow:first-child"
 								navigation-next-el=".plan__arrow:last-child">
@@ -2620,7 +2619,7 @@
 									</button>
 								</div>
 								<swiper-container
-									class="plan__slider"
+									class="plan__slider plan__slider--mobile"
 									slides-per-view="1"
 									navigation="true"
 									navigation-prev-el=".plan__mobile .plan__arrow:first-child"
@@ -2763,25 +2762,45 @@
 								autoplay-delay="3000"
 								autoplay-disable-on-interaction="false">
 								<swiper-slide class="section-card">
-									<video loop muted autoplay class="section-card__video">
+									<video
+										loop
+										muted
+										playsinline
+										autoplay
+										class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<video loop muted autoplay class="section-card__video">
+									<video
+										loop
+										muted
+										playsinline
+										autoplay
+										class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<video loop muted autoplay class="section-card__video">
+									<video
+										loop
+										muted
+										playsinline
+										autoplay
+										class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<video loop muted autoplay class="section-card__video">
+									<video
+										loop
+										muted
+										playsinline
+										autoplay
+										class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>

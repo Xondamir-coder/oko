@@ -3,7 +3,7 @@
 @use '@utils/mixins' as mix;
 
 .icon {
-	transition-property: fill, transform, translate;
+	transition-property: transform, translate;
 	transition-duration: vars.$dt;
 	width: clamp(20px, 1.3vw, 24px);
 }
