@@ -9,11 +9,11 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
     "sass-embedded": "^1.89.2",
     "vite": "^6.3.5"
   },
   "dependencies": {
+    "autoprefixer": "^10.4.21",
     "bootstrap": "^5.3.7",
     "gsap": "^3.13.0",
     "imagesloaded": "^5.0.0",

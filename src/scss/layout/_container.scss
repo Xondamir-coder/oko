@@ -9,6 +9,8 @@
 		transition: background-color vars.$dt, height vars.$dt;
 		overflow: hidden;
 		position: relative;
+		display: flex;
+		flex-direction: column;
 		&:not(.active) .menu {
 			display: none;
 		}

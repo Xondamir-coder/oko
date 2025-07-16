@@ -39,7 +39,16 @@
 	}
 	.arrow-button {
 		@media screen and (max-width: 500px) {
-			display: none;
+			position: absolute;
+			bottom: 0;
+			z-index: 10;
+			height: calc(100% - 74px);
+			border-radius: 0;
+			width: 30%;
+			opacity: 0;
+			&:last-of-type {
+				right: 0;
+			}
 		}
 		&:last-of-type {
 			order: 3;
@@ -61,6 +70,7 @@
 	}
 	&__slider {
 		display: grid;
+		position: relative;
 	}
 	&__close {
 		align-self: flex-end;

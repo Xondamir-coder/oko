@@ -84,12 +84,14 @@
 	}
 	&__box {
 		user-select: none;
-		pointer-events: none;
+		// pointer-events: none;
 		position: relative;
 		z-index: -1;
 		&-vector {
 			position: absolute;
 			inset: 0;
+			z-index: 1;
+
 			path {
 				stroke-dasharray: 4037.787353515625;
 				stroke-dashoffset: 4037.787353515625;
@@ -258,9 +260,9 @@
 			transform: translateX(25%);
 		}
 		@media screen and (max-width: 500px) {
-			height: 100%;
-			width: 862px;
-			transform: translateX(20%);
+			// position: absolute;
+			// left: 50%;
+			transform: translateX(5%);
 		}
 		img {
 			@media screen and (max-width: vars.$bp-ipad-pro) {
@@ -271,6 +273,8 @@
 	&__box {
 		position: relative;
 		@media screen and (max-width: 900px) {
+			width: 862px;
+			position: relative;
 			aspect-ratio: 862/375;
 		}
 	}
@@ -292,6 +296,7 @@
 		}
 		@include br.small-mobile {
 			width: 236%;
+			filter: blur(38px);
 		}
 		&-pic {
 			display: flex;

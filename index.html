@@ -3,7 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta
+			name="viewport"
+			content="width=device-width,
+               initial-scale=1.0,
+               viewport-fit=cover" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="src/scss/main.scss" />
@@ -12,10 +16,6 @@
 			rel="stylesheet" />
 		<title>Oko</title>
 		<script src="src/main.js" defer type="module"></script>
-
-		<!-- Preloading assets -->
-		<link rel="preload" as="image" href="src/images/illustration.webp" type="image/webp" />
-		<link rel="preload" as="image" href="src/images/compressed/illustration.png" />
 	</head>
 	<body>
 		<!-- Pointer -->
@@ -417,26 +417,29 @@
 									</svg>
 									<picture class="hero__ball-shadow">
 										<source
+											fetchpriority="high"
 											srcset="src/images/ball-shadow.webp"
 											type="image/webp" />
 										<img
-											width="200"
-											height="200"
+											fetchpriority="high"
+											width="900"
+											height="900"
 											src="src/images/compressed/ball-shadow.png"
 											alt="shadow" />
 									</picture>
 								</div>
-								<picture class="hero__illustration" fetchpriority="high">
+								<picture class="hero__illustration">
 									<source
+										fetchpriority="high"
 										srcset="src/images/illustration.webp"
 										type="image/webp" />
 									<img
+										fetchpriority="high"
 										src="src/images/compressed/illustration.png"
 										width="967"
 										height="335"
 										alt="illustration"
-										decoding="async"
-										fetchpriority="high" />
+										decoding="async" />
 								</picture>
 							</div>
 							<button class="hero__down">
@@ -2520,9 +2523,8 @@
 							</div>
 							<swiper-container
 								class="plan__slider"
-								slides-per-view="1"
-								navigation="true"
 								effect="fade"
+								navigation="true"
 								navigation-prev-el=".plan__arrow:first-child"
 								navigation-next-el=".plan__arrow:last-child">
 								<swiper-slide class="plan__slide">
@@ -2556,7 +2558,7 @@
 										class="plan__image plan--desktop" />
 									<ul class="plan__details plan--desktop">
 										<li class="plan__detail">
-											<span class="clr-grey">Тип апартамента:</span>
+											<span class="clr-grey">zxc:</span>
 											<span>Yellow</span>
 										</li>
 										<li class="plan__detail">
@@ -2580,7 +2582,7 @@
 										class="plan__image plan--desktop" />
 									<ul class="plan__details plan--desktop">
 										<li class="plan__detail">
-											<span class="clr-grey">Тип апартамента:</span>
+											<span class="clr-grey">qwe:</span>
 											<span>Yellow</span>
 										</li>
 										<li class="plan__detail">
@@ -2758,7 +2760,7 @@
 								navigation-next-el="#history-modal-next"
 								grab-cursor="true"
 								rewind="true"
-								speed="1000"
+								speed="600"
 								autoplay-delay="3000"
 								autoplay-disable-on-interaction="false">
 								<swiper-slide class="section-card">

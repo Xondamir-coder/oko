@@ -47,6 +47,16 @@
 	&:last-child {
 		cursor: pointer;
 	}
+	&:first-child {
+		@media screen and (max-width: 500px) {
+			.section-card__video {
+				opacity: 1;
+			}
+			.section-card__image {
+				opacity: 0;
+			}
+		}
+	}
 	&::after {
 		pointer-events: none;
 		@include mix.card-counter;

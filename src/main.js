@@ -230,7 +230,7 @@ const handleHistoryAnimations = () => {
 					y: i => DIRS[i % DIRS.length].y,
 					rotation: i => DIRS[i % DIRS.length].rotation,
 					duration: 1.5,
-					opacity: 0,
+					opacity: 0.15,
 					ease: 'power2.out',
 					stagger: 0
 				},
@@ -345,7 +345,7 @@ const handleHistoryModal = () => {
 			// animate filled / empty
 			gsap.to(bar, {
 				scaleX: isBefore ? 1 : 0,
-				duration: 1,
+				duration: 0.6,
 				ease: 'power2.out'
 			});
 
