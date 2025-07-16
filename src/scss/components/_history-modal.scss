@@ -12,7 +12,7 @@
 		grid-template-columns: 1fr;
 	}
 	&__dialog {
-		--bs-modal-width: max(35%, 500px);
+		--bs-modal-width: max(38%, 500px);
 		@media screen and (max-width: 500px) {
 			--bs-modal-margin: 0;
 		}

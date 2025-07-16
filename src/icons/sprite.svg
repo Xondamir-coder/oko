@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <svg id="plus" viewBox="0 0 16 16">
+        <path d="M1 8H8M8 8H15M8 8V15M8 8V1" stroke="#090909" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </svg>
     <svg id="footer-logo" viewBox="0 0 200 27" fill="none">
         <g clip-path="url(#clip0)">
             <path

@@ -83,6 +83,7 @@
 		}
 	}
 	&__box {
+		user-select: none;
 		pointer-events: none;
 		position: relative;
 		z-index: -1;
@@ -544,6 +545,10 @@
 	&__vector {
 		width: auto;
 		height: 100%;
+		&-bg {
+			fill: #d0d0d066;
+			opacity: 0;
+		}
 		&-group {
 			cursor: pointer;
 			fill: #d0d0d066;

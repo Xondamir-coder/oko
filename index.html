@@ -3,9 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<link rel="icon" type="image/png" href="/favicon.png" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link rel="stylesheet" href="src/scss/main.scss" />
@@ -14,21 +12,16 @@
 			rel="stylesheet" />
 		<title>Oko</title>
 		<script src="src/main.js" defer type="module"></script>
+
+		<!-- Preloading assets -->
+		<link rel="preload" as="image" href="src/images/illustration.webp" type="image/webp" />
+		<link rel="preload" as="image" href="src/images/compressed/illustration.png" />
 	</head>
 	<body>
 		<!-- Pointer -->
 		<div class="pointer">
-			<svg viewBox="0 0 24 24" id="add-circle-filled" class="pointer__icon">
-				<g clip-path="url(#clip0_126_2929)">
-					<path
-						d="M12 22C6.477 22 2 17.523 2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22ZM11 11H7V13H11V17H13V13H17V11H13V7H11V11Z"
-						fill="inherit" />
-				</g>
-				<defs>
-					<clipPath id="clip0_126_2929">
-						<rect width="24" height="24" fill="white" />
-					</clipPath>
-				</defs>
+			<svg viewBox="0 0 16 16" class="pointer__icon">
+				<use href="src/icons/sprite.svg#plus"></use>
 			</svg>
 		</div>
 
@@ -433,7 +426,7 @@
 											alt="shadow" />
 									</picture>
 								</div>
-								<picture class="hero__illustration">
+								<picture class="hero__illustration" fetchpriority="high">
 									<source
 										srcset="src/images/illustration.webp"
 										type="image/webp" />
@@ -441,7 +434,9 @@
 										src="src/images/compressed/illustration.png"
 										width="967"
 										height="335"
-										alt="illustration" />
+										alt="illustration"
+										decoding="async"
+										fetchpriority="high" />
 								</picture>
 							</div>
 							<button class="hero__down">
@@ -871,7 +866,10 @@
 							<g
 								class="apartments__vector-group"
 								data-bs-dismiss="modal"
-								data-lvl="apogee">
+								data-lvl="serviced">
+								<path
+									class="apartments__vector-bg"
+									d="M 147.778 -1.642 L 149.474 43.298 L 273.836 54.038 L 274.966 7.403 L 147.778 -1.642 Z" />
 								<path
 									id="Vector"
 									d="M152.563 1.5957L153.377 8.11058L273.999 20.8212V12.7216L152.728 0L152.563 1.5957ZM153.542 9.54121L153.707 11.4451L154.686 19.2365L273.999 31.639V22.0978L153.542 9.54121ZM154.85 20.8212L155.015 22.2518L155.994 30.3624L273.845 42.4457V33.0696L154.861 20.8322L154.85 20.8212ZM156.313 32.1122L156.478 33.2237L157.456 41.6534L273.999 53.5716V44.1955L156.313 32.1122ZM157.786 44.0304V43.3922L157.621 41.9615L152.409 42.4347V44.5036L157.786 44.0304ZM156.478 33.0586L156.313 31.9471L156.148 30.9897L152.398 31.3088V33.3777L156.478 33.0586ZM155.015 22.2518L154.85 20.8212V20.348L152.409 20.6671V22.571L155.015 22.2518ZM153.707 11.4451L153.542 9.54121L152.398 9.69528V11.5991L153.707 11.434V11.4451Z" />
@@ -880,6 +878,9 @@
 								class="apartments__vector-group"
 								data-bs-dismiss="modal"
 								data-lvl="meridian">
+								<path
+									class="apartments__vector-bg"
+									d="M 153.182 269.406 L 151.672 460.19 L 273.995 455.66 L 272.988 272.93 L 184.895 264.876 L 153.182 269.406 Z" />
 								<path
 									id="Vector_2"
 									d="M152.078 274.505L184.867 272.161L184.383 268.188L152.078 270.532V274.505Z" />
@@ -991,6 +992,9 @@
 								data-bs-dismiss="modal"
 								data-lvl="cityline">
 								<path
+									class="apartments__vector-bg"
+									d="M 149.26 49.246 L 148.284 253.597 L 274.114 260.913 L 275.089 61.926 L 149.26 49.246 Z" />
+								<path
 									id="Vector_37"
 									d="M151.914 252.88L182.229 250.382L181.789 246.718L151.914 249.073V252.88Z" />
 								<path
@@ -1099,7 +1103,10 @@
 							<g
 								class="apartments__vector-group"
 								data-bs-dismiss="modal"
-								data-lvl="serviced">
+								data-lvl="apogee">
+								<path
+									class="apartments__vector-bg"
+									d="M 150.239 702.741 L 150.568 897.37 L 262.469 946.134 L 273.33 945.476 L 273.659 698.518 L 240.418 697.201 L 150.239 702.741 Z" />
 								<path
 									id="Vector_72"
 									d="M261.61 899.328L261.764 900.12L261.929 901.87L273.012 902.024V899.482L261.599 899.328H261.61ZM264.381 921.261L264.546 921.899L264.711 923.484L273.023 923.649V921.261H264.381ZM265.689 932.232L265.854 932.871L266.019 934.455H273.034V932.232H265.7H265.689ZM266.998 943.204L267.152 943.843L267.317 945.273H273.023V943.039L266.998 943.204ZM266.822 942.093L265.843 934.466L265.678 932.882L237.815 933.036L259.004 942.093H266.822ZM265.524 931.121L264.546 923.649L264.381 922.053L212.547 922.372L233.417 931.44L265.524 931.121ZM264.227 919.995L263.413 912.688L263.248 910.938L187.785 911.411L208.479 920.314L264.227 919.995ZM158.108 898.855L261.61 897.897L260.796 890.909L260.631 889.005L151.434 889.963V895.839L158.119 898.866L158.108 898.855Z" />
@@ -1204,6 +1211,9 @@
 								class="apartments__vector-group"
 								data-bs-dismiss="modal"
 								data-lvl="horizont">
+								<path
+									class="apartments__vector-bg"
+									d="M 150.095 476.72 L 149.389 691.294 L 277.145 687.059 C 277.145 687.059 273.616 468.956 273.616 469.661 C 273.616 470.366 213.62 464.015 213.62 464.015 L 150.095 476.72 Z" />
 								<path
 									id="Vector_105"
 									d="M273.189 614.181L227.711 612.31L228.294 617.086L273.189 618.946V614.181Z" />
@@ -1329,6 +1339,9 @@
 								class="apartments__vector-group"
 								data-bs-dismiss="modal"
 								data-lvl="other">
+								<path
+									class="apartments__vector-bg"
+									d="M 119.17 273.193 L 125.052 883.568 L 2.353 883.568 L -0.409 286.023 L 119.17 273.193 Z" />
 								<path
 									id="Vector_145"
 									d="M119.97 673.145L50.7198 669.062L49.7852 674.312L119.97 678.395V673.145Z" />
@@ -2505,11 +2518,11 @@
 									</button>
 								</div>
 							</div>
-
 							<swiper-container
 								class="plan__slider"
 								slides-per-view="1"
 								navigation="true"
+								effect="fade"
 								navigation-prev-el=".plan__arrow:first-child"
 								navigation-next-el=".plan__arrow:last-child">
 								<swiper-slide class="plan__slide">
@@ -2744,102 +2757,33 @@
 								navigation-prev-el="#history-modal-prev"
 								navigation-next-el="#history-modal-next"
 								grab-cursor="true"
-								rewind="true">
+								rewind="true"
+								speed="1000"
+								autoplay-delay="3000"
+								autoplay-disable-on-interaction="false">
 								<swiper-slide class="section-card">
 									<video loop muted autoplay class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur--bottom">
-										<source
-											srcset="src/images/gallery-1.avif"
-											type="image/avif" />
-										<img
-											src="src/images/compressed/gallery-1.jpg"
-											alt="girl looking"
-											width="1796"
-											height="2784"
-											decoding="async" />
-									</picture>
-									<div class="section-card__content">
-										<h3 class="section-card__title">Там — город. Здесь — я.</h3>
-										<p class="history__card-text text-default">
-											В движении я сильная. Дома — настоящая. Пишу свои мечты,
-											воплощая их в реальность.
-										</p>
-									</div>
 								</swiper-slide>
 								<swiper-slide class="section-card">
 									<video loop muted autoplay class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur--bottom">
-										<source
-											srcset="src/images/gallery-2.avif"
-											type="image/avif" />
-										<img
-											src="src/images/compressed/gallery-2.jpg"
-											alt="girl looking"
-											width="1796"
-											height="2784"
-											decoding="async" />
-									</picture>
-									<div class="section-card__content">
-										<h3 class="section-card__title">Летняя рутина</h3>
-										<p class="gallery__card-text">
-											В движении я сильная. Дома — настоящая. Пишу свои мечты,
-											воплощая их в реальность.
-										</p>
-									</div>
 								</swiper-slide>
 								<swiper-slide class="section-card">
 									<video loop muted autoplay class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur--bottom">
-										<source
-											srcset="src/images/history-2.avif"
-											type="image/avif" />
-										<img
-											src="src/images/compressed/history-2.jpg"
-											alt="girl looking"
-											width="2298"
-											height="1170"
-											decoding="async" />
-									</picture>
-									<div class="section-card__content">
-										<h3 class="section-card__title">Деловая среда</h3>
-										<p class="gallery__card-text">
-											В движении я сильная. Дома — настоящая. Пишу свои мечты,
-											воплощая их в реальность.
-										</p>
-									</div>
 								</swiper-slide>
 								<swiper-slide class="section-card">
 									<video loop muted autoplay class="section-card__video">
 										<source src="src/videos/vertical.mp4" />
 										Video isn't supported
 									</video>
-									<picture class="section-card__blur--bottom">
-										<source
-											srcset="src/images/history-2.avif"
-											type="image/avif" />
-										<img
-											src="src/images/compressed/history-2.jpg"
-											alt="girl looking"
-											width="2298"
-											height="1170"
-											decoding="async" />
-									</picture>
-									<div class="section-card__content">
-										<h3 class="section-card__title">Деловая среда</h3>
-										<p class="gallery__card-text">
-											В движении я сильная. Дома — настоящая. Пишу свои мечты,
-											воплощая их в реальность.
-										</p>
-									</div>
 								</swiper-slide>
 							</swiper-container>
 						</div>
@@ -2882,7 +2826,10 @@
 								<g
 									class="apartments__vector-group"
 									data-bs-dismiss="modal"
-									data-lvl="apogee">
+									data-lvl="serviced">
+									<path
+										class="apartments__vector-bg"
+										d="M 147.778 -1.642 L 149.474 43.298 L 273.836 54.038 L 274.966 7.403 L 147.778 -1.642 Z" />
 									<path
 										id="Vector"
 										d="M152.563 1.5957L153.377 8.11058L273.999 20.8212V12.7216L152.728 0L152.563 1.5957ZM153.542 9.54121L153.707 11.4451L154.686 19.2365L273.999 31.639V22.0978L153.542 9.54121ZM154.85 20.8212L155.015 22.2518L155.994 30.3624L273.845 42.4457V33.0696L154.861 20.8322L154.85 20.8212ZM156.313 32.1122L156.478 33.2237L157.456 41.6534L273.999 53.5716V44.1955L156.313 32.1122ZM157.786 44.0304V43.3922L157.621 41.9615L152.409 42.4347V44.5036L157.786 44.0304ZM156.478 33.0586L156.313 31.9471L156.148 30.9897L152.398 31.3088V33.3777L156.478 33.0586ZM155.015 22.2518L154.85 20.8212V20.348L152.409 20.6671V22.571L155.015 22.2518ZM153.707 11.4451L153.542 9.54121L152.398 9.69528V11.5991L153.707 11.434V11.4451Z" />
@@ -2891,6 +2838,9 @@
 									class="apartments__vector-group"
 									data-bs-dismiss="modal"
 									data-lvl="meridian">
+									<path
+										class="apartments__vector-bg"
+										d="M 153.182 269.406 L 151.672 460.19 L 273.995 455.66 L 272.988 272.93 L 184.895 264.876 L 153.182 269.406 Z" />
 									<path
 										id="Vector_2"
 										d="M152.078 274.505L184.867 272.161L184.383 268.188L152.078 270.532V274.505Z" />
@@ -3002,6 +2952,9 @@
 									data-bs-dismiss="modal"
 									data-lvl="cityline">
 									<path
+										class="apartments__vector-bg"
+										d="M 149.26 49.246 L 148.284 253.597 L 274.114 260.913 L 275.089 61.926 L 149.26 49.246 Z" />
+									<path
 										id="Vector_37"
 										d="M151.914 252.88L182.229 250.382L181.789 246.718L151.914 249.073V252.88Z" />
 									<path
@@ -3110,7 +3063,10 @@
 								<g
 									class="apartments__vector-group"
 									data-bs-dismiss="modal"
-									data-lvl="serviced">
+									data-lvl="apogee">
+									<path
+										class="apartments__vector-bg"
+										d="M 150.239 702.741 L 150.568 897.37 L 262.469 946.134 L 273.33 945.476 L 273.659 698.518 L 240.418 697.201 L 150.239 702.741 Z" />
 									<path
 										id="Vector_72"
 										d="M261.61 899.328L261.764 900.12L261.929 901.87L273.012 902.024V899.482L261.599 899.328H261.61ZM264.381 921.261L264.546 921.899L264.711 923.484L273.023 923.649V921.261H264.381ZM265.689 932.232L265.854 932.871L266.019 934.455H273.034V932.232H265.7H265.689ZM266.998 943.204L267.152 943.843L267.317 945.273H273.023V943.039L266.998 943.204ZM266.822 942.093L265.843 934.466L265.678 932.882L237.815 933.036L259.004 942.093H266.822ZM265.524 931.121L264.546 923.649L264.381 922.053L212.547 922.372L233.417 931.44L265.524 931.121ZM264.227 919.995L263.413 912.688L263.248 910.938L187.785 911.411L208.479 920.314L264.227 919.995ZM158.108 898.855L261.61 897.897L260.796 890.909L260.631 889.005L151.434 889.963V895.839L158.119 898.866L158.108 898.855Z" />
@@ -3215,6 +3171,9 @@
 									class="apartments__vector-group"
 									data-bs-dismiss="modal"
 									data-lvl="horizont">
+									<path
+										class="apartments__vector-bg"
+										d="M 150.095 476.72 L 149.389 691.294 L 277.145 687.059 C 277.145 687.059 273.616 468.956 273.616 469.661 C 273.616 470.366 213.62 464.015 213.62 464.015 L 150.095 476.72 Z" />
 									<path
 										id="Vector_105"
 										d="M273.189 614.181L227.711 612.31L228.294 617.086L273.189 618.946V614.181Z" />
@@ -3340,6 +3299,9 @@
 									class="apartments__vector-group"
 									data-bs-dismiss="modal"
 									data-lvl="other">
+									<path
+										class="apartments__vector-bg"
+										d="M 119.17 273.193 L 125.052 883.568 L 2.353 883.568 L -0.409 286.023 L 119.17 273.193 Z" />
 									<path
 										id="Vector_145"
 										d="M119.97 673.145L50.7198 669.062L49.7852 674.312L119.97 678.395V673.145Z" />

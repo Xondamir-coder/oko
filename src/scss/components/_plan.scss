@@ -47,9 +47,6 @@
 		@media screen and (max-width: 700px) {
 			grid-template-columns: 1fr;
 		}
-		& > *:not(.plan__image) {
-			z-index: 1;
-		}
 		.text-default {
 			max-width: max(65%, 310px);
 		}
@@ -214,12 +211,10 @@
 		}
 	}
 	&__slide {
+		pointer-events: none;
 		display: grid;
 		grid-template-columns: 1fr 1.35fr;
 		transition: opacity 0.15s;
-		&:not(.swiper-slide-active) {
-			opacity: 0;
-		}
 		@include br.large-mobile {
 			display: flex;
 			ul {

@@ -158,16 +158,22 @@ const handleHistoryAnimations = () => {
 
 	if (window.innerWidth > 900) {
 		// 1) Define your four off-screen start positions (plus optional rotation)
-		const getDIRS = () => {
+		const getDIRS = index => {
 			const w = window.innerWidth;
-			return [
-				{ x: -0.2 * w, y: -0.15 * w, rotation: 15 }, // ↖ from top-left
-				{ x: -0.35 * w, y: 0.15 * w, rotation: -15 }, // ↗ from top-right
-				{ x: 0.2 * w, y: 0.3 * w, rotation: 10 }, // ↙ from bottom-left
-				{ x: 0.2 * w, y: -0.15 * w, rotation: -40 } // ↘ from bottom-right
-			];
+			return index === 0
+				? [
+						{ x: -0.2 * w, y: -0.15 * w, rotation: 15 }, // ↖ from top-left
+						{ x: -0.35 * w, y: 0.15 * w, rotation: -15 }, // ↗ from top-right
+						{ x: 0.2 * w, y: 0.3 * w, rotation: 10 }, // ↙ from bottom-left
+						{ x: 0.2 * w, y: -0.15 * w, rotation: -40 } // ↘ from bottom-right
+				  ]
+				: [
+						{ x: -0.2 * w, y: -0.15 * w, rotation: 15 },
+						{ x: -0.35 * w, y: 0.15 * w, rotation: -15 },
+						{ x: 0.2 * w, y: -0.15 * w, rotation: -40 },
+						{ x: 0.2 * w, y: 0.3 * w, rotation: 10 }
+				  ];
 		};
-		const DIRS = getDIRS();
 
 		const scrollTriggerObj = {
 			start: 'center center',
@@ -177,7 +183,8 @@ const handleHistoryAnimations = () => {
 			pinSpacing: true
 		};
 
-		sections.forEach(section => {
+		sections.forEach((section, i) => {
+			const DIRS = getDIRS(i);
 			const label = section.querySelector('.section-label');
 
 			const tl = gsap.timeline({
@@ -223,6 +230,7 @@ const handleHistoryAnimations = () => {
 					y: i => DIRS[i % DIRS.length].y,
 					rotation: i => DIRS[i % DIRS.length].rotation,
 					duration: 1.5,
+					opacity: 0,
 					ease: 'power2.out',
 					stagger: 0
 				},
@@ -337,7 +345,7 @@ const handleHistoryModal = () => {
 			// animate filled / empty
 			gsap.to(bar, {
 				scaleX: isBefore ? 1 : 0,
-				duration: 0.5,
+				duration: 1,
 				ease: 'power2.out'
 			});
 

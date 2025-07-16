@@ -34,14 +34,6 @@
 		}
 	}
 }
-swiper-slide.section-card {
-	@include br.large-mobile {
-		.section-card__content,
-		.section-card__blur--bottom {
-			display: none;
-		}
-	}
-}
 .section-card {
 	counter-increment: card;
 	position: relative;
