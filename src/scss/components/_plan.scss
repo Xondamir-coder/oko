@@ -67,9 +67,8 @@
 			align-self: stretch;
 		}
 		.plan__image {
-			z-index: -1;
 			height: 100%;
-			width: 136%;
+			width: 100%;
 			right: 0;
 			left: auto;
 			object-fit: cover;
@@ -107,6 +106,7 @@
 		width: clamp(50px, 3.3vw, 62px);
 	}
 	&__container {
+		z-index: 50;
 		display: grid;
 		place-items: center;
 		@media only screen and (max-width: 700px) {
@@ -202,6 +202,9 @@
 		@include br.large-mobile {
 			padding-bottom: calc(60px + 32px);
 		}
+		& > * {
+			grid-area: 1/1/2/2;
+		}
 		&--desktop {
 			@media screen and (max-width: 768px) {
 				display: none;
@@ -221,10 +224,16 @@
 		}
 	}
 	&__slide {
+		position: relative;
 		pointer-events: none;
 		display: grid;
 		grid-template-columns: 1fr 1.35fr;
-		transition: opacity 0.15s;
+		transition: opacity 0.4s, transform 0.4s;
+		opacity: 0;
+		&.active {
+			pointer-events: all;
+			opacity: 1;
+		}
 		@include br.large-mobile {
 			display: flex;
 			ul {

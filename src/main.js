@@ -108,6 +108,23 @@ const handlePlanModal = () => {
 	planModalEl.addEventListener('show.bs.modal', () => {
 		document.querySelector('.plan__container').className = 'plan__container';
 	});
+
+	const modal = document.querySelector('#plan-modal');
+	let activeIndex = 0;
+	modal.addEventListener('click', e => {
+		const btn = e.target.closest('button[data-slider]');
+		if (!btn) return;
+		const sliderType = btn.dataset.slider;
+		const slider = document.getElementById(`plan-slider-${sliderType}`);
+
+		if (activeIndex === slider.children.length - 1) {
+			activeIndex = 0;
+		} else {
+			activeIndex++;
+		}
+		[...slider.children].forEach(el => el.classList.remove('active'));
+		slider.children[activeIndex].classList.add('active');
+	});
 };
 const splitWordsAndAnimate = () => {
 	document.querySelectorAll('section h2').forEach(title => {

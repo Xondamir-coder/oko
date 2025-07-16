@@ -2447,7 +2447,9 @@
 										</svg>
 									</button>
 									<div class="plan__nav plan--desktop">
-										<button class="plan__arrow arrow-button">
+										<button
+											class="plan__arrow arrow-button"
+											data-slider="desktop">
 											<svg class="icon" viewBox="0 0 24 24">
 												<use href="src/icons/sprite.svg#arrow-left"></use>
 											</svg>
@@ -2455,7 +2457,9 @@
 												<use href="src/icons/sprite.svg#arrow-left"></use>
 											</svg>
 										</button>
-										<button class="plan__arrow arrow-button">
+										<button
+											class="plan__arrow arrow-button"
+											data-slider="desktop">
 											<svg class="icon" viewBox="0 0 24 24">
 												<use href="src/icons/sprite.svg#arrow-left"></use>
 											</svg>
@@ -2520,12 +2524,8 @@
 									</button>
 								</div>
 							</div>
-							<swiper-container
-								class="plan__slider plan__slider--desktop"
-								navigation="true"
-								navigation-prev-el=".plan__arrow:first-child"
-								navigation-next-el=".plan__arrow:last-child">
-								<swiper-slide class="plan__slide">
+							<ul id="plan-slider-desktop" class="plan__slider plan__slider--desktop">
+								<li class="plan__slide active">
 									<img
 										src="src/images/compressed/plan.png"
 										alt="plan"
@@ -2548,8 +2548,8 @@
 											<span>47 - 64 этаж</span>
 										</li>
 									</ul>
-								</swiper-slide>
-								<swiper-slide class="plan__slide">
+								</li>
+								<li class="plan__slide">
 									<img
 										src="src/images/compressed/plan.png"
 										alt="plan"
@@ -2572,8 +2572,8 @@
 											<span>47 - 64 этаж</span>
 										</li>
 									</ul>
-								</swiper-slide>
-								<swiper-slide class="plan__slide">
+								</li>
+								<li class="plan__slide">
 									<img
 										src="src/images/compressed/plan.png"
 										alt="plan"
@@ -2596,12 +2596,12 @@
 											<span>47 - 64 этаж</span>
 										</li>
 									</ul>
-								</swiper-slide>
-							</swiper-container>
+								</li>
+							</ul>
 
 							<div class="plan__mobile">
 								<div class="plan__nav">
-									<button class="plan__arrow arrow-button">
+									<button class="plan__arrow arrow-button" data-slider="mobile">
 										<svg class="icon" viewBox="0 0 24 24">
 											<use href="src/icons/sprite.svg#arrow-left"></use>
 										</svg>
@@ -2609,7 +2609,7 @@
 											<use href="src/icons/sprite.svg#arrow-left"></use>
 										</svg>
 									</button>
-									<button class="plan__arrow arrow-button">
+									<button class="plan__arrow arrow-button" data-slider="mobile">
 										<svg class="icon" viewBox="0 0 24 24">
 											<use href="src/icons/sprite.svg#arrow-left"></use>
 										</svg>
@@ -2618,13 +2618,10 @@
 										</svg>
 									</button>
 								</div>
-								<swiper-container
+								<ul
 									class="plan__slider plan__slider--mobile"
-									slides-per-view="1"
-									navigation="true"
-									navigation-prev-el=".plan__mobile .plan__arrow:first-child"
-									navigation-next-el=".plan__mobile .plan__arrow:last-child">
-									<swiper-slide class="plan__slide">
+									id="plan-slider-mobile">
+									<li class="plan__slide active">
 										<img
 											src="src/images/compressed/plan.png"
 											alt="plan"
@@ -2647,8 +2644,32 @@
 												<span>47 - 64 этаж</span>
 											</li>
 										</ul>
-									</swiper-slide>
-									<swiper-slide class="plan__slide">
+									</li>
+									<li class="plan__slide">
+										<img
+											src="src/images/compressed/plan.png"
+											alt="plan"
+											class="plan__image" />
+										<ul class="plan__details">
+											<li class="plan__detail">
+												<span class="clr-grey">zxc апартамента:</span>
+												<span>Yellow</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Площадь:</span>
+												<span>295 М2</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Особенности:</span>
+												<span>Вид на Центр</span>
+											</li>
+											<li class="plan__detail">
+												<span class="clr-grey">Этаж:</span>
+												<span>47 - 64 этаж</span>
+											</li>
+										</ul>
+									</li>
+									<li class="plan__slide">
 										<img
 											src="src/images/compressed/plan.png"
 											alt="plan"
@@ -2671,32 +2692,8 @@
 												<span>47 - 64 этаж</span>
 											</li>
 										</ul>
-									</swiper-slide>
-									<swiper-slide class="plan__slide">
-										<img
-											src="src/images/compressed/plan.png"
-											alt="plan"
-											class="plan__image" />
-										<ul class="plan__details">
-											<li class="plan__detail">
-												<span class="clr-grey">Тип апартамента:</span>
-												<span>Yellow</span>
-											</li>
-											<li class="plan__detail">
-												<span class="clr-grey">Площадь:</span>
-												<span>295 М2</span>
-											</li>
-											<li class="plan__detail">
-												<span class="clr-grey">Особенности:</span>
-												<span>Вид на Центр</span>
-											</li>
-											<li class="plan__detail">
-												<span class="clr-grey">Этаж:</span>
-												<span>47 - 64 этаж</span>
-											</li>
-										</ul>
-									</swiper-slide>
-								</swiper-container>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>
