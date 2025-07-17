@@ -1,23 +1,26 @@
 {
-  "name": "oko",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "sass-embedded": "^1.89.2",
-    "vite": "^6.3.5"
-  },
-  "dependencies": {
-    "autoprefixer": "^10.4.21",
-    "bootstrap": "^5.3.7",
-    "gsap": "^3.13.0",
-    "imagesloaded": "^5.0.0",
-    "lenis": "^1.3.4",
-    "swiper": "^11.2.8"
-  }
+	"name": "oko",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite --host",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"sass-embedded": "^1.89.2",
+		"vite": "^6.3.5",
+		"vite-plugin-pwa": "^1.0.1"
+	},
+	"dependencies": {
+		"autoprefixer": "^10.4.21",
+		"bootstrap": "^5.3.7",
+		"gsap": "^3.13.0",
+		"imagesloaded": "^5.0.0",
+		"lenis": "^1.3.4",
+		"rollup-plugin-visualizer": "^6.0.3",
+		"swiper": "^11.2.8",
+		"vite-plugin-compression": "^0.5.1"
+	}
 }
