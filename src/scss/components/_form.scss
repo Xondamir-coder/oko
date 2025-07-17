@@ -30,6 +30,10 @@
 		font-weight: 500;
 		font-size: clamp(16px, 1vw, 18px);
 		line-height: 100%;
+		transition: background-color vars.$dt;
+		&:hover {
+			background-color: #2b313f;
+		}
 		&::placeholder {
 			color: rgba(#fff, 0.6);
 			opacity: 1;

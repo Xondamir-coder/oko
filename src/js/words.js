@@ -1,4 +1,4 @@
-import { GSAPScrub } from './gsap';
+import { GSAPOnce, GSAPScrub } from './gsap';
 
 /**
  * Splits an element’s text & children into word-wrapped spans (preserving <br> and existing <span>),
@@ -68,17 +68,13 @@ const splitAndAnimate = (
 	el,
 	{
 		animProps = { yPercent: 120, stagger: 0.05 },
-		scrollTriggerOptions = { scrub: false, toggleActions: 'play none none reverse' },
 		wordClass = 'ds-inline-block',
 		containerClass = 'no-scroll'
 	} = {}
 ) => {
 	const spans = splitElementText(el, { wordClass, containerClass });
 	if (!spans.length) return;
-	GSAPScrub(spans, {
-		animProps,
-		scrollTriggerOptions: scrollTriggerOptions
-	});
+	GSAPOnce(spans, animProps);
 };
 
 // Export functions if using modules

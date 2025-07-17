@@ -46,13 +46,14 @@
 						</nav>
 					</div>
 					<div class="header__right">
-						<a href="tel:+7 (495) 182 39 05" class="button header__tel">
+						<a href="tel:+7 (495) 182 39 05" class="button header__tel" data-not-icon>
 							<span>+7 (495) 182-39-05</span>
 							<svg viewBox="0 0 24 24" class="icon">
 								<use href="src/icons/sprite.svg#phone"></use>
 							</svg>
 						</a>
 						<button
+							data-not-icon
 							data-bs-toggle="modal"
 							data-bs-target="#apartments-modal"
 							class="button">
@@ -80,7 +81,7 @@
 						</button>
 					</div>
 				</header>
-				<div class="menu">
+				<div class="menu" data-lenis-prevent="true">
 					<nav class="menu__nav">
 						<a href="#about" class="menu__link"> О проекте </a>
 						<a href="#apartments" class="menu__link"> Апартаменты </a>

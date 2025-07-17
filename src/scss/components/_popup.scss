@@ -27,7 +27,6 @@
 	}
 	&__container {
 		display: grid;
-		place-items: center;
 		&.active .popup__box {
 			opacity: 0;
 			pointer-events: none;
@@ -45,6 +44,7 @@
 		}
 	}
 	&__success {
+		place-self: center;
 		transition: opacity calc(vars.$dt + 0.3s), transform calc(vars.$dt + 0.3s);
 		display: flex;
 		flex-direction: column;

@@ -400,7 +400,9 @@ const handleParallax = () => {
 	});
 };
 const handleButtons = () => {
-	const buttons = document.querySelectorAll('.button, .section-card__button');
+	const buttons = document.querySelectorAll(
+		'.button:not([data-not-icon]), .section-card__button'
+	);
 	buttons.forEach(button => {
 		const svgIcon = button.querySelector('.icon');
 		if (!svgIcon) return;

@@ -37,12 +37,7 @@
 		z-index: 2;
 		background: linear-gradient(180deg, #00061465 0%, rgba(0, 6, 20, 0) 100%);
 		@include br.small-mobile {
-			background: linear-gradient(
-				180deg,
-				#000614 0%,
-				rgba(0, 6, 20, 0.974592) 30.47%,
-				rgba(0, 6, 20, 0) 90.98%
-			);
+			background: transparent;
 		}
 	}
 	&__down {
