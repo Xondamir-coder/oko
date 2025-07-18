@@ -3,7 +3,6 @@ import path from 'path';
 import autoprefixer from 'autoprefixer';
 import { VitePWA } from 'vite-plugin-pwa';
 import viteCompression from 'vite-plugin-compression';
-import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig(({ command }) => ({
 	plugins: [
@@ -11,7 +10,7 @@ export default defineConfig(({ command }) => ({
 			VitePWA({
 				registerType: 'autoUpdate',
 				workbox: {
-					globPatterns: ['**/*.{js,css,html,mp4}'],
+					globPatterns: ['**/*.{mp4,html}'],
 					runtimeCaching: [
 						{
 							urlPattern: /\/assets\/.*\.mp4$/,
@@ -28,8 +27,7 @@ export default defineConfig(({ command }) => ({
 				}
 			}),
 		viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 10240 }),
-		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 }),
-		visualizer({ open: true, gzipSize: true, brotliSize: true })
+		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 })
 	].filter(Boolean),
 
 	resolve: {
