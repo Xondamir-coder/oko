@@ -190,6 +190,7 @@
 			}
 		}
 		&-shadow {
+			pointer-events: none;
 			position: absolute;
 			inset: 0;
 			scale: 2.5;
