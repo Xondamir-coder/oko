@@ -1,8 +1,8 @@
 @use '@utils/variables' as vars;
 
 .container.safari .menu {
-	$bar-height: 52px;
-	padding-bottom: calc(20px + $bar-height);
+	$bar-height: 65px;
+	padding-bottom: $bar-height + 20px;
 }
 
 .menu {
