@@ -2,6 +2,9 @@
 @use '@utils/breakpoints' as br;
 @use '@utils/mixins' as mix;
 
+.container.safari .about__box {
+	padding-top: 30px;
+}
 .wall {
 	position: absolute;
 	inset: 0;
