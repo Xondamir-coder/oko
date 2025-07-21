@@ -2,9 +2,6 @@
 @use '@utils/breakpoints' as br;
 @use '@utils/mixins' as mix;
 
-.container.safari .about__box {
-	padding-top: 30px;
-}
 .wall {
 	position: absolute;
 	inset: 0;
@@ -241,7 +238,7 @@
 	position: relative;
 	overflow-x: clip;
 	z-index: 2;
-	animation: appear 1s backwards $preloader-duration;
+	// animation: appear 1s backwards $preloader-duration;
 	& > *:not(.about__box) {
 		z-index: 2;
 	}
@@ -255,17 +252,12 @@
 		z-index: 1;
 		height: auto;
 		width: 100%;
-		animation: uslide-from-bottom-50px 0.6s backwards 3.2s;
+		// animation: uslide-from-bottom-50px 0.6s backwards $preloader-duration;
 		@media screen and (max-width: 900px) {
 			height: 100%;
-			width: 862px;
-			transform: translateX(25%);
+			min-width: 862px;
 		}
-		@media screen and (max-width: 500px) {
-			// position: absolute;
-			// left: 50%;
-			transform: translateX(5%);
-		}
+
 		img {
 			@media screen and (max-width: vars.$bp-ipad-pro) {
 				object-fit: cover;
@@ -274,11 +266,6 @@
 	}
 	&__box {
 		position: relative;
-		@media screen and (max-width: 900px) {
-			width: 862px;
-			position: relative;
-			aspect-ratio: 862/375;
-		}
 	}
 	&__bg {
 		position: absolute;
