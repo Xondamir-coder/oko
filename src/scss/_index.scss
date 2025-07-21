@@ -231,12 +231,14 @@
 	}
 }
 .about {
+	$preloader-duration: 3s;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	position: relative;
 	overflow-x: clip;
 	z-index: 2;
+	animation: appear 1s backwards $preloader-duration;
 	& > *:not(.about__box) {
 		z-index: 2;
 	}
