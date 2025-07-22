@@ -10,7 +10,7 @@ export default defineConfig(({ command }) => ({
 			VitePWA({
 				registerType: 'autoUpdate',
 				workbox: {
-					globPatterns: ['**/*.{mp4,html}'],
+					globPatterns: ['**/*.{png,jpg,jpeg,webp,avif,mp4,webm}'],
 					runtimeCaching: [
 						{
 							urlPattern: /\/assets\/.*\.mp4$/,
