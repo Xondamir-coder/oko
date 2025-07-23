@@ -29,7 +29,6 @@ export default defineConfig(({ command }) => ({
 		viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 10240 }),
 		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 })
 	].filter(Boolean),
-
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),

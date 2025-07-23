@@ -453,7 +453,7 @@
 										type="image/webp" />
 									<img
 										fetchpriority="high"
-										src="src/images/compressed/illustration.png"
+										src="src/images/old/illustration.png"
 										width="967"
 										height="335"
 										alt="illustration"
@@ -473,19 +473,26 @@
 					</section>
 					<section class="about">
 						<div class="about__box">
-							<picture class="about__towers">
-								<source srcset="src/images/towers.webp" type="image/webp" />
-								<img
-									src="src/images/compressed/towers.png"
-									alt="towers"
-									width="1186"
-									height="667" />
-							</picture>
 							<div class="about__bg">
 								<picture class="about__bg-pic">
 									<source srcset="src/images/city.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/city.jpg"
+										src="src/images/old/city.jpg"
+										alt="city"
+										decoding="async"
+										width="480"
+										height="349" />
+								</picture>
+							</div>
+							<video class="about__towers" loop muted playsinline autoplay>
+								<source src="src/videos/hero.mp4" type="video/mp4" />
+								Video not supported
+							</video>
+							<div class="about__bg">
+								<picture class="about__bg-pic">
+									<source srcset="src/images/city.avif" type="image/avif" />
+									<img
+										src="src/images/old/city.jpg"
 										alt="city"
 										decoding="async"
 										width="480"
@@ -497,9 +504,9 @@
 							<div class="about__title" id="about-title">
 								<span>Истории</span>
 								<picture class="about__image">
-									<source srcset="src/images/compressed/about-1.jpg" />
+									<source srcset="src/images/about-1.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/about-1.jpg"
+										src="src/images/old/about-1.jpg"
 										alt="banner 1"
 										width="140"
 										height="88"
@@ -512,7 +519,7 @@
 								<picture class="about__image">
 									<source srcset="src/images/about-2.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/about-2.jpg"
+										src="src/images/old/about-2.jpg"
 										alt="banner 2"
 										decoding="async"
 										width="140"
@@ -523,7 +530,7 @@
 								<picture class="about__image">
 									<source srcset="src/images/about-3.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/about-3.jpg"
+										src="src/images/old/about-3.jpg"
 										alt="banner 3"
 										decoding="async"
 										width="140"
@@ -534,7 +541,7 @@
 								<picture class="about__image">
 									<source srcset="src/images/about-4.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/about-4.jpg"
+										src="src/images/old/about-4.jpg"
 										alt="banner 4"
 										decoding="async"
 										width="140"
@@ -545,7 +552,7 @@
 								<picture class="about__image">
 									<source srcset="src/images/about-5.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/about-5.jpg"
+										src="src/images/old/about-5.jpg"
 										alt="banner 5"
 										decoding="async"
 										width="140"
@@ -601,29 +608,29 @@
 									playsinline
 									preload="metadata"
 									class="section-card__video">
-									<source src="src/videos/horizontal-min-super.mp4" />
+									<source src="src/videos/1.mp4" type="video/mp4" />
 									Video isn't supported
 								</video>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-1.avif" type="image/avif" />
+									<source srcset="src/images/1.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-1.jpg"
+										src="src/images/old/1.jpg"
 										alt="banner"
 										width="2298"
 										height="1167"
 										decoding="async" />
 								</picture>
 								<picture class="section-card__blur">
-									<source srcset="src/images/history-1.avif" type="image/avif" />
+									<source srcset="src/images/1.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-1.jpg"
+										src="src/images/old/1.jpg"
 										alt="banner"
 										width="2298"
 										height="1167"
 										decoding="async" />
 								</picture>
 								<div class="section-card__content">
-									<h3 class="section-card__title">Там — город. Здесь — я.</h3>
+									<h3 class="section-card__title">Быть собой — это масштаб</h3>
 									<p class="history__card-text text-default">
 										В движении я сильная. Дома — настоящая. Пишу свои мечты,
 										воплощая их в реальность.
@@ -640,32 +647,31 @@
 									playsinline
 									preload="metadata"
 									class="section-card__video">
-									<source src="src/videos/horizontal-min-super.mp4" />
+									<source src="src/videos/1.mp4" type="video/mp4" />
 									Video isn't supported
 								</video>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-2.avif" type="image/avif" />
+									<source srcset="src/images/2.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-2.jpg"
+										src="src/images/old/2.jpg"
 										alt="banner"
 										width="2298"
 										height="1170"
 										decoding="async" />
 								</picture>
 								<picture class="section-card__blur">
-									<source srcset="src/images/history-2.avif" type="image/avif" />
+									<source srcset="src/images/2.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-2.jpg"
+										src="src/images/old/2.jpg"
 										alt="banner"
 										width="2298"
 										height="1170"
 										decoding="async" />
 								</picture>
 								<div class="section-card__content">
-									<h3 class="section-card__title">Летняя рутина</h3>
+									<h3 class="section-card__title">Ритм, который задаешь ты</h3>
 									<p class="history__card-text text-default">
-										Как Андрей научился наслаждаться круассаном в тишине»;
-										«Андрей и его утренний ритуал
+										В сердце города она всегда на шаг впереди.
 									</p>
 								</div>
 							</div>
@@ -679,22 +685,22 @@
 									playsinline
 									preload="metadata"
 									class="section-card__video">
-									<source src="src/videos/vertical-min-super.mp4" />
+									<source src="src/videos/1.mp4" type="video/mp4" />
 									Video isn't supported
 								</video>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-3.avif" type="image/avif" />
+									<source srcset="src/images/3.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-3.jpg"
+										src="src/images/old/3.jpg"
 										alt="banner"
 										width="1518"
 										height="2376"
 										decoding="async" />
 								</picture>
 								<picture class="section-card__blur--bottom">
-									<source srcset="src/images/history-3.avif" type="image/avif" />
+									<source srcset="src/images/3.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-3.jpg"
+										src="src/images/old/3.jpg"
 										alt="banner"
 										width="1518"
 										height="2376"
@@ -702,10 +708,10 @@
 								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">
-										Пространство для вдохновения
+										Пространство, в котором всё замирает
 									</h3>
 									<p class="history__card-text text-default">
-										Место для моих желаний в любом масштабе.
+										Дома всё живёт в темпе твоего дыхания
 									</p>
 								</div>
 							</div>
@@ -715,9 +721,9 @@
 								data-bs-target="#plan-modal">
 								<div class="history__card-gradient"></div>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-4.webp" type="image/webp" />
+									<source srcset="src/images/card-plan.webp" type="image/webp" />
 									<img
-										src="src/images/compressed/history-4.png"
+										src="src/images/old/card-plan.png"
 										alt="banner"
 										width="1518"
 										height="2376"
@@ -726,7 +732,7 @@
 								<div class="section-card__content">
 									<h3 class="section-card__title">Планировочные решения</h3>
 									<p class="history__card-text text-default">
-										Как Андрей научился наслаждаться круассаном в тишине»
+										Для тех, кто привык выбирать пространство под себя.
 									</p>
 									<button class="section-card__button">
 										<span>Смотреть</span>
@@ -743,12 +749,12 @@
 					<div class="gallery__top">
 						<div class="section-label">История 2</div>
 						<h2 class="gallery__title">
-							Место <br />
-							для любой мечты
+							Жизнь <br />
+							без ожидания
 						</h2>
 						<p class="text-default">
-							Просторные апартаменты, в которых каждый находит место для вдохновения и
-							творчества.
+							Когда ключи от нового дома становятся ключами от новой жизни — сразу,
+							здесь и сейчас.
 						</p>
 					</div>
 					<ul class="gallery__list">
@@ -762,32 +768,31 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/2.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<source srcset="src/images/4.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-1.jpg"
+									src="src/images/old/4.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<source srcset="src/images/4.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-1.jpg"
+									src="src/images/old/4.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Утро без суеты</h3>
+								<h3 class="section-card__title">Интрига новой жизни</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Когда важна каждая деталь и каждая секунда.
 								</p>
 							</div>
 						</li>
@@ -801,32 +806,32 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/2.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<source srcset="src/images/5.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-2.jpg"
+									src="src/images/old/5.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<source srcset="src/images/5.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-2.jpg"
+									src="src/images/old/5.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Летняя рутина</h3>
+								<h3 class="section-card__title">Въехать в будущее</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Пространство, готовое к жизни сразу, без компромиссов и
+									задержек.
 								</p>
 							</div>
 						</li>
@@ -840,32 +845,31 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/2.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<source srcset="src/images/6.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/history-2.jpg"
+									src="src/images/old/6.jpg"
 									alt="girl looking"
 									width="2298"
 									height="1170"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<source srcset="src/images/6.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/history-2.jpg"
+									src="src/images/old/6.jpg"
 									alt="girl looking"
 									width="2298"
 									height="1170"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Деловая среда</h3>
+								<h3 class="section-card__title">Счастье без ожидания</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Дом, где первая минута становится особенной.
 								</p>
 							</div>
 						</li>
@@ -874,9 +878,9 @@
 							data-bs-toggle="modal"
 							data-bs-target="#plan-modal">
 							<picture class="section-card__image">
-								<source srcset="src/images/history-4.webp" type="image/webp" />
+								<source srcset="src/images/card-plan.webp" type="image/webp" />
 								<img
-									src="src/images/compressed/history-4.png"
+									src="src/images/old/card-plan.png"
 									alt="banner"
 									width="1518"
 									height="2376"
@@ -885,7 +889,7 @@
 							<div class="section-card__content">
 								<h3 class="section-card__title">Планировочные решения</h3>
 								<p class="gallery__card-text">
-									Как Андрей научился наслаждаться круассаном в тишине»
+									Для тех, кто не хочет ждать, чтобы начать жить.
 								</p>
 								<button class="section-card__button">
 									<span>Смотреть</span>
@@ -904,8 +908,8 @@
 							<span class="clr-normal-white">своего уровня</span>
 						</h2>
 						<p class="text-default">
-							Свобода в каждой детали. Свобода в каждой детали. Свобода в каждой
-							детали. Свобода в каждой детали.
+							Каждый уровень — это не просто этаж. Это другое ощущение пространства,
+							другое утро, другой ритм. Выбирайте то, что совпадает с вами.
 						</p>
 					</div>
 					<div class="apartments__middle">
@@ -1772,7 +1776,10 @@
 					<div class="gallery__top">
 						<div class="section-label">История 3</div>
 						<h2 class="gallery__title">360° Инфраструктура</h2>
-						<p class="text-default">ОКО. Жизнь по кругу твоих желаний.</p>
+						<p class="text-default">
+							Когда всё, что тебе нужно — уже вокруг тебя. Сила, отдых и вдохновение в
+							одном пространстве.
+						</p>
 					</div>
 					<ul class="gallery__list">
 						<li
@@ -1785,32 +1792,31 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/3.mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-3.avif" type="image/avif" />
+								<source srcset="src/images/7.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-3.jpg"
+									src="src/images/old/7.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-3.avif" type="image/avif" />
+								<source srcset="src/images/7.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-3.jpg"
+									src="src/images/old/7.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Утро без суеты</h3>
+								<h3 class="section-card__title">Быть сильнее</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Не тратить время и энергию на то, чтобы получить желанное
 								</p>
 							</div>
 						</li>
@@ -1824,33 +1830,30 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/3.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-4.avif" type="image/avif" />
+								<source srcset="src/images/8.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-4.jpg"
+									src="src/images/old/8.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-4.avif" type="image/avif" />
+								<source srcset="src/images/8.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-4.jpg"
+									src="src/images/old/8.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Выбирать всё</h3>
-								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
-								</p>
+								<h3 class="section-card__title">Выбирая себя</h3>
+								<p class="gallery__card-text">Твой день — твои правила</p>
 							</div>
 						</li>
 						<li
@@ -1863,28 +1866,27 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/3.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-5.avif" type="image/avif" />
+								<source srcset="src/images/9.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-5.jpg"
+									src="src/images/old/9.jpg"
 									alt="girl looking"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-5.avif" type="image/avif" />
+								<source srcset="src/images/9.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-5.jpg"
+									src="src/images/old/9.jpg"
 									alt="girl looking"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Отдых на высоте</h3>
+								<h3 class="section-card__title">Твой дом — пять звезд</h3>
 								<p class="gallery__card-text">
-									В самом сердце Москва-Сити, там, где город встречается с вашим
-									образом жизни.
+									Никакх компромиссов, только комфорт и удовольствие
 								</p>
 							</div>
 						</li>
@@ -1893,9 +1895,9 @@
 							data-bs-toggle="modal"
 							data-bs-target="#plan-modal">
 							<picture class="section-card__image">
-								<source srcset="src/images/history-4.webp" type="image/webp" />
+								<source srcset="src/images/card-plan.webp" type="image/webp" />
 								<img
-									src="src/images/compressed/history-4.png"
+									src="src/images/old/card-plan.png"
 									alt="banner"
 									width="1518"
 									height="2376"
@@ -1904,7 +1906,7 @@
 							<div class="section-card__content">
 								<h3 class="section-card__title">Планировочные решения</h3>
 								<p class="gallery__card-text">
-									Как Андрей научился наслаждаться круассаном в тишине»
+									Для тех, кто привык жить в комфорте пятизвёздочного отеля.
 								</p>
 								<button class="section-card__button">
 									<span>Смотреть</span>
@@ -1942,29 +1944,30 @@
 									playsinline
 									preload="metadata"
 									class="section-card__video">
-									<source src="src/videos/vertical-min-super.mp4" />
+									<source src="src/videos/4.mp4" type="video/mp4" />
 									Video isn't supported
 								</video>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-5.avif" type="image/avif" />
+									<source srcset="src/images/10.avif" type="image/avif" />
 									<img
 										width="1000"
 										height="1565"
-										src="src/images/compressed/history-5.jpg"
+										src="src/images/old/10.jpg"
 										alt="banner" />
 								</picture>
 								<picture class="section-card__blur--bottom">
-									<source srcset="src/images/history-5.avif" type="image/avif" />
+									<source srcset="src/images/10.avif" type="image/avif" />
 									<img
 										width="1000"
 										height="1565"
-										src="src/images/compressed/history-5.jpg"
+										src="src/images/old/10.jpg"
 										alt="banner" />
 								</picture>
 								<div class="section-card__content">
-									<h3 class="section-card__title">Без прогноза</h3>
+									<h3 class="section-card__title">Контраст как манифест</h3>
 									<p class="history__card-text text-default">
-										Место для моих желаний в любом масштабе.
+										Ты в футболке, город — в пальто. И всё складывается
+										правильно.
 									</p>
 								</div>
 							</div>
@@ -1978,31 +1981,29 @@
 									playsinline
 									preload="metadata"
 									class="section-card__video">
-									<source src="src/videos/vertical-min-super.mp4" />
+									<source src="src/videos/4.mp4" type="video/mp4" />
 									Video isn't supported
 								</video>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-6.avif" type="image/avif" />
+									<source srcset="src/images/11.avif" type="image/avif" />
 									<img
 										width="1000"
 										height="1565"
-										src="src/images/compressed/history-6.jpg"
+										src="src/images/old/11.jpg"
 										alt="banner" />
 								</picture>
 								<picture class="section-card__blur--bottom">
-									<source srcset="src/images/history-6.avif" type="image/avif" />
+									<source srcset="src/images/11.avif" type="image/avif" />
 									<img
 										width="1000"
 										height="1565"
-										src="src/images/compressed/history-6.jpg"
+										src="src/images/old/11.jpg"
 										alt="banner" />
 								</picture>
 								<div class="section-card__content">
-									<h3 class="section-card__title">Лёгкость выбора</h3>
+									<h3 class="section-card__title">Особенная атмосфера</h3>
 									<p class="history__card-text text-default">
-										Когда подготовка к выходу занимает секунды.Когда подготовка
-										к выходу занимает секунды.Когда подготовка к выходу занимает
-										секунды.
+										Город подстраивается под тебя и никак иначе
 									</p>
 								</div>
 							</div>
@@ -2016,30 +2017,30 @@
 									playsinline
 									preload="metadata"
 									class="section-card__video">
-									<source src="src/videos/horizontal-min-super.mp4" />
+									<source src="src/videos/4.mp4" type="video/mp4" />
 									Video isn't supported
 								</video>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-7.avif" type="image/avif" />
+									<source srcset="src/images/12.avif" type="image/avif" />
 									<img
-										src="src/images/compressed/history-7.jpg"
+										src="src/images/old/12.jpg"
 										width="3064"
 										height="1556"
 										alt="banner" />
 								</picture>
 								<picture class="section-card__blur">
-									<source srcset="src/images/history-7.avif" type="image/avif" />
+									<source srcset="src/images/12.avif" type="image/avif" />
 									<img
 										width="3064"
 										height="1556"
-										src="src/images/compressed/history-7.jpg"
+										src="src/images/old/12.jpg"
 										alt="banner" />
 								</picture>
 								<div class="section-card__content">
 									<h3 class="section-card__title">Свой климат</h3>
 									<p class="history__card-text text-default">
-										Пока другие готовятся, ты уже живёшь.Пока другие готовятся,
-										ты уже живёшь.Пока другие готовятся, ты уже живёшь.
+										Твой безпрецендентный уровень удобства и комфорта в деловом
+										центре Москвы
 									</p>
 								</div>
 							</div>
@@ -2049,22 +2050,22 @@
 								data-bs-target="#plan-modal">
 								<div class="history__card-gradient"></div>
 								<picture class="section-card__image">
-									<source srcset="src/images/history-4.webp" type="image/webp" />
+									<source srcset="src/images/card-plan.webp" type="image/webp" />
 									<img
-										src="src/images/compressed/history-4.png"
+										src="src/images/old/card-plan.png"
 										alt="banner"
 										width="1518"
 										height="2376"
 										decoding="async" />
 								</picture>
 								<!-- <img
-								src="src/images/compressed/history-4.png"
+								src="src/images/old/card-plan.png"
 								alt="banner"
 								class="section-card__blur" /> -->
 								<div class="section-card__content">
 									<h3 class="section-card__title">Планировочные решения</h3>
 									<p class="history__card-text text-default">
-										Как Андрей научился наслаждаться круассаном в тишине»
+										Для тех, кто привык жить в комфорте пятизвёздочного отеля.
 									</p>
 									<button class="section-card__button">
 										<span>Смотреть</span>
@@ -2086,8 +2087,8 @@
 							офис
 						</h2>
 						<p class="text-default">
-							Просторные апартаменты, в которых каждый находит место для вдохновения и
-							творчества.
+							Когда продуктивность не требует дресс-кода, а успех — начинается с
+							правильной атмосферы.
 						</p>
 					</div>
 					<ul class="gallery__list">
@@ -2101,32 +2102,31 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/5.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<source srcset="src/images/13.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-1.jpg"
+									src="src/images/old/13.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-1.avif" type="image/avif" />
+								<source srcset="src/images/13.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-1.jpg"
+									src="src/images/old/13.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Там — город. Здесь — я</h3>
+								<h3 class="section-card__title">Рабочий день на твоих условиях</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Где между графиками и кофе — нет ни одного лишнего шага.
 								</p>
 							</div>
 						</li>
@@ -2140,32 +2140,33 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/5.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<source srcset="src/images/14.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-2.jpg"
+									src="src/images/old/14.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/gallery-2.avif" type="image/avif" />
+								<source srcset="src/images/14.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/gallery-2.jpg"
+									src="src/images/old/14.jpg"
 									alt="girl looking"
 									width="1796"
 									height="2784"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Пространство для вдохновения</h3>
+								<h3 class="section-card__title">
+									Тишина, в которой слышно результат
+								</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Сделки, идеи, решения — в пространстве, созданном под тебя.
 								</p>
 							</div>
 						</li>
@@ -2179,32 +2180,31 @@
 								playsinline
 								preload="metadata"
 								class="section-card__video">
-								<source src="src/videos/vertical-min-super.mp4" />
+								<source src="src/videos/5.mp4" type="video/mp4" />
 								Video isn't supported
 							</video>
 							<picture class="section-card__image">
-								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<source srcset="src/images/15.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/history-2.jpg"
+									src="src/images/old/15.jpg"
 									alt="girl looking"
 									width="2298"
 									height="1170"
 									decoding="async" />
 							</picture>
 							<picture class="section-card__blur--bottom">
-								<source srcset="src/images/history-2.avif" type="image/avif" />
+								<source srcset="src/images/15.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/history-2.jpg"
+									src="src/images/old/15.jpg"
 									alt="girl looking"
 									width="2298"
 									height="1170"
 									decoding="async" />
 							</picture>
 							<div class="section-card__content">
-								<h3 class="section-card__title">Вид, достойный тебя</h3>
+								<h3 class="section-card__title">Продуктивность в комфорте</h3>
 								<p class="gallery__card-text">
-									В движении я сильная. Дома — настоящая. Пишу свои мечты,
-									воплощая их в реальность.
+									Дом, где ты работаешь не хуже. А живёшь — лучше.
 								</p>
 							</div>
 						</li>
@@ -2213,9 +2213,9 @@
 							data-bs-toggle="modal"
 							data-bs-target="#plan-modal">
 							<picture class="section-card__image">
-								<source srcset="src/images/history-4.webp" type="image/webp" />
+								<source srcset="src/images/card-plan.webp" type="image/webp" />
 								<img
-									src="src/images/compressed/history-4.png"
+									src="src/images/old/card-plan.png"
 									alt="banner"
 									width="1518"
 									height="2376"
@@ -2224,7 +2224,7 @@
 							<div class="section-card__content">
 								<h3 class="section-card__title">Планировочные решения</h3>
 								<p class="gallery__card-text">
-									Как Андрей научился наслаждаться круассаном в тишине»
+									Для тех, кто привык жить в комфорте пятизвёздочного отеля.
 								</p>
 								<button class="section-card__button">
 									<span>Смотреть</span>
@@ -2281,9 +2281,9 @@
 						loop="true">
 						<swiper-slide class="slider__slide">
 							<picture class="slider__image">
-								<source srcset="src/images/slider-1.avif" type="image/avif" />
+								<source srcset="src/images/slider.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/slider-1.jpg"
+									src="src/images/old/slider.jpg"
 									width="1000"
 									height="666"
 									alt="slider banner" />
@@ -2291,9 +2291,9 @@
 						</swiper-slide>
 						<swiper-slide class="slider__slide">
 							<picture class="slider__image">
-								<source srcset="src/images/slider-1.avif" type="image/avif" />
+								<source srcset="src/images/slider.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/slider-1.jpg"
+									src="src/images/old/slider.jpg"
 									width="1000"
 									height="666"
 									alt="slider banner" />
@@ -2301,9 +2301,9 @@
 						</swiper-slide>
 						<swiper-slide class="slider__slide">
 							<picture class="slider__image">
-								<source srcset="src/images/slider-1.avif" type="image/avif" />
+								<source srcset="src/images/slider.avif" type="image/avif" />
 								<img
-									src="src/images/compressed/slider-1.jpg"
+									src="src/images/old/slider.jpg"
 									width="1000"
 									height="666"
 									alt="slider banner" />
@@ -2315,11 +2315,9 @@
 					<div class="cta__left">
 						<h2 class="cta__title">
 							Почувствуйте
-							<span class="clr-normal-white">жизнь в ОКО сами</span>
+							<span class="clr-normal-white">жизнь в ОКО уже сейчас</span>
 						</h2>
-						<p class="text-default">
-							Запишитесь на индивидуальный просмотр уже сегодня
-						</p>
+						<p class="text-default">Запишитесь на индивидуальный просмотр</p>
 					</div>
 					<form class="form" data-standalone>
 						<input
@@ -2521,8 +2519,9 @@
 									<div class="plan__box-top">
 										<h2 class="title-62">Планировочные решения</h2>
 										<p class="text-default">
-											Свобода в каждой детали. Свобода в каждой детали.
-											Свобода в каждой детали. Свобода в каждой детали.
+											Каждый метр здесь работает на тебя. Никаких
+											компромиссов, никаких лишних углов — только
+											пространство, в котором хочется остаться.
 										</p>
 									</div>
 									<button class="button plan--desktop">
@@ -2567,7 +2566,7 @@
 									<div class="plan__header">
 										<h2 class="title-62">
 											Почувствуйте <br />
-											жизнь в ОКО сами
+											жизнь в ОКО
 										</h2>
 										<p class="text-default">
 											Запишитесь на индивидуальный просмотр уже сегодня
@@ -2620,10 +2619,14 @@
 							</div>
 							<ul id="plan-slider-desktop" class="plan__slider plan__slider--desktop">
 								<li class="plan__slide active">
-									<img
-										src="src/images/compressed/plan.png"
-										alt="plan"
-										class="plan__image plan--desktop" />
+									<picture class="plan__image plan--desktop">
+										<source srcset="src/images/plan.webp" type="image/webp" />
+										<img
+											src="src/images/old/plan.png"
+											alt="plan-banner"
+											width="1600"
+											height="920" />
+									</picture>
 									<ul class="plan__details plan--desktop">
 										<li class="plan__detail">
 											<span class="clr-grey">Тип апартамента:</span>
@@ -2644,10 +2647,14 @@
 									</ul>
 								</li>
 								<li class="plan__slide">
-									<img
-										src="src/images/compressed/plan.png"
-										alt="plan"
-										class="plan__image plan--desktop" />
+									<picture class="plan__image plan--desktop">
+										<source srcset="src/images/plan.webp" type="image/webp" />
+										<img
+											src="src/images/old/plan.png"
+											alt="plan-banner"
+											width="1600"
+											height="920" />
+									</picture>
 									<ul class="plan__details plan--desktop">
 										<li class="plan__detail">
 											<span class="clr-grey">zxc:</span>
@@ -2668,10 +2675,14 @@
 									</ul>
 								</li>
 								<li class="plan__slide">
-									<img
-										src="src/images/compressed/plan.png"
-										alt="plan"
-										class="plan__image plan--desktop" />
+									<picture class="plan__image plan--desktop">
+										<source srcset="src/images/plan.webp" type="image/webp" />
+										<img
+											src="src/images/old/plan.png"
+											alt="plan-banner"
+											width="1600"
+											height="920" />
+									</picture>
 									<ul class="plan__details plan--desktop">
 										<li class="plan__detail">
 											<span class="clr-grey">qwe:</span>
@@ -2716,10 +2727,16 @@
 									class="plan__slider plan__slider--mobile"
 									id="plan-slider-mobile">
 									<li class="plan__slide active">
-										<img
-											src="src/images/compressed/plan.png"
-											alt="plan"
-											class="plan__image" />
+										<picture class="plan__image">
+											<source
+												srcset="src/images/plan.webp"
+												type="image/webp" />
+											<img
+												src="src/images/old/plan.png"
+												alt="plan-banner"
+												width="1600"
+												height="920" />
+										</picture>
 										<ul class="plan__details">
 											<li class="plan__detail">
 												<span class="clr-grey">Тип апартамента:</span>
@@ -2740,10 +2757,16 @@
 										</ul>
 									</li>
 									<li class="plan__slide">
-										<img
-											src="src/images/compressed/plan.png"
-											alt="plan"
-											class="plan__image" />
+										<picture class="plan__image">
+											<source
+												srcset="src/images/plan.webp"
+												type="image/webp" />
+											<img
+												src="src/images/old/plan.png"
+												alt="plan-banner"
+												width="1600"
+												height="920" />
+										</picture>
 										<ul class="plan__details">
 											<li class="plan__detail">
 												<span class="clr-grey">zxc апартамента:</span>
@@ -2764,10 +2787,16 @@
 										</ul>
 									</li>
 									<li class="plan__slide">
-										<img
-											src="src/images/compressed/plan.png"
-											alt="plan"
-											class="plan__image" />
+										<picture class="plan__image">
+											<source
+												srcset="src/images/plan.webp"
+												type="image/webp" />
+											<img
+												src="src/images/old/plan.png"
+												alt="plan-banner"
+												width="1600"
+												height="920" />
+										</picture>
 										<ul class="plan__details">
 											<li class="plan__detail">
 												<span class="clr-grey">Тип апартамента:</span>
@@ -2824,15 +2853,9 @@
 						<div class="history-modal__container">
 							<div class="history-modal__top">
 								<div class="history-modal__bars">
-									<div class="history-modal__bar">
+									<!-- <div class="history-modal__bar">
 										<div class="history-modal__bar--inner"></div>
-									</div>
-									<div class="history-modal__bar">
-										<div class="history-modal__bar--inner"></div>
-									</div>
-									<div class="history-modal__bar">
-										<div class="history-modal__bar--inner"></div>
-									</div>
+									</div> -->
 								</div>
 								<button data-bs-dismiss="modal" class="history-modal__close">
 									<svg viewBox="0 0 24 24" width="24" height="24">
@@ -2847,56 +2870,35 @@
 								navigation="true"
 								navigation-prev-el="#history-modal-prev"
 								navigation-next-el="#history-modal-next"
-								grab-cursor="true"
 								rewind="true"
-								speed="600"
-								autoplay-delay="3000"
-								autoplay-disable-on-interaction="false">
+								grab-cursor="true">
 								<swiper-slide class="section-card">
-									<video
-										loop
-										muted
-										playsinline
-										preload="metadata"
-										autoplay
-										class="section-card__video">
-										<source src="src/videos/vertical-min-super.mp4" />
+									<video muted playsinline class="section-card__video">
+										<source src="src/videos/1.mp4" type="video/mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<video
-										loop
-										muted
-										playsinline
-										preload="metadata"
-										autoplay
-										class="section-card__video">
-										<source src="src/videos/vertical-min-super.mp4" />
+									<video muted playsinline class="section-card__video">
+										<source src="src/videos/2.mp4" type="video/mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<video
-										loop
-										muted
-										playsinline
-										preload="metadata"
-										autoplay
-										class="section-card__video">
-										<source src="src/videos/vertical-min-super.mp4" />
+									<video muted playsinline class="section-card__video">
+										<source src="src/videos/3.mp4" type="video/mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
 								<swiper-slide class="section-card">
-									<video
-										loop
-										muted
-										playsinline
-										preload="metadata"
-										autoplay
-										class="section-card__video">
-										<source src="src/videos/vertical-min-super.mp4" />
+									<video muted playsinline class="section-card__video">
+										<source src="src/videos/4.mp4" type="video/mp4" />
+										Video isn't supported
+									</video>
+								</swiper-slide>
+								<swiper-slide class="section-card">
+									<video muted playsinline class="section-card__video">
+										<source src="src/videos/5.mp4" type="video/mp4" />
 										Video isn't supported
 									</video>
 								</swiper-slide>
@@ -2928,8 +2930,9 @@
 								<span class="clr-normal-white">своего уровня</span>
 							</h2>
 							<p class="text-default">
-								Свобода в каждой детали. Свобода в каждой детали. Свобода в каждой
-								детали. Свобода в каждой детали.
+								Каждый уровень — это не просто этаж. Это другое ощущение
+								пространства, другое утро, другой ритм. Выбирайте то, что совпадает
+								с вами.
 							</p>
 						</div>
 						<div class="apartments__middle">

@@ -162,11 +162,16 @@ const handleAboutAnimation = () => {
 };
 const handleVideoStart = () => {
 	document.querySelectorAll('.section-card').forEach(el => {
+		const videoEl = el.querySelector('video');
+		if (!videoEl) return;
+
 		el.addEventListener('mouseenter', () => {
 			el.classList.add('playing');
-			const videoEl = el.querySelector('video');
-			if (!videoEl) return;
 			videoEl.play();
+		});
+		el.addEventListener('mouseleave', () => {
+			el.classList.remove('playing');
+			videoEl.pause();
 		});
 	});
 };
@@ -351,33 +356,93 @@ const handleSafari = () => {
 };
 const handleHistoryModal = () => {
 	const sliderEl = document.querySelector('.history-modal__slider');
-	const bars = document.querySelectorAll('.history-modal__bar--inner');
 	const swiper = sliderEl.swiper;
+	const videos = sliderEl.querySelectorAll('video');
+	const barsContainer = document.querySelector('.history-modal__bars');
+	let currentIndex = 0;
+	let rafId = null;
 
-	const updateBars = activeIndex => {
-		bars.forEach((bar, i) => {
-			const isBefore = i < activeIndex;
-			const isCurrent = i === activeIndex;
+	// build bars
+	barsContainer.innerHTML = '';
+	videos.forEach(() => {
+		const wrapper = document.createElement('div');
+		wrapper.className = 'history-modal__bar';
+		wrapper.innerHTML = `<div class="history-modal__bar--inner" style="width:0%"></div>`;
+		barsContainer.append(wrapper);
+	});
+	const barInners = barsContainer.querySelectorAll('.history-modal__bar--inner');
 
-			// animate filled / empty
-			gsap.to(bar, {
-				scaleX: isBefore ? 1 : 0,
-				duration: 0.6,
-				ease: 'power2.out'
-			});
-
-			// set a class on the current bar for custom styling
-			bar.classList.toggle('current', isCurrent);
-		});
+	const resetBar = idx => {
+		barInners[idx].style.width = '0%';
 	};
 
-	// initial paint
-	updateBars(swiper.activeIndex);
+	// JS tween helper: from current width → target% over duration ms
+	const animateWidth = (el, targetPct, duration = 300) => {
+		cancelAnimationFrame(el._animRaf);
+		const startPct = parseFloat(el.style.width) || 0;
+		const delta = targetPct - startPct;
+		const t0 = performance.now();
 
+		const step = now => {
+			const t = Math.min((now - t0) / duration, 1);
+			el.style.width = `${startPct + delta * t}%`;
+			if (t < 1) el._animRaf = requestAnimationFrame(step);
+		};
+		el._animRaf = requestAnimationFrame(step);
+	};
+
+	const playSlide = (idx, jumpOnly = false) => {
+		// stop old
+		if (videos[currentIndex]) {
+			videos[currentIndex].pause();
+			cancelAnimationFrame(rafId);
+		}
+
+		// on auto‑advance, reset this bar & slide
+		if (!jumpOnly) {
+			resetBar(idx);
+			swiper.slideTo(idx);
+		}
+
+		currentIndex = idx;
+		const vid = videos[idx];
+		const bar = barInners[idx];
+
+		vid.currentTime = 0;
+		vid.play();
+
+		const tick = () => {
+			const pct = vid.currentTime / vid.duration;
+			bar.style.width = `${Math.min(pct, 1) * 100}%`;
+			if (!vid.paused) rafId = requestAnimationFrame(tick);
+		};
+		tick();
+
+		vid.onended = () => {
+			cancelAnimationFrame(rafId);
+			bar.style.width = '100%';
+			const next = idx + 1 < videos.length ? idx + 1 : 0;
+			playSlide(next);
+		};
+	};
+
+	// manual swipe: tween all previous bars to 100%, rest to 0%, then restart
 	swiper.on('slideChange', () => {
-		updateBars(swiper.activeIndex);
+		const idx = swiper.activeIndex;
+		videos[currentIndex].pause();
+		cancelAnimationFrame(rafId);
+
+		barInners.forEach((bar, i) => {
+			animateWidth(bar, i < idx ? 100 : 0, 300);
+		});
+
+		playSlide(idx, true);
 	});
+
+	// kick off
+	playSlide(0);
 };
+
 const handleHeroAnimation = () => {
 	// Hero animation is full CSS here we only toggle body overflow
 	document.body.classList.add('no-scroll');
@@ -388,12 +453,12 @@ const handleHeroAnimation = () => {
 	}, 3000);
 };
 const handleParallax = () => {
-	gsap.from('.about__towers img', {
+	gsap.from('.about__box', {
 		yPercent: 10,
 		ease: 'none',
 		scrollTrigger: {
 			scrub: 1,
-			trigger: '.about__towers',
+			trigger: '.about__box',
 			start: 'top 80%',
 			end: 'bottom center'
 		}

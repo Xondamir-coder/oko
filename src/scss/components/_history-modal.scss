@@ -90,7 +90,7 @@
 	}
 	&__bars {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
 		grid-auto-rows: 2px;
 		gap: 3px;
 	}
@@ -103,10 +103,8 @@
 			background: #ffffff;
 			position: absolute;
 			inset: 0;
-			width: 100%;
+			width: 0;
 			height: 100%;
-			transform: scaleX(0);
-			transform-origin: left;
 		}
 	}
 	&__container {
