@@ -13,13 +13,24 @@ export default defineConfig(({ command }) => ({
 					globPatterns: ['**/*.{png,jpg,jpeg,webp,avif,mp4,webm}'],
 					runtimeCaching: [
 						{
-							urlPattern: /\/assets\/.*\.mp4$/,
-							handler: 'CacheFirst',
+							urlPattern: /\/assets\/.*\.(?:mp4|webm)$/,
+							handler: 'StaleWhileRevalidate',
 							options: {
 								cacheName: 'video-cache',
 								expiration: {
 									maxEntries: 5,
 									maxAgeSeconds: 60 * 60 * 24 * 365
+								}
+							}
+						},
+						{
+							urlPattern: /\/assets\/.*\.(?:png|jpg|jpeg|webp|avif)$/,
+							handler: 'StaleWhileRevalidate',
+							options: {
+								cacheName: 'image-cache',
+								expiration: {
+									maxEntries: 50,
+									maxAgeSeconds: 60 * 60 * 24 * 30
 								}
 							}
 						}
@@ -29,6 +40,7 @@ export default defineConfig(({ command }) => ({
 		viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 10240 }),
 		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 })
 	].filter(Boolean),
+
 	resolve: {
 		alias: {
 			'@': path.resolve(__dirname, 'src'),

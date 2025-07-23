@@ -22,7 +22,7 @@
 	&__container {
 		display: flex;
 		flex-direction: column;
-		gap: min(30vw, 500px);
+		gap: max(10vw, 50px);
 	}
 }
 .hero {
@@ -272,7 +272,7 @@
 	}
 	&__box {
 		position: relative;
-		animation: slide-from-bottom-50px 0.6s backwards $preloader-duration;
+		animation: appear 0.6s backwards 2s;
 	}
 	&__bg {
 		position: absolute;
