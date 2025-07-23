@@ -12,6 +12,7 @@ export default defineConfig(({ command }) => ({
 				registerType: 'autoUpdate',
 				workbox: {
 					globPatterns: ['**/*.{png,jpg,jpeg,webp,avif,mp4,webm}'],
+					maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
 					runtimeCaching: [
 						{
 							urlPattern: /\/assets\/.*\.(?:mp4|webm)$/,
