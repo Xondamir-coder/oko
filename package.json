@@ -7,8 +7,7 @@
 		"dev": "vite --host",
 		"build": "vite build",
 		"preview": "vite preview",
-		"test": "vite build && vite preview",
-		"push": "git push origin main"
+		"test": "vite build && vite preview"
 	},
 	"devDependencies": {
 		"sass-embedded": "^1.89.2",

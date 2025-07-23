@@ -163,6 +163,7 @@
 		}
 	}
 	&__details {
+		z-index: 2;
 		align-self: flex-end;
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -179,6 +180,8 @@
 		font-size: clamp(16px, 1vw, 18px);
 	}
 	&__image {
+		height: 100%;
+		width: 100%;
 		position: absolute;
 		top: 0;
 		left: 0;

@@ -24,6 +24,12 @@
 	grid-template-columns: 1fr 1.45fr;
 	position: relative;
 
+	@media screen and (min-width: 900px) {
+		height: calc(100vh - 20px);
+		max-height: 1200px;
+		grid-auto-rows: max-content 1fr;
+	}
+
 	&::-webkit-scrollbar {
 		display: none;
 	}
@@ -90,7 +96,7 @@
 		& > *:first-child,
 		& > *:nth-child(2) {
 			@media screen and (min-width: 900px) {
-				aspect-ratio: 766 / 390;
+				// aspect-ratio: 766 / 390;
 			}
 		}
 		& > *:nth-child(3) .section-card__blur--bottom img {
@@ -114,7 +120,7 @@
 		& > *:last-child,
 		& > *:nth-child(3) {
 			@media screen and (min-width: 900px) {
-				aspect-ratio: 766 / 390;
+				// aspect-ratio: 766 / 390;
 			}
 		}
 	}
@@ -124,9 +130,6 @@
 		counter-reset: card;
 		@media screen and (min-width: vars.$bp-small-mobile) {
 			grid-column: span 2;
-		}
-		@media screen and (min-width: 900px) {
-			grid-auto-rows: 20vw;
 		}
 		@media screen and (max-width: 900px) {
 			@include mix.grid-scroll(max(30%, 300px));

@@ -3,6 +3,7 @@ import path from 'path';
 import autoprefixer from 'autoprefixer';
 import { VitePWA } from 'vite-plugin-pwa';
 import viteCompression from 'vite-plugin-compression';
+import { fixRussianPrepositions } from './src/js/typography';
 
 export default defineConfig(({ command }) => ({
 	plugins: [
@@ -38,7 +39,13 @@ export default defineConfig(({ command }) => ({
 				}
 			}),
 		viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 10240 }),
-		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 })
+		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 }),
+		{
+			name: 'fix-russian-prepositions',
+			transformIndexHtml(html) {
+				return fixRussianPrepositions(html);
+			}
+		}
 	].filter(Boolean),
 
 	resolve: {

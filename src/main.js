@@ -355,94 +355,110 @@ const handleSafari = () => {
 	}
 };
 const handleHistoryModal = () => {
-	const sliderEl = document.querySelector('.history-modal__slider');
-	const swiper = sliderEl.swiper;
-	const videos = sliderEl.querySelectorAll('video');
-	const barsContainer = document.querySelector('.history-modal__bars');
-	let currentIndex = 0;
-	let rafId = null;
+	const init = () => {
+		const sliderEl = document.querySelector('.history-modal__slider');
+		const swiper = sliderEl.swiper;
+		const videos = sliderEl.querySelectorAll('video');
+		const barsContainer = document.querySelector('.history-modal__bars');
+		let currentIndex = 0;
+		let rafId = null;
 
-	// build bars
-	barsContainer.innerHTML = '';
-	videos.forEach(() => {
-		const wrapper = document.createElement('div');
-		wrapper.className = 'history-modal__bar';
-		wrapper.innerHTML = `<div class="history-modal__bar--inner" style="width:0%"></div>`;
-		barsContainer.append(wrapper);
-	});
-	const barInners = barsContainer.querySelectorAll('.history-modal__bar--inner');
+		// build bars
+		barsContainer.innerHTML = '';
+		videos.forEach(() => {
+			const wrapper = document.createElement('div');
+			wrapper.className = 'history-modal__bar';
+			wrapper.innerHTML = `<div class="history-modal__bar--inner" style="width:0%"></div>`;
+			barsContainer.append(wrapper);
+		});
+		const barInners = barsContainer.querySelectorAll('.history-modal__bar--inner');
 
-	const resetBar = idx => {
-		barInners[idx].style.width = '0%';
-	};
-
-	// JS tween helper: from current width → target% over duration ms
-	const animateWidth = (el, targetPct, duration = 300) => {
-		cancelAnimationFrame(el._animRaf);
-		const startPct = parseFloat(el.style.width) || 0;
-		const delta = targetPct - startPct;
-		const t0 = performance.now();
-
-		const step = now => {
-			const t = Math.min((now - t0) / duration, 1);
-			el.style.width = `${startPct + delta * t}%`;
-			if (t < 1) el._animRaf = requestAnimationFrame(step);
+		const resetBar = idx => {
+			barInners[idx].style.width = '0%';
 		};
-		el._animRaf = requestAnimationFrame(step);
-	};
 
-	const playSlide = (idx, jumpOnly = false) => {
-		// stop old
-		if (videos[currentIndex]) {
+		// JS tween helper: from current width → target% over duration ms
+		const animateWidth = (el, targetPct, duration = 300) => {
+			cancelAnimationFrame(el._animRaf);
+			const startPct = parseFloat(el.style.width) || 0;
+			const delta = targetPct - startPct;
+			const t0 = performance.now();
+			const step = now => {
+				const t = Math.min((now - t0) / duration, 1);
+				el.style.width = `${startPct + delta * t}%`;
+				if (t < 1) el._animRaf = requestAnimationFrame(step);
+			};
+			el._animRaf = requestAnimationFrame(step);
+		};
+
+		// safe play wrapper to swallow AbortError
+		const safePlay = vid => {
+			const p = vid.play();
+			if (p && p.catch) {
+				p.catch(err => {
+					if (err.name !== 'AbortError') console.error('Video play failed:', err);
+				});
+			}
+		};
+
+		const playSlide = (idx, jumpOnly = false) => {
+			// stop old
+			if (videos[currentIndex]) {
+				videos[currentIndex].pause();
+				cancelAnimationFrame(rafId);
+			}
+
+			// on auto‑advance, reset this bar & slide
+			if (!jumpOnly) {
+				resetBar(idx);
+				swiper.slideTo(idx);
+			}
+
+			currentIndex = idx;
+			const vid = videos[idx];
+			const bar = barInners[idx];
+
+			vid.currentTime = 0;
+			safePlay(vid);
+
+			const tick = () => {
+				const pct = vid.currentTime / vid.duration;
+				bar.style.width = `${Math.min(pct, 1) * 100}%`;
+				if (!vid.paused) rafId = requestAnimationFrame(tick);
+			};
+			tick();
+
+			vid.onended = () => {
+				cancelAnimationFrame(rafId);
+				bar.style.width = '100%';
+				const next = idx + 1 < videos.length ? idx + 1 : 0;
+				playSlide(next);
+			};
+		};
+
+		// manual swipe: tween previous bars to 100%, rest to 0%, then restart
+		swiper.on('slideChange', () => {
+			const idx = swiper.activeIndex;
 			videos[currentIndex].pause();
 			cancelAnimationFrame(rafId);
-		}
 
-		// on auto‑advance, reset this bar & slide
-		if (!jumpOnly) {
-			resetBar(idx);
-			swiper.slideTo(idx);
-		}
+			barInners.forEach((bar, i) => {
+				animateWidth(bar, i < idx ? 100 : 0, 300);
+			});
 
-		currentIndex = idx;
-		const vid = videos[idx];
-		const bar = barInners[idx];
-
-		vid.currentTime = 0;
-		vid.play();
-
-		const tick = () => {
-			const pct = vid.currentTime / vid.duration;
-			bar.style.width = `${Math.min(pct, 1) * 100}%`;
-			if (!vid.paused) rafId = requestAnimationFrame(tick);
-		};
-		tick();
-
-		vid.onended = () => {
-			cancelAnimationFrame(rafId);
-			bar.style.width = '100%';
-			const next = idx + 1 < videos.length ? idx + 1 : 0;
-			playSlide(next);
-		};
-	};
-
-	// manual swipe: tween all previous bars to 100%, rest to 0%, then restart
-	swiper.on('slideChange', () => {
-		const idx = swiper.activeIndex;
-		videos[currentIndex].pause();
-		cancelAnimationFrame(rafId);
-
-		barInners.forEach((bar, i) => {
-			animateWidth(bar, i < idx ? 100 : 0, 300);
+			playSlide(idx, true);
 		});
 
-		playSlide(idx, true);
+		// kick off
+		playSlide(0);
+	};
+
+	const modal = document.querySelector('#history-modal');
+	modal.addEventListener('show.bs.modal', init);
+	modal.addEventListener('hide.bs.modal', () => {
+		document.querySelectorAll('.history-modal__slider video').forEach(v => v.pause());
 	});
-
-	// kick off
-	playSlide(0);
 };
-
 const handleHeroAnimation = () => {
 	// Hero animation is full CSS here we only toggle body overflow
 	document.body.classList.add('no-scroll');
@@ -453,16 +469,16 @@ const handleHeroAnimation = () => {
 	}, 3000);
 };
 const handleParallax = () => {
-	gsap.from('.about__box', {
-		yPercent: 10,
-		ease: 'none',
-		scrollTrigger: {
-			scrub: 1,
-			trigger: '.about__box',
-			start: 'top 80%',
-			end: 'bottom center'
-		}
-	});
+	// gsap.from('.about__box', {
+	// 	yPercent: 10,
+	// 	ease: 'none',
+	// 	scrollTrigger: {
+	// 		scrub: 1,
+	// 		trigger: '.about__box',
+	// 		start: 'top 80%',
+	// 		end: 'bottom center'
+	// 	}
+	// });
 };
 const handleButtons = () => {
 	const buttons = document.querySelectorAll(

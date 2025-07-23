@@ -19,11 +19,11 @@
 	& > *:not(:first-child) {
 		margin-inline: vars.$spacing;
 	}
-	&__container {
-		display: flex;
-		flex-direction: column;
-		gap: max(10vw, 50px);
-	}
+	// &__container {
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	gap: max(10vw, 50px);
+	// }
 }
 .hero {
 	$preloader-duration: 3s;
@@ -69,10 +69,18 @@
 		@media (max-width: vars.$bp-ipad-pro) {
 			margin-inline: 10%;
 		}
-		@include br.large-mobile {
+		@media screen and (max-width: vars.$bp-large-mobile) and (min-height: 700px) {
 			@keyframes slide-from-bottom-content {
 				from {
-					transform: translateY(15%);
+					transform: translateY(20vh);
+				}
+			}
+			animation: slide-from-bottom-content 1.5s backwards $preloader-duration;
+		}
+		@media screen and (max-width: vars.$bp-large-mobile) and (max-height: 700px) {
+			@keyframes slide-from-bottom-content {
+				from {
+					transform: translateY(10vh);
 				}
 			}
 			animation: slide-from-bottom-content 1.5s backwards $preloader-duration;
@@ -244,11 +252,10 @@
 	overflow-x: clip;
 	z-index: 2;
 	gap: 20px;
-	// animation: appear 1s backwards $preloader-duration;
+	animation: appear 1s backwards $preloader-duration;
 	& > *:not(.about__box) {
 		z-index: 2;
 	}
-
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -260,10 +267,10 @@
 		height: auto;
 		width: 100%;
 		@media screen and (max-width: 900px) {
-			height: 100%;
 			min-width: 862px;
+			transform: translateX(-25%);
+			// aspect-ratio: 375/862;
 		}
-
 		img {
 			@media screen and (max-width: vars.$bp-ipad-pro) {
 				object-fit: cover;
@@ -271,8 +278,10 @@
 		}
 	}
 	&__box {
+		align-self: stretch;
 		position: relative;
 		animation: appear 0.6s backwards 2s;
+		display: flex;
 	}
 	&__bg {
 		position: absolute;
@@ -281,22 +290,11 @@
 		filter: blur(65px);
 		display: flex;
 		left: 50%;
+		bottom: 0;
+		transform: translate(-50%, 70%);
 
-		&:first-child {
-			top: 0;
-			transform: translate(-50%, -60%);
-			@media (max-width: vars.$bp-ipad-pro) {
-				transform: translate(5%, -50%);
-			}
-		}
-		&:last-child {
-			bottom: 0;
-			transform: translate(-50%, 70%);
-			@media (max-width: vars.$bp-ipad-pro) {
-				transform: translate(5%, 50%);
-			}
-		}
 		@media (max-width: vars.$bp-ipad-pro) {
+			transform: translate(5%, 50%);
 			left: -10%;
 			filter: blur(48px);
 			width: 130%;
@@ -331,6 +329,11 @@
 		text-transform: uppercase;
 		br:first-of-type {
 			@media screen and (min-width: 500px) {
+				display: none;
+			}
+		}
+		&-br--desktop {
+			@media screen and (max-width: vars.$bp-ipad-pro) {
 				display: none;
 			}
 		}
