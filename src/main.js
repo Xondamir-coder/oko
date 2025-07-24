@@ -94,6 +94,7 @@ const handleFormSubmission = () => {
 		});
 
 		const telInput = form.querySelector('input[name="tel"]');
+		if (!telInput) return;
 		telInput.addEventListener('input', () => {
 			telInput.value = telInput.value.replace(/[^\d +]/g, '');
 		});
@@ -273,13 +274,20 @@ const handleHistoryAnimations = () => {
 	}
 };
 const handleLinkTextDuplications = () => {
-	const links = document.querySelectorAll('a[href*="/"]:not(.button), a[href*="#"]:not(.button)');
+	// 1. Grab every internal non-button link
+	const allLinks = document.querySelectorAll(
+		'a[href^="/"]:not(.button):not(.pagination__button), a[href^="#"]:not(.button):not(.pagination__button)'
+	);
+
+	const links = Array.from(allLinks).filter(link => !link.closest('#wpadminbar'));
+
 	links.forEach(link => {
-		if (!link.innerHTML.trim().includes('<')) {
+		if (link.children.length === 0) {
+			const txt = link.textContent.trim();
 			link.innerHTML = `
-				<span class="link-span">${link.textContent.trim()}</span>
-				<span class="link-span">${link.textContent.trim()}</span>
-			`;
+      <span class="link-span">${txt}</span>
+      <span class="link-span">${txt}</span>
+    `;
 		}
 	});
 };
