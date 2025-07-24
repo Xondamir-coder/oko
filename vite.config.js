@@ -1,44 +1,15 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 import autoprefixer from 'autoprefixer';
-import { VitePWA } from 'vite-plugin-pwa';
 import viteCompression from 'vite-plugin-compression';
 import { fixRussianPrepositions } from './src/js/typography';
+import { createHtmlPlugin } from 'vite-plugin-html';
 
-export default defineConfig(({ command }) => ({
+export default defineConfig(() => ({
 	plugins: [
-		command === 'build' &&
-			VitePWA({
-				registerType: 'autoUpdate',
-				workbox: {
-					globPatterns: ['**/*.{png,jpg,jpeg,webp,avif,mp4,webm}'],
-					maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-					runtimeCaching: [
-						{
-							urlPattern: /\/assets\/.*\.(?:mp4|webm)$/,
-							handler: 'StaleWhileRevalidate',
-							options: {
-								cacheName: 'video-cache',
-								expiration: {
-									maxEntries: 5,
-									maxAgeSeconds: 60 * 60 * 24 * 365
-								}
-							}
-						},
-						{
-							urlPattern: /\/assets\/.*\.(?:png|jpg|jpeg|webp|avif)$/,
-							handler: 'StaleWhileRevalidate',
-							options: {
-								cacheName: 'image-cache',
-								expiration: {
-									maxEntries: 50,
-									maxAgeSeconds: 60 * 60 * 24 * 30
-								}
-							}
-						}
-					]
-				}
-			}),
+		createHtmlPlugin({
+			minify: true
+		}),
 		viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 10240 }),
 		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 }),
 		{
