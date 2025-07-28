@@ -8,7 +8,10 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 export default defineConfig(() => ({
 	plugins: [
 		createHtmlPlugin({
-			minify: true
+			minify: {
+				collapseWhitespace: false,
+				conservativeCollapse: true
+			}
 		}),
 		viteCompression({ algorithm: 'brotliCompress', ext: '.br', threshold: 10240 }),
 		viteCompression({ algorithm: 'gzip', ext: '.gz', threshold: 10240 }),
