@@ -72,14 +72,15 @@ const handleFormSubmission = () => {
 			// You can check result of formData here
 			// console.log(...formData);
 
-			if (form.hasAttribute('data-standalone')) {
-				const successModal = Modal.getOrCreateInstance('#success-modal');
-				successModal.show();
-				setTimeout(() => {
-					successModal.hide();
-				}, 3000);
-				return;
-			}
+			// For CTA form once filled show success modal
+			// if (form.hasAttribute('data-standalone')) {
+			// 	const successModal = Modal.getOrCreateInstance('#success-modal');
+			// 	successModal.show();
+			// 	setTimeout(() => {
+			// 		successModal.hide();
+			// 	}, 3000);
+			// 	return;
+			// }
 
 			if (!e.target.closest('[data-container]')) {
 				modal.show();
