@@ -362,11 +362,48 @@ const handleSafari = () => {
 		document.querySelector('.container').classList.add('safari');
 	}
 };
-const handleHistoryModal = () => {
-	const init = () => {
-		const sliderEl = document.querySelector('.history-modal__slider');
-		const swiper = sliderEl.swiper;
-		const videos = sliderEl.querySelectorAll('video');
+const handleCards = () => {
+	const swiperEl = document.querySelector('.history-modal__slider');
+	const modal = document.querySelector('#history-modal');
+
+	const handleVideoLoad = stringURL => {
+		// Get swiper-slide children
+		const videoURLs = Array.from(stringURL.split(','));
+
+		const children = [];
+		for (const videoURL of videoURLs) {
+			const markup = `
+			<swiper-slide class="section-card">
+				<video playsinline class="section-card__video">
+					<source src="${videoURL}" type="video/mp4" />
+					Video isn't supported
+				</video>
+			</swiper-slide>
+`;
+			children.push(markup);
+		}
+
+		swiperEl.innerHTML = children.join('');
+
+		const swiperParams = {
+			slidesPerView: 1,
+			spaceBetween: 6,
+			navigation: {
+				enabled: true,
+				prevEl: '#history-modal-prev',
+				nextEl: '#history-modal-next'
+			},
+			rewind: true,
+			grabCursor: true
+		};
+
+		Object.assign(swiperEl, swiperParams);
+
+		swiperEl.initialize();
+	};
+	const handleVideoPlayBars = () => {
+		const swiper = swiperEl.swiper;
+		const videos = swiperEl.querySelectorAll('video');
 		const barsContainer = document.querySelector('.history-modal__bars');
 		let currentIndex = 0;
 		let rafId = null;
@@ -461,10 +498,19 @@ const handleHistoryModal = () => {
 		playSlide(0);
 	};
 
-	const modal = document.querySelector('#history-modal');
-	modal.addEventListener('show.bs.modal', init);
 	modal.addEventListener('hide.bs.modal', () => {
-		document.querySelectorAll('.history-modal__slider video').forEach(v => v.pause());
+		document.querySelectorAll('.history-modal__slider video').forEach(v => {
+			v.src = '';
+			v.load();
+		});
+	});
+
+	document.body.addEventListener('click', e => {
+		const { target } = e;
+		const card = target.classList.contains('section-card') || target.closest('.section-card');
+		if (!card || card.dataset.bsTarget === '#plan-modal') return;
+		handleVideoLoad(card.dataset.videos);
+		handleVideoPlayBars();
 	});
 };
 const handleHeroAnimation = () => {
@@ -553,7 +599,7 @@ handleVideoStart();
 handleDownScroll();
 handlePointer();
 handleLinkClicks();
-handleHistoryModal();
+handleCards();
 
 // Animations related
 document.addEventListener('DOMContentLoaded', () => {
