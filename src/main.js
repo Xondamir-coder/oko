@@ -69,6 +69,7 @@ const handleFormSubmission = () => {
 			e.preventDefault();
 			const formData = new FormData(form);
 
+			// You can check result of formData here
 			// console.log(...formData);
 
 			if (form.hasAttribute('data-standalone')) {
@@ -84,13 +85,14 @@ const handleFormSubmission = () => {
 				modal.show();
 			}
 
-			const popupContainer = e.target.closest('[data-container]');
-			if (!popupContainer) return;
-			popupContainer.classList.add('active');
-			setTimeout(() => {
-				popupContainer.classList.remove('active', 'show-form');
-				form.reset();
-			}, 3000);
+			// Removed as backend will implement this
+			// const popupContainer = e.target.closest('[data-container]');
+			// if (!popupContainer) return;
+			// popupContainer.classList.add('active');
+			// setTimeout(() => {
+			// 	popupContainer.classList.remove('active', 'show-form');
+			// 	form.reset();
+			// }, 3000);
 		});
 
 		const telInput = form.querySelector('input[name="tel"]');
